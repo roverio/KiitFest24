@@ -19,8 +19,8 @@ const Hero = () => {
         className="w-[50%] max-w-[960px]"
       ></Image>
       <motion.div
-        initial={{ opacity: 0, y: 0, scaleX: 1.4 }}
-        animate={{ opacity: 1, y: 0, scaleX: 1 }}
+        initial={{ opacity: 0, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0, duration: 3 }}
       >
         <Image
