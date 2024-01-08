@@ -2,9 +2,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+
 import MobileNav from "./MobileNav";
-import { LuAlignJustify } from "react-icons/lu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +33,6 @@ const Navbar = () => {
         <button className="md:hidden" onClick={toggleNavbar}>
           <Image src="/mobiilenav.svg" alt="mb" width={32} height={12}></Image>
         </button>
-        {/* <LuAlignJustify className="cursor-pointer " onClick={toggleNavbar} /> */}
       </div>
     </nav>
   );
