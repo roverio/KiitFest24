@@ -28,7 +28,7 @@ const Hero = () => {
           alt="building"
           width={1500}
           height={1800}
-          className="w-full absolute bottom-0  left-0 h-[50%]"
+          className="w-full object-cover md:object-fill absolute bottom-0  left-0 h-[50%]"
         ></Image>
       </motion.div>
       <Image
@@ -36,7 +36,7 @@ const Hero = () => {
         alt="building"
         width={1500}
         height={1800}
-        className="w-[73%] absolute bottom-[8%] left-[10%]  h-[48%]"
+        className="w-[73%] object-cover md:object-fill absolute bottom-[8%] left-[10%]  h-[48%]"
       ></Image>
     </div>
   );

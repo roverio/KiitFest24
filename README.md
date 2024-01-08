@@ -6,9 +6,7 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
+# or104c8491ad2bd09cd3389e122aa28d6ab5fc2042
 pnpm dev
 # or
 bun dev
