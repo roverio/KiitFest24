@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const MobileNav = ({ isOpen, toggleNavbar }) => {
   return (
@@ -18,20 +19,27 @@ const MobileNav = ({ isOpen, toggleNavbar }) => {
         transition={{ duration: 0.3 }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Your Navbar content goes here */}
-        <ul className="p-2 space-y-4">
-          <li>
-            <Image
-              src="/Assets/fest_logo.png"
-              alt="fest logo"
-              width={1000}
-              height={850}
-              className="w-[80%] "
-            ></Image>
-          </li>
-          <li className="pt-4">Home</li>
-          <li>About</li>
-          <li>Contact</li>
+        <ul className="p-2 flex flex-col space-y-3">
+          <Link href={"/"}>
+            <li>
+              <Image
+                src="/Assets/fest_logo.png"
+                alt="fest logo"
+                width={1000}
+                height={850}
+                className="w-[99%] "
+              ></Image>
+            </li>
+          </Link>
+          <Link href={"/"}>
+            <li className="pt-4">Home</li>
+          </Link>
+          <Link href={"/"}>
+            <li>About</li>
+          </Link>
+          <Link href={"/"}>
+            <li>Contact</li>
+          </Link>
         </ul>
       </motion.div>
     </motion.div>
