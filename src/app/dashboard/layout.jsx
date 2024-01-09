@@ -19,14 +19,12 @@ export default function DashboardLayout({
     
     return (
       <AnimatePresence>
-        <div className="bg-[#0E0B17] flex font-roboto text-white">
+        <div className="bg-[#0E0B17] flex font-roboto text-white overflow-x-hidden">
           <motion.section {...slideAnimation('left')} >
-            {/* {sidebarOpen &&  */}
-              <DashboardSidebar 
+            <DashboardSidebar 
               sidebarOpen={sidebarOpen}
-                setSidebarOpen={setSidebarOpen}
-              /> 
-            {/* } */}
+              setSidebarOpen={setSidebarOpen}
+            /> 
           </motion.section>
           <div className="px-4 md:px-6 py-7 w-full flex-1">
             <motion.section {...slideAnimation('down')}>

@@ -17,7 +17,7 @@ const PreLoader = () => {
       <motion.div
         initial={{ opacity: 0, x: 0 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 2, duration: 3 }}
+        transition={{ delay: 1, duration: 3 }}
       >
         <Image
           src="/Assets/fest_logo.png"
