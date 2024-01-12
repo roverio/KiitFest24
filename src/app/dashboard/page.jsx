@@ -4,7 +4,7 @@ import AddedToCartSwiper from '@/components/dashboard/AddedToCartSwiper'
 import CountDown from '@/components/dashboard/CountDown'
 import StaticCalander from '@/components/dashboard/static-calander'
 import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { headTextAnimation } from '@/config/motion'
 
 const Dashboard = () => {
