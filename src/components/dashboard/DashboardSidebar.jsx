@@ -7,7 +7,9 @@ import DashboardSidebarItem from './DashboardSidebarItem';
 
 function DashboardSidebar({ setSidebarOpen, sidebarOpen }) {
   return (
-    <div className={`sidebar px-2 md:px-7 py-4 md:py-8 h-screen flex flex-col justify-between bg-gradient-to-l from-[#0c0a1d] to-[#181146] z-40 flex-shrink-0 top-0 transition-transform duration-300 ${!sidebarOpen ? " -translate-x-full absolute" : "translate-0 fixed sidebar:sticky"}`}>
+    <div className={`px-2 md:px-7 py-4 md:py-8 h-screen flex flex-col justify-between bg-gradient-to-l from-[#0c0a1d] to-[#181146] z-40 flex-shrink-0 top-0 transition-transform duration-300 sidebar:bg-red-400
+        ${!sidebarOpen ? "-translate-x-full absolute" : "fixed lg:sticky"}
+    `}>
         <div className='flex flex-col gap-20'>
             <div className='flex justify-between items-center gap-16'>
                 <Image
