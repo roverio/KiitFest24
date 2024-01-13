@@ -23,14 +23,14 @@ const Page = () => {
     <div className="w-[100vw] h-[100vh] overflow-x-hidden">
       <div className="-z-10 w-[100vw] h-[100vh] fixed">
         <Image
-          src="/assets/bgbottom.svg"
+          src="/Assets/bgbottom.svg"
           alt="bg image"
           fill
           priority
           className=" invisible md:visible object-cover translate-y-[100px]"
         />
         <Image
-          src="/assets/bgbottom2.svg"
+          src="/Assets/bgbottom2.svg"
           alt="bg image"
           fill
           className="md:invisible visible object-cover translate-y-[200px]"
@@ -38,7 +38,7 @@ const Page = () => {
       </div>
       <div className="-z-30 w-[100vw] h-[100vh] fixed">
         <Image
-          src="/assets/bgblue.png"
+          src="/Assets/bgblue.png"
           alt="bg image"
           fill
           className="object-cover"
@@ -46,7 +46,7 @@ const Page = () => {
       </div>
       <div className="-z-20 w-[100vw] h-[100vh] fixed">
         <Image
-          src="/assets/bgimage2.png"
+          src="/Assets/bgimage2.png"
           alt="bg image"
           fill
           className="object-cover translate-y-[200px]"
@@ -55,7 +55,7 @@ const Page = () => {
       <div className="w-full h-full flex items-center justify-center">
         <div className="max-w-[484px] w-11/12 bg-[#CCC]/20 backdrop-blur-sm shadow-xl border-[4px] rounded-3xl border-white py-[44px] md:py-[76.5px] px-[25px] md:px-[45px] mx-auto relative">
           <Image
-            src="/assets/profile.svg"
+            src="/Assets/profile.svg"
             alt="bg image"
             width={122}
             height={122}
