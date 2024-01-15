@@ -8,3 +8,11 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
+model User {
+    id                      String  @id @default(uuid())
+    name                    String
+    kiitEmail               String  @unique
+    personalEmail           String  @unique
+    phoneNumber             String?
+    password                String
+}

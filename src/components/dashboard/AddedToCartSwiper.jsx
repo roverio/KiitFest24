@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import CarouselCard from './swiper-card';
-import { dashboard_carousel_dummyData } from '@/constants/constant';
+import { dashboard_carousel_dummyData } from '@/constants';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
