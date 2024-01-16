@@ -3,57 +3,50 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
 model User {
-  id                  String    @id @default(uuid())
-  name                String
-  kiitEmail           String    @unique
-  personalEmail       String    @unique
-  phoneNumber         String?
-  password            String
-  DateOfBirth         DateTime
-  city                String
-  state               String
-  gender              String
-  college             String
-  events              Event[]   @relation("Participants")
-  accomodation        Boolean
-  payment             Boolean
-  qr_code             String    @unique
-  amount_paid         Boolean
-  createdAt           DateTime  @default(now())
-  issues              Issue[]   @relation("UserIssues")
-  carts               Cart[]    @relation("UserCarts")
-  qrParticipantEvents Event[]   @relation("QRParticipants")  
+  id            String   @id @default(uuid())
+  name          String
+  kiitEmail     String?  @unique
+  personalEmail String   @unique
+  phoneNumber   String
+  password      String
+  DateOfBirth   DateTime
+  city          String
+  state         String
+  gender        String
+  college       String
+  events        Event[]
+  accomodation  Boolean
+  payment       Boolean
+  createdAt     DateTime @default(now())
+  issues        Issue[]
+  carts         Cart[]
 }
 
 model Event {
-  event_id           String    @id @default(uuid())
-  name               String    @unique
-  participants       User[]    @relation("Participants")
-  qr_participants    User[]    @relation("QRParticipants")
-  carts              Cart[]    @relation("CartEvents")  
+  event_id     String @id @default(uuid())
+  name         String @unique
+  participants User   @relation(fields: [event_id], references: [id])
 }
 
 model Issue {
-  issue_id           String    @id @default(uuid())
-  user               User      @relation("UserIssues", fields: [userId], references: [id])
-  userId             String
-  issue              String
-  createdAt          DateTime  @default(now())
-  resolved           Boolean
+  issue_id  String   @id @default(uuid())
+  userId    String
+  issue     String
+  createdAt DateTime @default(now())
+  resolved  Boolean
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 model Cart {
-  cart_id            String    @id @unique
-  user               User      @relation("UserCarts", fields: [userId], references: [id])
-  userId             String
+  cart_id            String  @id @unique
+  user               User    @relation(fields: [cart_id], references: [id])
   user_name          String
-  events             Event[]   @relation("CartEvents")
   merchandise        Boolean
   accomodation_price Int
   final_Amount       Int
