@@ -12,7 +12,13 @@ export const userSchema = yup.object({
     city:yup.string().max(20).required("please enter city"),
     state:yup.string().max(20).required("please enter state"),
     gender: yup.string().required("please select gender"),
-    college:yup.string().max(50, "maximum 50 characters").required("please enter college name"),
+    institution:yup.string().max(50, "maximum 50 characters").required("please enter institution name"),
+    isKiitStudent: yup.boolean(),
+    rollNumber: yup.string().when("isKiitStudent", {
+    is: true,
+    then: () => yup.string().max(20, "Maximum 20 characters").required("Please enter Roll Number"),
+    otherwise:  () => yup.string()
+  }),
 })
 
 export const loginSchema = yup.object({
