@@ -9,10 +9,45 @@ datasource db {
 }
 
 model User {
-    id                      String  @id @default(uuid())
-    name                    String
-    kiitEmail               String  @unique
-    personalEmail           String  @unique
-    phoneNumber             String?
-    password                String
+  id            String   @id @default(uuid())
+  name          String
+  kiitEmail     String?  @unique
+  personalEmail String   @unique
+  phoneNumber   String
+  password      String
+  DateOfBirth   DateTime
+  city          String
+  state         String
+  gender        String
+  college       String
+  events        Event[]
+  accomodation  Boolean
+  payment       Boolean
+  createdAt     DateTime @default(now())
+  issues        Issue[]
+  carts         Cart[]
+}
+
+model Event {
+  event_id     String @id @default(uuid())
+  name         String @unique
+  participants User   @relation(fields: [event_id], references: [id])
+}
+
+model Issue {
+  issue_id  String   @id @default(uuid())
+  userId    String
+  issue     String
+  createdAt DateTime @default(now())
+  resolved  Boolean
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Cart {
+  cart_id            String  @id @unique
+  user               User    @relation(fields: [cart_id], references: [id])
+  user_name          String
+  merchandise        Boolean
+  accomodation_price Int
+  final_Amount       Int
 }
