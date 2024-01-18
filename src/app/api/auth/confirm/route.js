@@ -1,6 +1,5 @@
 import { db } from "@/server/db";
 import jwt from "jsonwebtoken";
-import { env } from "@/env";
 import { NextResponse } from "next/server";
 
 export async function GET(request) {
@@ -13,7 +12,7 @@ export async function GET(request) {
 
   let decoded;
   try {
-    decoded = jwt.verify(code, env.NEXTAUTH_SECRET);
+    decoded = jwt.verify(code, process.env.NEXTAUTH_SECRET);
   } catch (err) {
     return NextResponse.redirect(new URL("/auth/unable-to-verify", request.url));
   }
