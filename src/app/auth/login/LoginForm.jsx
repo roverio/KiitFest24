@@ -27,32 +27,12 @@ const Page = () => {
         password: data.password,
       });
       if (res?.error) {
-        return NextResponse.json(
-          {
-            success: false,
-            message: res?.error || "Unknown error Occurred",
-          },
-          {
-            status: 400,
-          }
-        );
+        console.log(res?.error || "Unknown error Occurred")
       } else {
-        return NextResponse.json({
-          success: true,
-          message: "Logged in Successfully",
-        });
+        console.log("Logged in Successfully")
       }
     } catch (err) {
-      console.log(err);
-      return NextResponse.json(
-        {
-          success: false,
-          message: "Unknown error Occurred",
-        },
-        {
-          status: 500,
-        }
-      );
+      console.log(err || "Unknown error Occurred");
     }
   };
 

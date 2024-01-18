@@ -2,30 +2,34 @@ import { NextResponse } from "next/server";
 import { db } from "@/server/db";
 import { userSchema } from "@/validations/userSchema";
 import { hashPassword } from "@/lib/bcrypt";
+// import { generateVerificationCode, sendConfirmationEmail } from "@/lib/utils";
 
 export async function POST(request) {
   try {
     const data = await request.json();
-    const checkData = userSchema.safeParse(data);
+    // const checkData = userSchema.safeParse(data);
+    const checkData = await userSchema.validate(data);
 
-    if (!checkData.success) {
-      return NextResponse.json(
-        {
-          success: checkData.success,
-          message: "Invalid data provided"
-        },
-        {
-          status: 400,
-        }
-      );
-    }
+    const {
+      name,
+      email,
+      password,
+      phoneNumber,
+      date: dateOfBirth,
+      city,
+      state,
+      gender,
+      institution,
+      isKiitStudent,
+      rollNumber,
+    } = data;
 
-    const { id, name, personalEmail, phoneNumber, password, DateOfBirth, city, state, gender, college } = data;
+    console.log({isKiitStudent,rollNumber})
 
     // Check If user Exists
     const userExists = await db.user.findUnique({
       where: {
-        id,
+        email,
       },
     });
 
@@ -36,34 +40,50 @@ export async function POST(request) {
           message: "User already exists",
         },
         {
-          status: 400
-        },
+          status: 400,
+        }
       );
     }
 
     // Create User
     try {
       const hashedPasswordGen = await hashPassword(password);
+      const studentsData = {
+        name,
+        email,
+        password: hashedPasswordGen,
+        phoneNumber,
+        dateOfBirth: new Date(dateOfBirth),
+        city,
+        state,
+        gender,
+        institution,
+      };
+
+      if (isKiitStudent) {
+        studentsData.isKiitStudent = isKiitStudent;
+        studentsData.rollNumber = rollNumber;
+      }
+      
       await db.user.create({
-        data: {
-          name,
-          personalEmail,
-          phoneNumber,
-          password: hashedPasswordGen,
-          DateOfBirth,
-          city,
-          state,
-          gender,
-          college,
-        }
+        data: studentsData,
       });
+
+      // const code = generateVerificationCode(email);
+
+      // await sendConfirmationEmail({
+      //   email,
+      //   name,
+      //   verificationCode: code,
+      // });
+
       return NextResponse.json(
         {
           success: true,
-          message: "User successfully created"
+          message: "User successfully created",
         },
         {
-          status: 201
+          status: 201,
         }
       );
     } catch (error) {
@@ -74,7 +94,7 @@ export async function POST(request) {
           message: "Something went wrong",
         },
         {
-          status: 500
+          status: 500,
         }
       );
     }

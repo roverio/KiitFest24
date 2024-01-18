@@ -9,23 +9,27 @@ datasource db {
 }
 
 model User {
-  id            String   @id @default(uuid())
-  name          String
-  kiitEmail     String?  @unique
-  personalEmail String   @unique
-  phoneNumber   String
-  password      String
-  DateOfBirth   DateTime
-  city          String
-  state         String
-  gender        String
-  college       String
-  events        Event[]
-  accomodation  Boolean
-  payment       Boolean
-  createdAt     DateTime @default(now())
-  issues        Issue[]
-  carts         Cart[]
+  id              String   @id @default(uuid())
+  name            String
+  email           String   @unique
+  phoneNumber     String
+  password        String
+  dateOfBirth     DateTime
+  city            String
+  state           String
+  gender          String
+  institution     String
+  isKiitStudent   Boolean  @default(false)
+  rollNumber      String?
+  isEmailVerified Boolean  @default(false)
+
+  accomodation Boolean @default(false)
+  payment      Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  events    Event[]
+  issues    Issue[]
+  carts     Cart[]
 }
 
 model Event {
