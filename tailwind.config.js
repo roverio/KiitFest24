@@ -16,6 +16,7 @@ module.exports = {
         'dashboard-coundown' : 'linear-gradient(180deg, #0D0A17 -15.4%, #181146 47.05%, #0D0A17 116.35%)',
         'about-background' : 'linear-gradient(74deg, #0D0A17 1.28%, #181146 42.54%, #0D0A17 88.34%)',
         'about-details-section' : 'linear-gradient(67deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 96.06%)',
+
       },
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif'],
