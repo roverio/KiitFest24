@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 const Page = () => {
@@ -41,7 +41,9 @@ const Page = () => {
   };
 
   return (
-    <div className='h-[100vh] flex flex-col justify-between overflow-x-hidden bg-about-background blur-[0.1px] text-white'>
+   <div className='h-screen w-screen'>
+   <div className="-z-10 w-[100vw] h-[100vh] fixed  bg-about-background"></div>
+    <div className='flex flex-col justify-between h-full  blur-[0.1px] text-white'>
       <div>      
         <div className='text-center text-xl font-semibold md:font-normal md:text-5xl tracking-[1.62px] md:tracking-[4.32px] mt-20'>
           {informationList[currentInfo].title}
@@ -63,7 +65,7 @@ const Page = () => {
     </div>      
       <div className='grid grid-cols-[auto,min-content,auto] xl:min-h-[200px] mt-3 sm:-mt-3 md:-mt-7 w-full'>
         <div className='relative'>
-        <div className='flex items-center gap-[2px] xl:gap-4 absolute -right-3 bottom-3 cursor-pointer group' onClick={() => handleButtonClick('left')}>
+        <div className='flex items-center gap-[2px] xl:gap-4 absolute -right-3 bottom-3 cursor-pointer group z-50' onClick={() => handleButtonClick('left')}>
              <div className='text-[9px] sm:text-xs md:text-[14px] xl:text-[24px] sm:font-light tracking-[0.5px] md:tracking-[2.16px] sm:group-hover:scale-105 transition-all duration-300'>
                {informationList[currentInfo2].title}
              </div>
@@ -101,7 +103,7 @@ const Page = () => {
           </div>
         </div>
         <div className='relative'>
-        <div className='flex items-center gap-[2px] xl:gap-4 absolute -left-3 bottom-3 cursor-pointer group' onClick={() => handleButtonClick('right')}>
+        <div className='flex items-center gap-[2px] xl:gap-4 absolute -left-3 bottom-3 cursor-pointer group z-50' onClick={() => handleButtonClick('right')}>
              <Image
                src='/Assets/arrowabout.png'
                alt='bg image'
@@ -115,10 +117,9 @@ const Page = () => {
            </div>
         </div>
       </div>
-      
-
-      
     </div>
+   </div>
+    
   );
 };
 
