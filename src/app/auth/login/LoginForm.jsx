@@ -6,6 +6,8 @@ import Image from "next/image";
 import React from 'react';
 import Link from 'next/link';
 import dynamic from "next/dynamic";
+import { NextResponse } from "next/server";
+import {signIn} from "next-auth/react";
 
 
 const Page = () => {
@@ -17,7 +19,22 @@ const Page = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    try {
+      const res = await signIn("credentials", {
+        redirect: false,
+        email: data.email,
+        password: data.password,
+      });
+      if (res?.error) {
+        console.log(res?.error || "Unknown error Occurred")
+      } else {
+        console.log("Logged in Successfully")
+      }
+    } catch (err) {
+      console.log(err || "Unknown error Occurred");
+    }
+  };
 
   return (
     <div className="w-[100vw] h-[100vh] overflow-x-hidden">
