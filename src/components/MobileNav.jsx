@@ -13,41 +13,41 @@ const MobileNav = ({ isOpen, toggleNavbar }) => {
       onClick={toggleNavbar}
     >
       <motion.div
-        className="fixed text-white flex flex-col text-xl justify-between bg-gradient-to-r from-[#110D26] via-[#181146] to-[#110D26]  h-full w-[50vw] p-4 shadow-md top-0 left-0"
+        className="fixed text-white flex flex-col text-xl justify-between bg-gradient-to-r from-[#110D26] via-[#181146] to-[#110D26]  h-full w-[55vw] p-4 shadow-md top-0 left-0"
         initial={{ x: "-100%" }}
         animate={isOpen ? { x: 0 } : { x: "-100%" }}
         transition={{ duration: 0.3 }}
         onClick={(e) => e.stopPropagation()}
       >
-        <ul className="p-5 flex flex-col space-y-8">
-          <li>
+        <ul className="p-2 flex flex-col space-y-6">
+          <li className="mb-6">
             <Link href={"/"}>
               <Image
                 src="/Assets/fest_logo.png"
                 alt="fest logo"
                 width={1000}
                 height={850}
-                className="w-[99%] "
+                className="w-full "
               ></Image>
             </Link>
           </li>
 
-          <li className="mt-20">
+          <li className="hover:pl-3 duration-200">
             {" "}
             <Link href={"/"}>Home </Link>
           </li>
 
-          <li>
+          <li className="hover:pl-2 duration-200">
             {" "}
             <Link href={"/"}>About </Link>
           </li>
 
-          <li>
+          <li className="hover:pl-2 duration-200">
             {" "}
             <Link href={"/"}>Contact </Link>
           </li>
         </ul>
-        <div className="flex w-full justify-between p-5">
+        <div className="flex w-full justify-between p-2">
           <Link href="/">
             <Image
               src="/icons/social1.png"

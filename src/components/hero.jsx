@@ -8,9 +8,9 @@ const Hero = ({ clicked, clickHandler }) => {
   return (
     <div className="flex  relative items-center w-full h-[100vh] overflow-hidden justify-start flex-col space-y-32 py-2">
       <motion.div
-        initial={{ opacity: 0, y: 900, scale: 0.7 }}
+        initial={{ opacity: 0, y: 500, scale: 0.7 }}
         animate={clicked ? { opacity: 1, y: 0, z: 0, scale: 1 } : {}}
-        transition={{ delay: 0, duration: 1.5 }}
+        transition={{ delay: 0, duration: 1 }}
         className="flex items-center  justify-center"
       >
         <Image
