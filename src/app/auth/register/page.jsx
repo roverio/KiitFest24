@@ -1,10 +1,12 @@
 "use client";
+
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { userSchema } from "@/validations/userSchema";
 import Image from "next/image";
 import React, { useState } from 'react';
 import dynamic from "next/dynamic";
+import { NextResponse } from "next/server";
 
 const Page = () => {
   const {
@@ -22,12 +24,38 @@ const Page = () => {
   const [showRollNumberField, setShowRollNumberField] = useState(false);
   const rollNumber = watch("rollNumber");
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     // If isKiitStudent is not selected, set rollNumber to an empty string
     if (!data.isKiitStudent) {
       data.rollNumber = "";
     }
-    console.log(data);
+    const response = await fetch("/api/auth/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const sendData = await response.json();
+    if(!sendData.success){
+      return NextResponse.json({
+        success:false,
+        message:"Error in sending Data",
+      },
+      {
+        status: 400
+      })
+    }
+    else{
+      return NextResponse.json({
+        success: true,
+        message: "Data Sent Successfully"
+      },
+      {
+        status:200
+      });
+      
+    }
   };
 
   return (

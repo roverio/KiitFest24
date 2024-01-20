@@ -27,16 +27,11 @@ export const authOptions = {
         }
 
         const { email, password } = credentials;
-
-        if (!email.endsWith("@kiit.ac.in")) {
-          throw new Error("Please use your KIIT email");
-        }
-
         let user;
         try {
           user = await db.user.findUnique({
             where: {
-              kiitEmail: email,
+              email: email,
             },
           });
         } catch (_err) {
@@ -45,6 +40,10 @@ export const authOptions = {
 
         if (!user) {
           throw new Error("User not found. Please Register.");
+        }
+
+        if(!user.isEmailVerified){
+          throw new Error("Please verify your email to login.")
         }
 
         const isValid = await comparePassword(password, user.password);
