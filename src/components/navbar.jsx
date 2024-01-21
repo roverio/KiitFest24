@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import BgAudio from "./BgAudio";
 
 import MobileNav from "./MobileNav";
 
@@ -38,6 +39,7 @@ const Navbar = ({ clicked }) => {
             SIGN IN
           </button>
         </Link>
+        <BgAudio />
         <button className="md:hidden" onClick={toggleNavbar}>
           <Image src="/mobiilenav.svg" alt="mb" width={32} height={12}></Image>
         </button>

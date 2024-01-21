@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import { motion } from "framer-motion";
 import ParticleBackgound from "@/components/particleBackgound";
+import BgAudio from "@/components/BgAudio";
 
 import PreLoader from "@/components/PreLoader";
 export default function Home() {
