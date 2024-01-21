@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { db } from "@/server/db";
 import { userSchema } from "@/validations/userSchema";
 import { hashPassword } from "@/lib/bcrypt";
-// import { generateVerificationCode, sendConfirmationEmail } from "@/lib/utils";
+import { generateVerificationCode, sendConfirmationEmail } from "@/lib/utils";
 
 export async function POST(request) {
   try {
@@ -69,13 +69,13 @@ export async function POST(request) {
         data: studentsData,
       });
 
-      // const code = generateVerificationCode(email);
+      const code = generateVerificationCode(email);
 
-      // await sendConfirmationEmail({
-      //   email,
-      //   name,
-      //   verificationCode: code,
-      // });
+      await sendConfirmationEmail({
+        email,
+        name,
+        verificationCode: code,
+      });
 
       return NextResponse.json(
         {
