@@ -3,12 +3,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "@/validations/userSchema";
 import Image from "next/image";
-import React from 'react';
-import Link from 'next/link';
+import React,{useState} from "react";
+import Link from "next/link";
 import dynamic from "next/dynamic";
 import { NextResponse } from "next/server";
-import {signIn} from "next-auth/react";
-
+import { signIn } from "next-auth/react";
+import { PulseLoader } from "react-spinners";
 
 const Page = () => {
   const {
@@ -19,20 +19,31 @@ const Page = () => {
     resolver: yupResolver(loginSchema),
   });
 
+  const [displayMessage, setDisplayMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const onSubmit = async (data) => {
+    
     try {
+      setLoading(true);
       const res = await signIn("credentials", {
         redirect: false,
         email: data.email,
         password: data.password,
       });
       if (res?.error) {
-        console.log(res?.error || "Unknown error Occurred")
+        console.log(res?.error || "Unknown error Occurred");
+        setDisplayMessage(res?.error || "Try again later or Contact us");
+        setLoading(false);
       } else {
-        console.log("Logged in Successfully")
+        console.log("Logged in Successfully");
+        setLoading(false);
       }
     } catch (err) {
       console.log(err || "Unknown error Occurred");
+      setDisplayMessage(err || "Try again later or Contact us");
+
+      setLoading(false);
     }
   };
 
@@ -89,13 +100,15 @@ const Page = () => {
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
                 <Image
-                src="/icons/profile.png"
-                alt="bg image"
-                width={30}
-                height={30}
-                className="absolute left-[10px] bottom-[7.8px]"
+                  src="/icons/profile.png"
+                  alt="bg image"
+                  width={30}
+                  height={30}
+                  className="absolute left-[10px] bottom-[7.8px]"
                 />
-                <div className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">{errors.email?.message}</div>
+                <div className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
+                  {errors.email?.message}
+                </div>
               </div>
 
               <div className="w-full relative">
@@ -107,33 +120,47 @@ const Page = () => {
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
                 <Image
-                src="/icons/password.png"
-                alt="bg image"
-                width={30}
-                height={30}
-                className="absolute left-[10px] bottom-[7.8px]"
+                  src="/icons/password.png"
+                  alt="bg image"
+                  width={30}
+                  height={30}
+                  className="absolute left-[10px] bottom-[7.8px]"
                 />
-                <div className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">{errors.password?.message}</div>
+                <div className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
+                  {errors.password?.message}
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center justify-between gap-1 mt-10">
-              <button type="submit" className="mx-auto py-1 md:py-2 leading-none px-4 md:px-6 rounded-full bg-gradient-to-b from-[#174ACE] to-[#16B2DB] border-[3.3px] border-white text-sm md:text-lg font-medium text-white">SUBMIT</button>
+            <p className="mx-auto text-red-400 font-medium mt-5">
+              {displayMessage}
+            </p>
+            <div className="flex items-center justify-between gap-1 mt-5">
+              <button
+                type="submit"
+                disabled={loading}
+                className={`${
+                  loading && "opacity-50 cursor-not-allowed"
+                } mx-auto flex items-center gap-4 py-1 md:py-2 leading-none px-4 md:px-6 rounded-full bg-gradient-to-b from-[#174ACE] to-[#16B2DB] border-[3.3px] border-white text-sm md:text-lg font-medium text-white`}
+              >
+                <PulseLoader loading={loading} size={6} color="#fff" />
+                <p>Submit</p>
+              </button>
               <span className="text-white text-xl">or</span>
               <Link href="/auth/register" className="mx-auto">
-              <div className="mx-auto py-1 md:py-2 leading-none px-4 md:px-6 rounded-full bg-gradient-to-b from-[#174ACE] to-[#16B2DB] border-[3.3px] border-white text-sm md:text-lg font-medium text-white">
-               REGISTER
-              </div></Link>
-              </div>
+                <div className="mx-auto py-1 md:py-2 leading-none px-4 md:px-6 rounded-full bg-gradient-to-b from-[#174ACE] to-[#16B2DB] border-[3.3px] border-white text-sm md:text-lg font-medium text-white">
+                  REGISTER
+                </div>
+              </Link>
+            </div>
           </form>
-          <div>
-          </div>
+          <div></div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 // export default Page;
 
-export default dynamic (() => Promise.resolve(Page), {ssr: false})
+export default dynamic(() => Promise.resolve(Page), { ssr: false });

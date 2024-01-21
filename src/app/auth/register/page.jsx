@@ -4,9 +4,9 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { userSchema } from "@/validations/userSchema";
 import Image from "next/image";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import dynamic from "next/dynamic";
-import { NextResponse } from "next/server";
+import { PulseLoader } from "react-spinners";
 
 const Page = () => {
   const {
@@ -23,12 +23,15 @@ const Page = () => {
   const [isKiitStudent, setIsKiitStudent] = useState(false);
   const [showRollNumberField, setShowRollNumberField] = useState(false);
   const rollNumber = watch("rollNumber");
-
+  const [displayMessage, setDisplayMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const onSubmit = async (data) => {
     // If isKiitStudent is not selected, set rollNumber to an empty string
     if (!data.isKiitStudent) {
       data.rollNumber = "";
     }
+    setLoading(true);
     const response = await fetch("/api/auth/register", {
       method: "POST",
       headers: {
@@ -36,25 +39,16 @@ const Page = () => {
       },
       body: JSON.stringify(data),
     });
-    const sendData = await response.json();
-    if(!sendData.success){
-      return NextResponse.json({
-        success:false,
-        message:"Error in sending Data",
-      },
-      {
-        status: 400
-      })
-    }
-    else{
-      return NextResponse.json({
-        success: true,
-        message: "Data Sent Successfully"
-      },
-      {
-        status:200
-      });
-      
+    const { success, message } = await response.json();
+    if (!success) {
+      setLoading(false);
+      return setDisplayMessage(message);
+    } else {
+      setLoading(false);
+      setDisplayMessage(
+        "Check your email for verification link. You may close this tab."
+      );
+      setSubmitted(true);
     }
   };
 
@@ -118,7 +112,9 @@ const Page = () => {
                   height={30}
                   className="absolute left-[10px] bottom-[7.8px]"
                 />
-                <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">{errors.name?.message}</span>
+                <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
+                  {errors.name?.message}
+                </span>
               </div>
 
               <div className="w-full relative">
@@ -135,7 +131,9 @@ const Page = () => {
                   height={30}
                   className="absolute left-[10px] bottom-[7.8px]"
                 />
-                <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">{errors.email?.message}</span>
+                <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
+                  {errors.email?.message}
+                </span>
               </div>
 
               <div className="flex md:flex-row flex-col gap-5">
@@ -154,7 +152,9 @@ const Page = () => {
                     height={30}
                     className="absolute left-[10px] bottom-[7.8px]"
                   />
-                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">{errors.password?.message}</span>
+                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
+                    {errors.password?.message}
+                  </span>
                 </div>
 
                 <div className="w-full relative">
@@ -172,7 +172,9 @@ const Page = () => {
                     height={30}
                     className="absolute left-[10px] bottom-[7.8px]"
                   />
-                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">{errors.password_confirmation?.message}</span>
+                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
+                    {errors.password_confirmation?.message}
+                  </span>
                 </div>
               </div>
 
@@ -191,7 +193,9 @@ const Page = () => {
                     height={30}
                     className="absolute left-[10px] bottom-[7.8px]"
                   />
-                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">{errors.phoneNumber?.message}</span>
+                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
+                    {errors.phoneNumber?.message}
+                  </span>
                 </div>
                 <div className="w-full relative">
                   <input
@@ -208,7 +212,9 @@ const Page = () => {
                     height={30}
                     className="absolute left-[10px] bottom-[7.8px]"
                   />
-                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">{errors.date?.message}</span>
+                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
+                    {errors.date?.message}
+                  </span>
                 </div>
               </div>
 
@@ -227,7 +233,9 @@ const Page = () => {
                     height={30}
                     className="absolute left-[10px] bottom-[7.8px]"
                   />
-                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">{errors.city?.message}</span>
+                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
+                    {errors.city?.message}
+                  </span>
                 </div>
 
                 <div className="w-full relative">
@@ -244,16 +252,24 @@ const Page = () => {
                     height={30}
                     className="absolute left-[10px] bottom-[7.8px]"
                   />
-                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">{errors.state?.message}</span>
+                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
+                    {errors.state?.message}
+                  </span>
                 </div>
               </div>
 
               <div className="flex md:flex-row flex-col gap-5">
                 <div className="w-full relative">
-                  <select {...register("gender")} onChange={(e) => setValue('gender', e.target.value, { shouldValidate: true })} 
+                  <select
+                    {...register("gender")}
+                    onChange={(e) =>
+                      setValue("gender", e.target.value, {
+                        shouldValidate: true,
+                      })
+                    }
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-[10px] appearance-none"
                   >
-                    <option value="" >Gender</option>
+                    <option value="">Gender</option>
                     <option value="female">Female</option>
                     <option value="male">Male</option>
                     <option value="other">Other</option>
@@ -263,7 +279,8 @@ const Page = () => {
                     alt="icon"
                     width={18}
                     height={18}
-                    className="absolute right-5 bottom-3.5 "/>
+                    className="absolute right-5 bottom-3.5 "
+                  />
                   <Image
                     src="/icons/gender.png"
                     alt="bg image"
@@ -271,7 +288,9 @@ const Page = () => {
                     height={30}
                     className="absolute left-[10px] bottom-[7.8px]"
                   />
-                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">{errors.gender?.message}</span>
+                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
+                    {errors.gender?.message}
+                  </span>
                 </div>
 
                 <div className="w-full relative">
@@ -288,10 +307,12 @@ const Page = () => {
                     height={30}
                     className="absolute left-[10px] bottom-[7.8px]"
                   />
-                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">{errors.institution?.message}</span>
-                </div> 
+                  <span className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
+                    {errors.institution?.message}
+                  </span>
+                </div>
               </div>
-              
+
               {showRollNumberField && (
                 <div className="w-full relative mt-3">
                   <input
@@ -312,7 +333,6 @@ const Page = () => {
                   </span>
                 </div>
               )}
-
             </div>
 
             <div className="flex items-center space-x-2 pt-5">
@@ -326,16 +346,30 @@ const Page = () => {
                 }}
                 className="mr-2 cursor-pointer"
               />
-              <label htmlFor="kiitStudentCheckbox" className="text-[#0098CE]">Are you a KIIT Student ?</label>
+              <label htmlFor="kiitStudentCheckbox" className="text-[#0098CE]">
+                Are you a KIIT Student ?
+              </label>
             </div>
-
-            <button type="submit" className="mx-auto py-1 mt-10 md:py-2 leading-none px-4 md:px-6 rounded-full bg-gradient-to-b from-[#174ACE] to-[#16B2DB] border-[3.3px] border-white text-sm md:text-lg font-medium text-white">SUBMIT</button>
+            <p className="mx-auto text-red-400 font-medium mt-5">
+              {displayMessage}
+            </p>
+            <button
+              type="submit"
+              disabled={loading}
+              className={`${
+                loading || (submitted && "opacity-50 cursor-not-allowed")
+              } mx-auto flex items-center gap-4 py-1 mt-5 md:py-2 leading-none px-4 md:px-6 rounded-full bg-gradient-to-b from-[#174ACE] to-[#16B2DB] border-[3.3px] border-white text-sm md:text-lg font-medium text-white`}
+            >
+              <PulseLoader loading={loading} size={6} color="#fff" />
+              {submitted && <>👍</>}
+              <p>Submit</p>
+            </button>
           </form>
         </div>
       </div>
     </div>
   );
-}
+};
 
 // export default Page;
 
