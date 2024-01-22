@@ -28,7 +28,7 @@ export async function GET(request) {
       email,
     },
     data: {
-      isVerified: true,
+      isEmailVerified: true,
     },
   });
 

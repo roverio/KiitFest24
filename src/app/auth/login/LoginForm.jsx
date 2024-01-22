@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 import { NextResponse } from "next/server";
 import { signIn } from "next-auth/react";
 import { PulseLoader } from "react-spinners";
+import { redirect } from "next/dist/server/api-utils";
 
 const Page = () => {
   const {
@@ -31,12 +32,14 @@ const Page = () => {
         email: data.email,
         password: data.password,
       });
+      console.log(res, 'res');
       if (res?.error) {
         console.log(res?.error || "Unknown error Occurred");
         setDisplayMessage(res?.error || "Try again later or Contact us");
         setLoading(false);
       } else {
         console.log("Logged in Successfully");
+        redirect("/dashboard");
         setLoading(false);
       }
     } catch (err) {

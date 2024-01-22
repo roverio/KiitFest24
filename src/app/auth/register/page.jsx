@@ -355,7 +355,7 @@ const Page = () => {
             </p>
             <button
               type="submit"
-              disabled={loading}
+              disabled={loading || submitted}
               className={`${
                 loading || (submitted && "opacity-50 cursor-not-allowed")
               } mx-auto flex items-center gap-4 py-1 mt-5 md:py-2 leading-none px-4 md:px-6 rounded-full bg-gradient-to-b from-[#174ACE] to-[#16B2DB] border-[3.3px] border-white text-sm md:text-lg font-medium text-white`}

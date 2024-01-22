@@ -19,14 +19,16 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          if (!credentials?.email && !credentials?.password)
-            throw new Error("Email and Password is required");
-          if (!credentials?.email) throw new Error("Email is required");
-          if (!credentials?.password) throw new Error("Password is required");
+        const { email, password }  = credentials;
+
+        if (!email && !password) {
+          throw new Error("Email and Password are required");
+        } else if (!email) {
+          throw new Error("Email is required");
+        } else if (!password) {
+          throw new Error("Password is required");
         }
 
-        const { email, password } = credentials;
         let user;
         try {
           user = await db.user.findUnique({
