@@ -4,6 +4,7 @@ import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { IoCloseSharp } from "react-icons/io5";
 import { PiInstagramLogoFill } from "react-icons/pi";
 import DashboardSidebarItem from './DashboardSidebarItem';
+import Logout from './Logout';
 
 function DashboardSidebar({ setSidebarOpen, sidebarOpen }) {
   return (
@@ -27,7 +28,7 @@ function DashboardSidebar({ setSidebarOpen, sidebarOpen }) {
                 <DashboardSidebarItem title={'alerts'} alertNo={3} link={'/dashboard'}/>
                 <DashboardSidebarItem title={'change password'} link={'/dashboard'}/>
                 <DashboardSidebarItem title={'report issues'} link={'/dashboard'}/>
-                <DashboardSidebarItem title={'logout'} link={'/dashboard'}/>
+                <Logout />
             </div>
         </div>
         <div className='flex justify-around'>
