@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const MembersCard = ({ src, memberName }) => {
   return (
-    <div className="text-white members-card flex flex-col items-center gap-3 py-5 px-5 max-w-60 min-h-[300px]">
+    <div className="text-white members-card flex flex-col items-center gap-3 py-5 px-5 max-w-60 min-h-[300px] rounded-2xl">
         <Image 
             src={src} 
             alt={memberName} 
