@@ -7,7 +7,7 @@ import BgAudio from "./BgAudio";
 
 import MobileNav from "./MobileNav";
 
-const Navbar = ({ clicked }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -24,8 +24,8 @@ const Navbar = ({ clicked }) => {
       <MobileNav isOpen={isOpen} toggleNavbar={toggleNavbar} />
       <motion.div
         initial={{ opacity: 0, y: -60 }}
-        animate={clicked ? { opacity: 1, y: 0 } : {}}
-        transition={{ delay: 0, duration: 1 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 8, duration: 1 }}
         className="text-lg lg:text-[24px] hidden md:flex space-x-8"
       >
         <Link href={"/"}>Home</Link>
