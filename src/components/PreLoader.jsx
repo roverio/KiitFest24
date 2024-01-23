@@ -12,7 +12,6 @@ const PreLoader = () => {
     >
       <video className="object-cover w-[100vw] h-[100vh]" autoPlay muted loop>
         <source src="/Assets/prebg.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
       <motion.div
         initial={{ opacity: 0, x: 0 }}
@@ -20,11 +19,11 @@ const PreLoader = () => {
         transition={{ delay: 1, duration: 3 }}
       >
         <Image
-          src="/Assets/fest_logo.png"
+          src="/Assets/k_logo.png"
           alt="fest logo"
-          width={1000}
-          height={850}
-          className=" w-[90%] left-[5%] md:w-[51%] lg:w-[40%] absolute md:left-[23%]  lg:left-[30%] top-[53%] max-w-[800px]"
+          width={500}
+          height={550}
+          className=" w-[40%] left-[36%] md:w-[25%] lg:w-[15%] absolute md:left-[43%]  lg:left-[45%] top-[53%] max-w-[800px]"
         ></Image>
       </motion.div>
     </motion.div>
