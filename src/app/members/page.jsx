@@ -1,59 +1,20 @@
+'use client'
+
 import MembersCard from "@/components/MembersCard";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
 
-const dummyData = [
-  {
-    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
-    memberName: "member name"
-  },
-  {
-    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
-    memberName: "member name"
-  },
-  {
-    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
-    memberName: "member name"
-  },
-  {
-    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
-    memberName: "member name"
-  },
-  {
-    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
-    memberName: "member name"
-  },
-  {
-    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
-    memberName: "member name"
-  },
-  {
-    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
-    memberName: "member name"
-  },
-  {
-    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
-    memberName: "member name"
-  },
-  {
-    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
-    memberName: "member name"
-  },
-  {
-    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
-    memberName: "member name"
-  },
-  {
-    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
-    memberName: "member name"
-  },
-  {
-    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
-    memberName: "member name"
-  },
-]
+import { dummyData } from "@/constants";
+import { useState } from "react";
+const TEAM_NAME = ["Web Development", "Marketing", "HR", "Content", "Design"]
 
 const Members = () => {
+  const [activeTeam, setActiveTeam] = useState("web-development")
+
+  const handleTeamChange = (event) => {
+    setActiveTeam(event.target.value);
+  };
+
   return (
     <div className="bg-about-background min-h-screen font-sans ">
       <Navbar />
@@ -80,9 +41,29 @@ const Members = () => {
         height={500}
         className="absolute bottom-0"
       />
+      <div className="flex flex-col justify-end h-full px-4">
+        <div className="mt-24 md:mt-40 max-w-5xl m-auto flex justify-between w-full mb-12">
+          <div className="flex gap-4 items-center ">
+            <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#1741CC] to-[#16BCDC]"></div>
+            <h1 className="text-2xl md:text-3xl text-white font-semibold capitalize">Web Development</h1>
+          </div>
+          <select
+            id="teamSelect"
+            name="teamSelect"
+            value={activeTeam}
+            onChange={handleTeamChange}
+            className="w-full max-w-sm px-2 py-1 block border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-white text-gray-700"
+          >
+            {TEAM_NAME.map((team, index) => (
+              <option key={index} value={team} className="w-full">
+                {team}
+              </option>
+            ))}
+          </select> 
+        </div>
+      </div>
       <MembersContainer 
         dummyData={dummyData} 
-        teamname={"Design"}
       />
     </div>
   )
@@ -90,20 +71,15 @@ const Members = () => {
 
 export default Members;
 
-function MembersContainer ({ dummyData, teamname, }) {
+function MembersContainer ({ dummyData }) {
   return (
     <div className="flex flex-col justify-end h-full px-4">
-      <div className="mt-24 md:mt-40 pb-10 max-w-7xl m-auto ">
-        <div className="flex gap-4 items-center ml-8 lg:ml-16 xl:ml-28 xl:pl-2 mb-12">
-          <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#1741CC] to-[#16BCDC]"></div>
-          <h1 className="text-2xl md:text-4xl text-white font-semibold capitalize">{teamname}</h1>
-        </div>
+      <div className="max-w-7xl m-auto ">
         <div className="flex justify-center flex-wrap gap-6 relative">
           {dummyData.map((member, index) => (
             <MembersCard 
               key={index}
-              src={member.src}
-              memberName={member.memberName}
+              member={member}
             />
           ))}
         </div>

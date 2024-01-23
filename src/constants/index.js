@@ -191,3 +191,41 @@ export const eventData = {
     ],
   },
 };
+
+export const dummyData = [
+  {
+    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
+    memberName: "member name",
+    instagram: "https://www.instagram.com/manishmh",
+    linkedin: "https://www.linkedin.com/in/manish-k-46101a139/",
+    github: "https://github.com/manishmh",
+  },
+  {
+    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
+    memberName: "member name",
+    instagram: "https://www.instagram.com/manishmh",
+    linkedin: "https://www.linkedin.com/in/manish-k-46101a139/",
+    github: "https://github.com/manishmh",
+  },
+  {
+    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
+    memberName: "member name",
+    instagram: "https://www.instagram.com/manishmh",
+    linkedin: "https://www.linkedin.com/in/manish-k-46101a139/",
+    github: "https://github.com/manishmh",
+  },
+  {
+    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
+    memberName: "member name",
+    instagram: "https://www.instagram.com/manishmh",
+    linkedin: "https://www.linkedin.com/in/manish-k-46101a139/",
+    github: "https://github.com/manishmh",
+  },
+  {
+    src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
+    memberName: "member name",
+    instagram: "https://www.instagram.com/manishmh",
+    linkedin: "https://www.linkedin.com/in/manish-k-46101a139/",
+    github: "https://github.com/manishmh",
+  },
+]
