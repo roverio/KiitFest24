@@ -10,6 +10,7 @@ import { NextResponse } from "next/server";
 import { signIn } from "next-auth/react";
 import { PulseLoader } from "react-spinners";
 import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const {
@@ -23,8 +24,8 @@ const Page = () => {
   const [displayMessage, setDisplayMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const router = useRouter();
   const onSubmit = async (data) => {
-    
     try {
       setLoading(true);
       const res = await signIn("credentials", {
@@ -39,7 +40,8 @@ const Page = () => {
         setLoading(false);
       } else {
         console.log("Logged in Successfully");
-        redirect("/dashboard");
+        router.push("/dashboard");
+        router.refresh();
         setLoading(false);
       }
     } catch (err) {
