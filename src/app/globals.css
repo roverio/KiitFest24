@@ -9,3 +9,11 @@
 .verified-card {
     box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
 } 
+
+.members-card {
+    border: 0.873px solid #130C5C;
+    background: linear-gradient(67deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 96.06%);
+    box-shadow: 1.747px 3.493px 26.198px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(39.29723358154297px);
+}
+
