@@ -9,10 +9,6 @@ import BgAudio from "@/components/BgAudio";
 
 import PreLoader from "@/components/PreLoader";
 export default function Home() {
-  const [clicked, setClicked] = useState(false);
-  const clickHandler = () => {
-    setClicked(true);
-  };
   return (
     <main className=" h-[100vh] bg-gradient-to-b overflow-hidden from-[#0e0b17a8] via-[#1d15579f] to-[#05111d8a]  z-20">
       <PreLoader />
@@ -28,8 +24,8 @@ export default function Home() {
         animate={{ opacity: 1, y: 0, display: "block" }}
         transition={{ delay: 6, duration: 2 }}
       >
-        <Navbar clicked={clicked} />
-        <Hero clicked={clicked} clickHandler={clickHandler} />
+        <Navbar />
+        <Hero />
       </motion.div>
     </main>
   );
