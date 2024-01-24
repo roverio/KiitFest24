@@ -13,7 +13,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <nav className="flex max-w-[1900px] mx-auto justify-between fixed left-0 right-0 w-full z-[50] font-medium p-4 md:p-5 lg:px-20 lg:py-10 items-center text-white ">
+    <nav className="flex max-w-[1900px] backdrop-blur-md mx-auto justify-between fixed left-0 right-0 w-full z-[50] font-medium p-4 md:p-5 lg:px-20 lg:pt-10 items-center text-white ">
       <Image
         src="/Assets/kiit_logo.png"
         alt="kiit logo"
@@ -25,7 +25,7 @@ const Navbar = () => {
       <motion.div
         initial={{ opacity: 0, y: -60 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 8, duration: 1 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
         className="text-lg lg:text-[24px] hidden md:flex space-x-8"
       >
         <Link href={"/"}>Home</Link>
