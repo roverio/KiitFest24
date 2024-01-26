@@ -6,8 +6,10 @@ import StaticCalander from '@/components/dashboard/static-calander'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { headTextAnimation } from '@/config/motion'
+import { useSession } from 'next-auth/react'
 
 const Dashboard = () => {
+  const {data} = useSession()
   return (
     <div className='mt-2 flex justify-evenly flex-col items-between min-h-screen max-w-screen-xl m-auto'>
       <motion.div {...headTextAnimation}>
@@ -17,14 +19,14 @@ const Dashboard = () => {
           </span>
           {" "}
           <span className='font-semibold uppercase'>
-            Manish
+            {data?.user?.name}
           </span>
         </h1>
       </motion.div>
       <div className='flex justify-between flex-col md:flex-row gap-8 md:gap-0'>
         <div className='max-w-xl mt-2 py-5 pl-4 pr-2 md:px-6 rounded-xl bg-dashboard-user-details flex flex-col flex-shrink-0 flex-grow'>
           <div className='flex flex-col gap-6 text-base sm:text-lg md:text-xl relative'>
-            <h1 className='uppercase font-semibold'>Manish Malhotra</h1>
+            <h1 className='uppercase font-semibold'>{data?.user?.name}</h1>
             <div className='flex justify-between gap-4'>
               <div className='flex flex-col gap-2 md:gap-5 font-light font-sans'>
                 <span>KF ID</span>
@@ -34,9 +36,9 @@ const Dashboard = () => {
               </div>
               <div className='flex flex-col gap-2 md:gap-5 font-light font-sans '>
                 <span>KF_1218</span>
-                <span>98388937288</span>
-                <span>2205749@kiit.ac.in</span>
-                <span>KIIT Bhubaneswar, Odisha</span>
+                <span>{data?.user?.phoneNumber}</span>
+                <span>{data?.user?.email}</span>
+                <span>{data?.user?.institution}</span>
               </div>
             </div>
             <Image

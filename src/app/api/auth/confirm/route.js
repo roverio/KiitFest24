@@ -12,7 +12,7 @@ export async function GET(request) {
 
   let decoded;
   try {
-    decoded = jwt.verify(code, process.env.NEXTAUTH_SECRET);
+    decoded = jwt.verify(code, process.env.MAIL_TOKEN_SECRET);
   } catch (err) {
     return NextResponse.redirect(new URL("/auth/unable-to-verify", request.url));
   }

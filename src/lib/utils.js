@@ -38,7 +38,15 @@ export const sendConfirmationEmail = async ({
 };
 
 export const generateVerificationCode = (email) => {
-  return jwt.sign({ email }, process.env.NEXTAUTH_SECRET, {
-    expiresIn: "30d",
+  return jwt.sign({ email }, process.env.MAIL_TOKEN_SECRET, {
+    expiresIn: "20d",
+  });
+};
+
+
+
+export const generateAccessToken = (payload) => {
+  return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {
+    expiresIn: "20d",
   });
 };

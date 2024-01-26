@@ -66,7 +66,7 @@ export async function POST(request) {
       }
       
       await db.user.create({
-        data: studentsData,
+        data: {...studentsData, cart : {}}
       });
 
       const code = generateVerificationCode(email);

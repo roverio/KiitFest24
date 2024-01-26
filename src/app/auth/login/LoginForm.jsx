@@ -42,6 +42,7 @@ const Page = () => {
         console.log("Logged in Successfully");
         router.push("/dashboard");
         router.refresh();
+        setDisplayMessage("Logged in Successfully. Taking you to Dashboard...");
         setLoading(false);
       }
     } catch (err) {

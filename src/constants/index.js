@@ -28,15 +28,21 @@ export const eventData = {
         name: 'Tech Event 1',
         description: 'Description for Tech Event 1',
         image: '/Assets/eventtech.png',
+        code: 'tech1',
+        redirect: '/event/undefined',
       },
       {
         name: 'Tech Event 2',
-        description: 'Description for Tech Event 1',
+        description: 'Description for Tech Event 2',
         image: '/Assets/eventtech.png',
+        code: 'tech2',
+        redirect: '/event/undefined',
       },{
         name: 'Tech Event 3',
-        description: 'Description for Tech Event 1',
+        description: 'Description for Tech Event 3',
         image: '/Assets/eventtech.png',
+        code: 'tech3',
+        redirect: '/event/undefined',
       },{
         name: 'Tech Event 4',
         description: 'Description for Tech Event 1',
