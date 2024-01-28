@@ -89,8 +89,8 @@ export const CustomDropdown = ({
                     y2="7.12358"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#1741CC" />
-                    <stop offset="1" stop-color="#16BCDC" />
+                    <stop stopColor="#1741CC" />
+                    <stop offset="1" stopColor="#16BCDC" />
                   </linearGradient>
                 </defs>
               </svg>
@@ -118,8 +118,8 @@ export const CustomDropdown = ({
                     y2="7.12358"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stop-color="#1741CC" />
-                    <stop offset="1" stop-color="#16BCDC" />
+                    <stop stopColor="#1741CC" />
+                    <stop offset="1" stopColor="#16BCDC" />
                   </linearGradient>
                 </defs>
               </svg>

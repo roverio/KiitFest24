@@ -1,13 +1,14 @@
 "use client";
-import Image from "next/image";
-import { useState } from "react";
-import Navbar from "@/components/navbar";
+
 import Hero from "@/components/hero";
 import { motion } from "framer-motion";
-import ParticleBackgound from "@/components/particleBackgound";
-import BgAudio from "@/components/BgAudio";
-
+import Navbar from "@/components/navbar";
 import PreLoader from "@/components/PreLoader";
+import ParticleBackground from "@/components/particleBackground";
+// import Image from "next/image";
+// import { useState } from "react";
+// import BgAudio from "@/components/BgAudio";
+
 export default function Home() {
   return (
     <main className=" h-[100vh] bg-gradient-to-b overflow-hidden from-[#0e0b17a8] via-[#1d15579f] to-[#05111d8a]  z-20">
@@ -17,7 +18,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 5.5, duration: 2 }}
       >
-        <ParticleBackgound />
+        <ParticleBackground />
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 900, display: "none" }}
