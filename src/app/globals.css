@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.jk {
-  color: #ffffff00;
-}
-
 .verified-card {
-    box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
-} 
+  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+}
