@@ -18,7 +18,7 @@ export const Card = ({ event, showRegister = true, buttonComponent }) => {
         {showRegister && (
           <Link href={`/events/${event.id}`}>
             <button className=" text-[9.5px] mt-3 md:text-sm font-semibold border-2 bg-gradient-to-b from-[#1741CC] to-[#16BCDC] text-white rounded-xl px-6 py-2">
-              REGISTER
+              Go to Event
             </button>
           </Link>
         )}

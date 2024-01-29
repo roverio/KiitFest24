@@ -4,7 +4,7 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 const createFakeEventData = () => {
-  const EventType = ["SOLO", "SOLO_OR_GROUP", "GROUP"];
+  const MemberType = ["SOLO", "SOLO_OR_GROUP", "GROUP"];
   const EventCategory = [
     "MUSIC",
     "DANCE",
@@ -14,43 +14,54 @@ const createFakeEventData = () => {
     "CSE",
   ];
 
+// randomly throws cultural or technical
+  function getRandomYesOrNo() {
+    let randomNum = Math.floor(Math.random() * 2);
+    return randomNum === 1 ? "CULTURAL" : "TECHNICAL";
+  }
+  
+  // Example usage
   const fakeEventData = [];
 
   EventCategory.forEach((category) => {
-    EventType.forEach((type) => {
+    MemberType.forEach((memberType) => {
       Array.from({ length: 3 }).forEach((_, i) => {
-        if (type === "SOLO") {
+        if (memberType === "SOLO") {
           fakeEventData.push({
-            name: `${category} ${type} ${i + 1}`,
-            description: `Description of ${category} ${type} ${i + 1}`,
+            name: `${category} ${memberType} ${i + 1}`,
+            description: `Description of ${category} ${memberType} ${i + 1}`,
             category,
-            type,
+            memberType,
             venue: "Campus 6",
             imageUrl: "https://picsum.photos/200",
+            type: getRandomYesOrNo(),
           });
         }
 
-        if (type === "SOLO_OR_GROUP") {
+        if (memberType === "SOLO_OR_GROUP") {
           fakeEventData.push({
-            name: `${category} ${type} ${i + 1}`,
-            description: `Description of ${category} ${type} ${i + 1}`,
+            name: `${category} ${memberType} ${i + 1}`,
+            description: `Description of ${category} ${memberType} ${i + 1}`,
             category,
-            type,
+            memberType,
             venue: "Campus 7",
             imageUrl: "https://picsum.photos/200",
             groupSize: Math.floor(Math.random() * 4) + 1,
+            type: getRandomYesOrNo(),
+
           });
         }
 
-        if (type === "GROUP") {
+        if (memberType === "GROUP") {
           fakeEventData.push({
-            name: `${category} ${type} ${i + 1}`,
-            description: `Description of ${category} ${type} ${i + 1}`,
+            name: `${category} ${memberType} ${i + 1}`,
+            description: `Description of ${category} ${memberType} ${i + 1}`,
             category,
-            type,
+            memberType,
             venue: "Campus 8",
             imageUrl: "https://picsum.photos/200",
             groupSize: Math.floor(Math.random() * 3) + 2,
+            type: getRandomYesOrNo(),
           });
         }
       });
@@ -66,6 +77,8 @@ async function seed() {
   await prisma.event.createMany({
     data: fakeEventData,
   });
+  // await prisma.eventRegisteredUser.deleteMany({});
+  // await prisma.user.deleteMany({});
 }
 
 seed()

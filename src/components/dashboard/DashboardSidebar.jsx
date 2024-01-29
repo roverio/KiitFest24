@@ -26,7 +26,7 @@ function DashboardSidebar({ setSidebarOpen, sidebarOpen }) {
             </div>
             <div className='flex flex-col gap-12 px-5'>
                 <DashboardSidebarItem title={'alerts'} alertNo={3} link={'/dashboard'}/>
-                <DashboardSidebarItem title={'change password'} link={'/dashboard'}/>
+                <DashboardSidebarItem title={'registered-events'} link={'/dashboard/registered-events'}/>
                 <DashboardSidebarItem title={'report issues'} link={'/dashboard'}/>
                 <Logout />
             </div>

@@ -31,7 +31,7 @@ model User {
   EventRegisteredUser EventRegisteredUser[]
 }
 
-enum EventType {
+enum EventMember {
   SOLO
   SOLO_OR_GROUP
   GROUP
@@ -46,16 +46,22 @@ enum EventCategory {
   CSE
 }
 
-model Event {
-  id          String        @id @default(uuid())
-  name        String        @unique
-  description String
-  imageUrl    String
-  venue       String
-  type        EventType // (solo) || (solo/group) || (group only)
-  category    EventCategory // ????
-  groupSize   Int           @default(1)
+enum EventType {
+  CULTURAL
+  TECHNICAL
+}
 
+model Event {
+  id                  String                @id @default(uuid())
+  name                String                @unique
+  description         String
+  imageUrl            String
+  venue               String
+  memberType          EventMember // (solo) || (solo/group) || (group only)
+  type                EventType //(cutural) || (technical)
+  category            EventCategory // put on basis of cultural or technical in the enum
+  groupSize           Int                   @default(1)
+  groupName           String?
   EventRegisteredUser EventRegisteredUser[]
 }
 

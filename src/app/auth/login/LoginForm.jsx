@@ -39,7 +39,7 @@ const Page = () => {
         setDisplayMessage(res?.error || "Try again later or Contact us");
         setLoading(false);
       } else {
-        console.log("Logged in Successfully");
+        setDisplayMessage("Taking you to your Dashboard...");
         router.push("/dashboard");
         router.refresh();
         setLoading(false);

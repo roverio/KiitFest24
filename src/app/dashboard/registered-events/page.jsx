@@ -3,6 +3,7 @@ import RemoveEventButton from "./RemoveEventButton.jsx";
 import { db } from "@/server/db";
 import { getServerAuthSession } from "@/server/auth";
 import { redirect } from "next/navigation";
+import Link from "next/link.js";
 
 const RegisteredEventsPage = async () => {
   const session = await getServerAuthSession();
@@ -38,6 +39,8 @@ const RegisteredEventsPage = async () => {
           <h1 className="">No event Registered Yet !!</h1>
         )}
       </div>
+
+   
     </div>
   );
 };
