@@ -3,51 +3,51 @@ import { NextResponse } from "next/server";
 
 export async function POST(request) {
   const searchParams = request.nextUrl.searchParams;
-  const code = searchParams.get("msg").toString();
-  let values = code.split("|");	
-  let checksumUrl = values[values.length - 1];
+  const receivedMsg = searchParams.get("msg").toString();
+  let values = receivedMsg.split("|");
+  let lastCheckSumValue = values[values.length - 1];
 
   // Example usage
-  const receivedMsg = code; // Replace with the actual received message
-  const receivedChecksum = checksumUrl; // Replace with the actual received checksum
   const checksum_key = process.env.BILLDESK_CHECKSUM;
 
-  // Validate the checksum
-  function validateChecksum(receivedMsg, receivedChecksum, key) {
-    const hmac = CryptoJS.HmacSHA256(receivedMsg, key).toString().toUpperCase();
+  if (receivedMsg !== "") {
+    const stringNew = receivedMsg.replace("|" + lastCheckSumValue, ""); // Replace "|" and the code with an empty string
+
+	console.log(stringNew, 'stringNew')
+    const calculatedChecksum = calculateHmacSha256(
+      stringNew,
+      `${checksum_key}`
+    );
+
+    console.log(calculatedChecksum, lastCheckSumValue);
+    if (calculatedChecksum === lastCheckSumValue && splitData[14] === "0300") {
+      const customer = splitData[1];
+      const txn = splitData[2];
+      const amt = splitData[4];
+
+	  console.log(customer, txn, amt);
+	//   run db query here to update payment status
 	
-    const calculatedChecksum = CryptoJS.enc.Hex.stringify(hmac);
-
-    const calculatedChecksumUpperCase = calculatedChecksum.toString().toUpperCase();
-	console.log(hmac, 'calculatedChecksumUpperCase');
-	console.log(receivedChecksum, 'receivedchecksum');
-	console.log(receivedMsg, 'receivedMsg');
-
-
-    if (calculatedChecksumUpperCase === receivedChecksum) {
-		const kfId = values[1];
-		// write code to update the database with the payment status
-      console.log("Checksum validation successful");
-    } else {
-      console.error("Checksum validation failed");
     }
+
+    // Function to calculate HMAC-SHA256 hash using CryptoJS
+    function calculateHmacSha256(str, key) {
+      const hmac = CryptoJS.HmacSHA256(str, key);
+      return hmac.toString().toUpperCase();
+    }
+
+    return NextResponse.json(
+      {
+        message: "Pay successfull",
+      },
+      {
+        status: 200,
+      }
+    );
   }
-
-  validateChecksum(receivedMsg, receivedChecksum, checksum_key);
-
-
-  return NextResponse.json(
-    {
-      message: "Pay successfull",
-    },
-    {
-      status: 200,
-    }
-  );
 }
-
 // const newValues = values.slice(0, values.length - 1).join("|");
 // console.log(newValues, 'newValues');
-// const calculatedChecksum = CryptoJS.HmacSHA256(newValues, `${checksumUrl}`)
+// const calculatedChecksum = CryptoJS.HmacSHA256(newValues, `${lastCheckSumValue}`)
 // .toString()
 // .toUpperCase();
