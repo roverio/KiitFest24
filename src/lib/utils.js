@@ -1,7 +1,6 @@
 import mailGun from "mailgun.js";
 import formData from "form-data";
 import jwt from "jsonwebtoken";
-import crypto from "crypto"
 import CryptoJS from "crypto-js";
 // update a tag of mail to kiitfest.org when in production
 export const sendConfirmationEmail = async ({
