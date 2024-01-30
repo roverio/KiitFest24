@@ -18,14 +18,14 @@ export default function Home() {
       <motion.div
         initial={{ opacity: 0, y: 900 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 5.5, duration: 2 }}
+        transition={{ delay: 1.5, duration: 2 }}
       >
         <ParticleBackground />
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 900, display: "none" }}
         animate={{ opacity: 1, y: 0, display: "block" }}
-        transition={{ delay: 6, duration: 2 }}
+        transition={{ delay: 1.5, duration: 2 }}
       >
         <Navbar />
         <Hero />

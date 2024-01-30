@@ -45,7 +45,7 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 8, duration: 1 }}
+          transition={{ delay: 3.2, duration: 1 }}
           className="text-lg font-light font-roboto lg:text-[24px] hidden md:flex space-x-8"
         >
           <Link href={"/"} className="hover:scale-[1.14] duration-300">

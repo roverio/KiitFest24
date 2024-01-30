@@ -10,7 +10,7 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 8, duration: 1 }}
+        transition={{ delay: 3.2, duration: 1 }}
         className="flex items-center  justify-center"
       >
         <Image
@@ -27,16 +27,13 @@ const Hero = () => {
         alt="building"
         initial={{ opacity: 0, y: 900, scale: 1.2 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ type: "spring", stiffness: 20, delay: 6, duration: 4 }}
+        transition={{ type: "spring", stiffness: 20, delay: 2, duration: 4 }}
         className={`w-full  object-cover  lg:object-fill  overflow-x-hidden absolute bottom-0  left-0 h-[50%]`}
       ></motion.img>
 
       <motion.img
         src="/Assets/building3.png"
         alt="building"
-        initial={{ opacity: 0, y: 900, scale: 1.2 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 0, duration: 1 }}
         className={`w-full lg:w-[73%]  object-cover  lg:object-fill  absolute bottom-[5%] lg:bottom-[8%] left-0 lg:left-[10%]  h-[48%]`}
       ></motion.img>
     </div>

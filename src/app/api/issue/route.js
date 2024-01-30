@@ -34,7 +34,7 @@ export const POST = async (req) => {
       return NextResponse.json(
         {
           status: false,
-          message: "No user found",
+          message: "No user found, please register and try again",
         },
         {
           status: 400,
@@ -93,7 +93,7 @@ export const POST = async (req) => {
 export const PUT = async (req) => {
   const { issueId, accessCode } = await req.json();
 
-  if (accessCode != 1242069) {
+  if (accessCode != process.env.ADMIN_SECRET) {
     return NextResponse.json(
       { status: false, message: "You are not an admin" },
       { status: 400 }
