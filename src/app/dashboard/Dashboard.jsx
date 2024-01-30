@@ -5,7 +5,6 @@ import CountDown from "@/components/dashboard/CountDown";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { headTextAnimation } from "@/config/motion";
-import PaymentButton from "@/components/dashboard/PaymentButton";
 import Link from "next/link";
 import Merchandise from "@/components/dashboard/merchandise";
 
