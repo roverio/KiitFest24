@@ -10,12 +10,13 @@ const Merchandise = ({ merchandise, userEmail }) => {
   const router = useRouter();
   return (
     <div className="text-center bg-dashboard-coundown px-8 rounded-xl py-2 flex flex-col justify-center items-center lg:max-w-xs xl:max-w-md">
-      <h1 className='font-semibold font-roboto uppercase tracking-widest'>Merchandise</h1>
+      <h1 className='font-semibold font-roboto uppercase tracking-widest py-4'>Merchandise</h1>
       <Image 
-        src={"https://res.cloudinary.com/dlkd1pzli/image/upload/v1706050532/kiifest/azfofoq7bz2qi6rbrp9x.svg"} 
+        src={"/merchandise.png"} 
         alt='merchandise'
-        width={350}
-        height={250}
+        width={500}
+        height={550}
+        className="w-[200px] h-[250px] sm:w-[300px] sm:h-[350px] lg:w-[500px] lg:h-[450px]"
       />
       <button
         onClick={async () => {
@@ -24,7 +25,7 @@ const Merchandise = ({ merchandise, userEmail }) => {
             toast.success(res.message);
           } else {toast.error(res.message)};
         }}
-        className="bg-blue-700 px-4 py-2 rounded-md uppercase text-sm tracking-wider hover:bg-blue-600 transition-colors duration-200"
+        className="bg-blue-700 px-4 py-2 lg:w-full rounded-md uppercase mt-4 text-sm tracking-wider hover:bg-blue-600 transition-colors duration-200"
       >
        {merchandise ? 'Remove MERCH' : 'Add MERCH'}
       </button>

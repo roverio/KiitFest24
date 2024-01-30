@@ -2,12 +2,12 @@
 
 import AddedToCartSwiper from "@/components/dashboard/AddedToCartSwiper";
 import CountDown from "@/components/dashboard/CountDown";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { headTextAnimation } from "@/config/motion";
 import PaymentButton from "@/components/dashboard/PaymentButton";
-import Link from "next/link";
 import Merchandise from "@/components/dashboard/merchandise";
+import { headTextAnimation } from "@/config/motion";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 const Dashboard = ({ userData }) => {
   const { merchandise, isKiitStudent, kfid } = userData;
@@ -32,12 +32,17 @@ const Dashboard = ({ userData }) => {
           </span>
         </h1>
       </motion.div>
-      <div className="flex justify-between flex-col md:flex-row gap-8 md:gap-0">
-        <div className="max-w-xl mt-2 py-5 pl-4 pr-2 md:px-6 rounded-xl bg-dashboard-user-details flex flex-col flex-shrink-0 flex-grow">
+      <div className="flex justify-between flex-col lg:flex-row gap-8 lg:gap-0">
+        <div className="lg:max-w-xl mt-2 py-5 pl-4 pr-2 md:px-6 rounded-xl bg-dashboard-user-details flex flex-col flex-shrink-0 flex-grow">
           <div className="flex flex-col gap-6 text-base sm:text-lg md:text-xl relative">
             <h1 className="uppercase font-semibold">{userData.name}</h1>
-            {/* refactor this later */}
-            <Link href="/dashboard/payment-confirm" className="underline">Payment link</Link>
+            <div class="bg-red-100 border text-sm border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              <strong class="font-bold">Holy smokes!{" "}</strong>
+              <span class="block sm:inline">You need to complete your payment to officially enroll for your registered events and other activies.</span>
+            </div>
+            <Link href={"/dashboard/payment-confirm"}>
+              <button className='bg-blue-700 px-4 py-2 rounded-md uppercase text-sm tracking-wider hover:bg-blue-600 transition-colors duration-200'>Proceed to Payment</button>
+            </Link>
             <div className="flex justify-between gap-4">
               <div className="flex flex-col gap-2 md:gap-5 font-light font-sans">
                 <span>KF ID</span>
