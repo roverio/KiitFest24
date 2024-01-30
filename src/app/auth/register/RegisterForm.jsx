@@ -7,6 +7,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import { PulseLoader } from "react-spinners";
+import Link from "next/link";
 
 const Page = () => {
   const {
@@ -95,6 +96,9 @@ const Page = () => {
             height={122}
             className="absolute left-[calc(50%-43px)] md:left-[calc(50%-61px)] -top-[43px] md:-top-[61px] md:w-[122px] md:h-[122px] h-[86px] w-[86px]"
           />
+
+          <Link href="/" className="absolute -top-8 right-2 text-white hover:scale-105 transition-all duration-200 hover:font-bold">Home</Link>
+
 
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
             <div className="w-full h-full flex flex-col space-y-5">
@@ -365,6 +369,9 @@ const Page = () => {
               <p>Submit</p>
             </button>
           </form>
+          <div className="text-center py-3">Already have an account ? 
+              <Link href='/auth/login' className="text-blue-700 font-bold"> Login</Link>
+          </div>
         </div>
       </div>
     </div>

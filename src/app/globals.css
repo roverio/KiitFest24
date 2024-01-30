@@ -9,3 +9,35 @@
 .verified-card {
     box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
 } 
+
+
+/* scrollbar in about page */
+.custom-scrollbar {
+  max-height: 500px; /* Set desired max height */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #919496 #edf2f7; /* Customize the scrollbar colors */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #a39e9e; /* Customize the thumb color */
+  border-radius: 30px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #FFF; /* Customize the track color */
+}
+
+@keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.blink {
+  animation: blink-animation 1.5s ease-in-out infinite;
+}
