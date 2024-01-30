@@ -37,14 +37,14 @@ export async function POST(request) {
       //   run db query here to update payment status
       await db.user.update({
         where: {
-          kfid: customer,
+          kfid: Number(customer),
         },
         data: {
           isPaymentCompleted: true,
         },
       });
       // write a newquery to log payments if possible
-      return redirect("/paymentnotsuccess");
+      return redirect("/paid");
     }
     return redirect("/paymentnotsuccess");
   }
