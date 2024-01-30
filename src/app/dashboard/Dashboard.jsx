@@ -2,12 +2,12 @@
 
 import AddedToCartSwiper from "@/components/dashboard/AddedToCartSwiper";
 import CountDown from "@/components/dashboard/CountDown";
-import StaticCalendar from "@/components/dashboard/static-calendar";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { headTextAnimation } from "@/config/motion";
 import PaymentButton from "@/components/dashboard/PaymentButton";
 import Link from "next/link";
+import Merchandise from "@/components/dashboard/merchandise";
 
 const Dashboard = ({ userData }) => {
   const { merchandise, isKiitStudent, kfid } = userData;
@@ -37,7 +37,7 @@ const Dashboard = ({ userData }) => {
           <div className="flex flex-col gap-6 text-base sm:text-lg md:text-xl relative">
             <h1 className="uppercase font-semibold">{userData.name}</h1>
             {/* refactor this later */}
-            <Link href="/dashboard/payment-confirm">Payment link</Link>
+            <Link href="/dashboard/payment-confirm" className="underline">Payment link</Link>
             <div className="flex justify-between gap-4">
               <div className="flex flex-col gap-2 md:gap-5 font-light font-sans">
                 <span>KF ID</span>
@@ -66,10 +66,11 @@ const Dashboard = ({ userData }) => {
               className="absolute right-0 -top-20 md:hidden"
             />
           </div>
-          {/* <div className='flex justify-center mt-7'>
-            <button className='uppercase font-medium border-4 py-[2px] px-8 rounded-full bg-gradient-to-b from-[#1741CC] to-[#16BCDC] hover:from-[#16BCDC] hover:to-[#1741CC]'>EDIT</button>
-          </div> */}
         </div>
+        <Merchandise merchandise={merchandise} userEmail={userData.email} />
+      </div>
+      <div className="flex justify-between gap-10 mt-10 flex-col md:flex-row">
+        <AddedToCartSwiper />
         <div className="flex flex-col justify-between">
           <Image
             src={
@@ -82,10 +83,6 @@ const Dashboard = ({ userData }) => {
           />
           <CountDown />
         </div>
-      </div>
-      <div className="flex justify-between gap-10 mt-10 flex-col md:flex-row">
-        <AddedToCartSwiper />
-        <StaticCalendar merchandise={merchandise} userEmail={userData.email} />
       </div>
     </div>
   );

@@ -13,27 +13,30 @@ function DashboardSidebar({ setSidebarOpen, sidebarOpen }) {
     `}>
         <div className='flex flex-col gap-20'>
             <div className='flex justify-between items-center gap-16'>
-                <Image
-                    src='https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709213/kiifest/dashboard-kiitfest-logo_kruogx.png'
-                    alt='dashboard-kiitfest-logo'  
-                    width={120}
-                    height={27}
-                    className='md:w-40 h-14'
-                />
+                <Link href="/">
+                    <Image
+                        src='https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709213/kiifest/dashboard-kiitfest-logo_kruogx.png'
+                        alt='dashboard-kiitfest-logo'  
+                        width={120}
+                        height={27}
+                        className='md:w-40 h-14'
+                    />
+                </Link>
                 <div className='translate-y-1 cursor-pointer' onClick={() => setSidebarOpen(false)}>
                     <IoCloseSharp className='text-2xl'/>
                 </div>
             </div>
             <div className='flex flex-col gap-12 px-5'>
-                <DashboardSidebarItem title={'alerts'} alertNo={3} link={'/dashboard'}/>
+                <DashboardSidebarItem title={'alerts'} alertNo={""} link={'/dashboard/alerts'}/>
                 <DashboardSidebarItem title={'registered-events'} link={'/dashboard/registered-events'}/>
                 <DashboardSidebarItem title={'report issues'} link={'/dashboard'}/>
+                <DashboardSidebarItem title={'add more events'} link={'/events'}/>
                 <Logout />
             </div>
         </div>
         <div className='flex justify-around'>
             <BottomSocials logo={<FaFacebookF />} link={''}/>
-            <BottomSocials logo={<PiInstagramLogoFill />} link={''}/>
+            <BottomSocials logo={<PiInstagramLogoFill />} link={'https://www.instagram.com/kiitfest?igsh=MXJ1OGh2a2FyeTFvMQ=='}/>
             <BottomSocials logo={<FaTwitter />} link={''}/>
         </div>
     </div>
@@ -42,7 +45,7 @@ function DashboardSidebar({ setSidebarOpen, sidebarOpen }) {
 
 function BottomSocials ({ link, logo }) {
     return (
-        <Link href={link}>
+        <Link href={link} target="_blank">
             <div className='text-xl hover:border-2 border-[#1741CC] p-2 w-10 h-10 flex justify-center items-center rounded-full'>
                 { logo }
             </div>
