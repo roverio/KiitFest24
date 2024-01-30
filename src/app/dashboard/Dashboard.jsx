@@ -2,12 +2,11 @@
 
 import AddedToCartSwiper from "@/components/dashboard/AddedToCartSwiper";
 import CountDown from "@/components/dashboard/CountDown";
-import PaymentButton from "@/components/dashboard/PaymentButton";
-import Merchandise from "@/components/dashboard/merchandise";
-import { headTextAnimation } from "@/config/motion";
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { headTextAnimation } from "@/config/motion";
 import Link from "next/link";
+import Merchandise from "@/components/dashboard/merchandise";
 
 const Dashboard = ({ userData }) => {
   const { merchandise, isKiitStudent, kfid } = userData;

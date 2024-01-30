@@ -36,11 +36,14 @@ const RegisteredEventsPage = async () => {
           />
         ))}
         {registeredEvents.length === 0 && (
-          <h1 className="">No event Registered Yet !!</h1>
+          <div className="mb-8">
+            <h1 className="">No event Registered Yet !!</h1>
+            <Link href="/events">
+            <button className="bg-blue-700 mt-8  px-4 py-2 rounded-md uppercase text-sm tracking-wider hover:bg-blue-600 transition-colors duration-200">Add Events Now</button>
+            </Link>
+          </div>
         )}
       </div>
-
-   
     </div>
   );
 };
