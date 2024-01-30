@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import CarouselCard from './swiper-card';
 import { dashboard_carousel_dummyData } from '@/constants';
+import Link from 'next/link';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -11,7 +12,9 @@ import 'swiper/css/autoplay';
 const AddedToCartSwiper = () => {
   return (
     <div className='flex flex-col gap-4 bg-dashboard-coundown rounded-xl py-2'>
-      <h1 className='text-2xl font-semibold px-4'>My Cart</h1>
+      <div className='flex justify-between gap-2 px-3 py-2'>
+        <h1 className='text-2xl font-semibold'>My Cart</h1>
+      </div>
       <div className='w-full max-w-md sm:max-w-2xl md:max-w-md 950:w-[50vw] 950:max-w-xl lg:max-w-2xl flex-shrink flex justify-center items-center mx-auto '>
         <Swiper
           spaceBetween={10}
