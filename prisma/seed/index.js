@@ -73,12 +73,12 @@ const createFakeEventData = () => {
 
 async function seed() {
   const fakeEventData = createFakeEventData();
+  await prisma.eventRegisteredUser.deleteMany({});
+  await prisma.user.deleteMany({});
   await prisma.event.deleteMany({});
   await prisma.event.createMany({
     data: fakeEventData,
   });
-  // await prisma.eventRegisteredUser.deleteMany({});
-  // await prisma.user.deleteMany({});
 }
 
 seed()

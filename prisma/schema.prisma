@@ -9,24 +9,23 @@ datasource db {
 }
 
 model User {
-  id              String   @id @default(uuid())
-  name            String
-  email           String   @unique
-  phoneNumber     String
-  password        String
-  dateOfBirth     DateTime
-  city            String
-  state           String
-  gender          String
-  institution     String
-  isKiitStudent   Boolean  @default(false)
-  rollNumber      String?
-  isEmailVerified Boolean  @default(false)
-
-  isPaymentCompleted Boolean @default(false)
-
-  createdAt DateTime @default(now())
-
+  id                  String                @id @default(uuid())
+  kfid                Int                   @unique @default(autoincrement())
+  name                String
+  email               String                @unique
+  phoneNumber         String
+  password            String
+  dateOfBirth         DateTime
+  city                String
+  state               String
+  gender              String
+  institution         String
+  isKiitStudent       Boolean               @default(false)
+  rollNumber          String?
+  isEmailVerified     Boolean               @default(false)
+  merchandise         Boolean               @default(false)
+  isPaymentCompleted  Boolean               @default(false)
+  createdAt           DateTime              @default(now())
   issue               Issue[]
   EventRegisteredUser EventRegisteredUser[]
 }
