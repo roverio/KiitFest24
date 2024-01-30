@@ -102,7 +102,7 @@ const Page = () => {
                onClick={() => handleButtonClick('top') }
              />
              </div>
-          <div className='relative overflow-hidden w-full'>
+          <div className='relative overflow-hidden w-full -z-10'>
              <Image
                src='/Assets/ellipse.svg'
               alt='bg image'
