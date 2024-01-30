@@ -1,7 +1,7 @@
 import mailGun from "mailgun.js";
 import formData from "form-data";
 import jwt from "jsonwebtoken";
-
+import CryptoJS from "crypto-js";
 // update a tag of mail to kiitfest.org when in production
 export const sendConfirmationEmail = async ({
   email,
@@ -42,3 +42,28 @@ export const generateVerificationCode = (email) => {
     expiresIn: "30d",
   });
 };
+
+
+export const initiatePayment = (kfid, amountToPay) => {
+	// naming variables here for ease
+  const baseUrl = process.env.BILLDESK_URL;
+  const security_id = process.env.BILLDESK_SECRET_ID;
+  const checksum_key = process.env.BILLDESK_CHECKSUM;
+  const merchant_id = process.env.BILLDESK_MERCHANT_ID;
+  const customer_id = kfid;
+  const amount = amountToPay; 
+  const return_url = process.env.BILLDESK_REDIRECT_URL; // billdesk will redirect to this url after payment
+
+  // final string to be hashed
+  const str = `${merchant_id}|${customer_id}|NA|${amount}|NA|NA|NA|INR|NA|R|${security_id}|NA|NA|F|NA|NA|NA|NA|NA|NA|NA|${return_url}`;
+
+  // don't remove the template literal below. there is some problem with env : https://stackoverflow.com/questions/63558506/typeerror-cannot-read-property-sigbytes-of-undefined-error-in-pre-request-c
+  const calculatedChecksum = CryptoJS.HmacSHA256(str, `${checksum_key}`)
+    .toString()
+    .toUpperCase();
+
+    // this url is the form action
+  const newURLtoPost = `${baseUrl}?msg=${str}|${calculatedChecksum}`;
+  return newURLtoPost;
+};
+

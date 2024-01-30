@@ -14,7 +14,16 @@ const DashboardPage = async () => {
 
   const userData = await db.user.findUnique({
     where: { id: userId },
-    select: { email: true, name: true, phoneNumber: true, institution: true },
+    select: {
+      kfid: true,
+      email: true,
+      name: true,
+      phoneNumber: true,
+      institution: true,
+      isPaymentCompleted: true,
+      merchandise: true,
+      isKiitStudent: true,
+    },
   });
 
   return <Dashboard userData={userData} />;
