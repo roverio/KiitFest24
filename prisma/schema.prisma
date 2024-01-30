@@ -81,6 +81,7 @@ model Issue {
   id        String   @id @default(uuid())
   userId    String
   issue     String
+  subject  String
   createdAt DateTime @default(now())
   resolved  Boolean
 

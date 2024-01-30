@@ -8,7 +8,7 @@ import CustomDropdown from "@/components/event/CustomDropdown";
 import Card from "@/components/event/Card";
 import { getEvents } from "./actions";
 
-const Event = () => {
+export default function Event() {
   const [selectedTechnicalCategory, setSelectedTechnicalCategory] =
     useState("School of CSE");
   const [selectedCulturalCategory, setSelectedCulturalCategory] =
@@ -100,6 +100,6 @@ const Event = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Event;
+// export default Event;

@@ -1,16 +1,15 @@
 "use client";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { issueSchema } from "@/validations/userSchema";
 import Image from "next/image";
 import React, { useState } from "react";
-import Link from "next/link";
-import dynamic from "next/dynamic";
-import { NextResponse } from "next/server";
-import { signIn } from "next-auth/react";
+import { CiUser, CiStickyNote, CiViewTimeline } from "react-icons/ci";
+import { CiMail } from "react-icons/ci";
 import { PulseLoader } from "react-spinners";
-import { redirect } from "next/dist/server/api-utils";
+
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 const IssueForm = () => {
   const {
@@ -28,25 +27,31 @@ const IssueForm = () => {
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      const res = await signIn("credentials", {
-        redirect: false,
-        email: data.email,
-        password: data.password,
-      });
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      const res = await axios.post(
+        "/api/issue",
+        {
+          issue: data.issue,
+          subject: data.subject,
+          email: data.email,
+        },
+        config
+      );
       console.log(res, "res");
-      if (res?.error) {
-        console.log(res?.error || "Unknown error Occurred");
-        setDisplayMessage(res?.error || "Try again later or Contact us");
-        setLoading(false);
-      } else {
-        setDisplayMessage("Taking you to your Dashboard...");
-        router.push("/dashboard");
-        router.refresh();
-        setLoading(false);
-      }
+
+      setDisplayMessage("Taking you to your Dashboard...");
+      router.push("/dashboard");
+      // router.refresh();
+      setLoading(false);
     } catch (err) {
       console.log(err || "Unknown error Occurred");
-      setDisplayMessage(err || "Try again later or Contact us");
+      setDisplayMessage(
+        err.response.data.message || "Try again later or Contact us"
+      );
 
       setLoading(false);
     }
@@ -86,7 +91,10 @@ const IssueForm = () => {
         />
       </div>
       <div className="w-full h-full flex items-center justify-center">
-        <div className="max-w-[584px] w-11/12 bg-[#CCC]/20 backdrop-blur-sm shadow-xl border-[1px] rounded-3xl border-white py-[44px] md:py-[76.5px] px-[25px] md:px-[45px] mx-auto relative">
+        <div className="max-w-[700px] text-center w-11/12 bg-[#CCC]/20 backdrop-blur-sm shadow-xl border-[1px] rounded-xl border-white py-[44px] md:py-[36.5px] px-[25px] md:px-[45px] mx-auto relative">
+          <h1 className="text-3xl md:text-4xl  text-white font-bold pb-8 md:pb-16 ">
+            Feedback and Issues Form
+          </h1>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="w-full h-full flex flex-col space-y-6">
               <div className="w-full relative">
@@ -96,13 +104,16 @@ const IssueForm = () => {
                   {...register("name")}
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
-                <Image
+                {/* <Image
                   src="/icons/profile.png"
                   alt="bg image"
                   width={30}
                   height={30}
                   className="absolute left-[10px] bottom-[7.8px]"
-                />
+                /> */}
+                <div className="absolute left-[10px] bottom-[10px]">
+                  <CiUser size={25} />
+                </div>
                 <div className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
                   {errors.name?.message}
                 </div>
@@ -116,13 +127,16 @@ const IssueForm = () => {
                   {...register("email")}
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
-                <Image
+                {/* <Image
                   src="/icons/mail.png"
                   alt="bg image"
                   width={30}
                   height={30}
                   className="absolute left-[10px] bottom-[7.8px]"
-                />
+                /> */}
+                <div className=" absolute left-[10px] bottom-[10px]">
+                  <CiMail className="" size={24} />
+                </div>
                 <div className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
                   {errors.email?.message}
                 </div>
@@ -134,13 +148,16 @@ const IssueForm = () => {
                   {...register("subject")}
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
-                <Image
+                {/* <Image
                   src="/icons/profile.png"
                   alt="bg image"
                   width={30}
                   height={30}
-                  className="absolute left-[10px] bottom-[7.8px]"
-                />
+                  
+                /> */}
+                <div className="absolute left-[10px] bottom-[9px]">
+                  <CiStickyNote size={24} />
+                </div>
                 <div className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
                   {errors.subject?.message}
                 </div>
@@ -148,17 +165,20 @@ const IssueForm = () => {
               <div className="w-full relative">
                 <textarea
                   type="text"
-                  placeholder="Decribe your issue"
+                  placeholder="Describe your issue"
                   {...register("issue")}
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
-                <Image
+                {/* <Image
                   src="/icons/profile.png"
                   alt="bg image"
                   width={30}
                   height={30}
                   className="absolute left-[10px] top-[10%]"
-                />
+                /> */}
+                <div className="absolute left-[10px] top-[13%]">
+                  <CiViewTimeline size={26} />
+                </div>
                 <div className="absolute -bottom-[18px] text-sm text-red-500 font-semibold">
                   {errors.issue?.message}
                 </div>

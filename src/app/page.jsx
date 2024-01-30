@@ -3,6 +3,7 @@
 import Hero from "@/components/hero";
 import { motion } from "framer-motion";
 import Navbar from "@/components/navbar";
+import { useState } from "react";
 import PreLoader from "@/components/PreLoader";
 import ParticleBackground from "@/components/particleBackground";
 // import Image from "next/image";
@@ -10,6 +11,7 @@ import ParticleBackground from "@/components/particleBackground";
 // import BgAudio from "@/components/BgAudio";
 
 export default function Home() {
+  const [hj, kl] = useState("");
   return (
     <main className=" h-[100vh] bg-gradient-to-b overflow-hidden from-[#0e0b17a8] via-[#1d15579f] to-[#05111d8a]  z-20">
       <PreLoader />
