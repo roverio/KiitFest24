@@ -62,7 +62,7 @@ export const initiatePayment = (kfid, amountToPay) => {
     .toString()
     .toUpperCase();
 
-    // this url is the form action
+  // this url is the form action
   const newURLtoPost = `${baseUrl}?msg=${str}|${calculatedChecksum}`;
   return newURLtoPost;
 };

@@ -6,7 +6,6 @@ import StaticCalendar from "@/components/dashboard/static-calendar";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { headTextAnimation } from "@/config/motion";
-import PaymentButton from "@/components/dashboard/PaymentButton";
 import Link from "next/link";
 
 const Dashboard = ({ userData }) => {
