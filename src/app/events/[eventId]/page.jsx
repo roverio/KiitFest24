@@ -62,11 +62,11 @@ const EventPage = async ({ params }) => {
           <section className="w-[90vw] mx-auto lg:w-[60vw] lg:h-[85vh] flex flex-col justify-between items-center text-white bg-gradient-to-r from-[#ffffff1a] to-[#ffffff00] backdrop-blur-2xl border-[#130C5C] rounded-xl border-[1px] md:py-[60px] md:px-12 px-6 text-lg py-8 gap-8 md:text-xl">
             <p>{events.description}</p>
 
-            <Link href="/auth/login">
+            {/* <Link href="/auth/login">
               <button className="text-sm lg:text-[17px] font-semibold bg-gradient-to-b from-[#174ACE] rounded-full border-white border-[2px] to-[#16B2DB] px-4 py-1  lg:px-9 lg:py-3">
                 Login to Register
               </button>
-            </Link>
+            </Link> */}
           </section>
         </div>
       </div>

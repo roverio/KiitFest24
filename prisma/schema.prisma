@@ -38,12 +38,20 @@ enum EventMember {
 
 // add both technical and cultural categories here
 enum EventCategory {
+  ART
+  DESIGN
+  ACTING
   MUSIC
+  COOKING
+  FASHION
+  PHOTOGRAPHY
+  DEBATE
+  SHORTFILM
+  QUIZ
+  WRITING
+  MARKETING
+  GAMES
   DANCE
-  DRAWING
-  CIVIL
-  MECHANICAL
-  CSE
 }
 
 enum EventType {
@@ -71,9 +79,10 @@ model EventRegisteredUser {
 
   createdAt DateTime @default(now())
 
-  event Event @relation(fields: [eventId], references: [id])
-  user  User  @relation(fields: [userId], references: [id])
+  event     Event   @relation(fields: [eventId], references: [id])
+  user      User    @relation(fields: [userId], references: [id])
   groupName String?
+
   @@id([userId, eventId])
 }
 
@@ -84,6 +93,5 @@ model Issue {
   issue     String
   createdAt DateTime @default(now())
   resolved  Boolean
-
-  user User @relation(fields: [userId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
 }

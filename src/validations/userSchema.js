@@ -1,13 +1,18 @@
 import * as yup from "yup";
-const phoneRegExp =
-  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 export const userSchema = yup.object({
   name: yup.string().max(50).required("please enter name"),
   email: yup
     .string()
-    .email("please enter a valid email")
-    .required("please enter email"),
+    .email("Please enter a valid email")
+    .required("Please enter email")
+    .test("kiit-email", "Please enter a valid KIIT email", function (value) {
+      const isKiitStudent = this.parent.isKiitStudent;
+      if (isKiitStudent) {
+        return value.includes("@kiit.ac.in");
+      }
+      return true;
+    }),
   password: yup
     .string()
     .min(6, "minimum 6 characters")
@@ -21,9 +26,6 @@ export const userSchema = yup.object({
     .required(),
   phoneNumber: yup
     .string()
-    .min(10, "enter correct phone number")
-    .max(10, "maximum 10 digits")
-    .matches(phoneRegExp, "Phone number is required")
     .required(),
   // date: yup.date().required("enter date"),
   city: yup.string().max(20).required("please enter city"),

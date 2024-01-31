@@ -6,7 +6,6 @@ import Image from "next/image";
 import React,{useState} from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { NextResponse } from "next/server";
 import { signIn } from "next-auth/react";
 import { PulseLoader } from "react-spinners";
 import { redirect } from "next/dist/server/api-utils";
@@ -95,6 +94,8 @@ const Page = () => {
             className="absolute left-[calc(50%-43px)] md:left-[calc(50%-61px)] -top-[43px] md:-top-[61px] md:w-[122px] md:h-[122px] h-[86px] w-[86px]"
           />
 
+          <Link href="/" className="absolute -top-8 right-2 text-white hover:scale-105 transition-all duration-200 hover:font-bold">Home</Link>
+
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="w-full h-full flex flex-col space-y-6">
               <div className="w-full relative">
@@ -151,15 +152,11 @@ const Page = () => {
                 <PulseLoader loading={loading} size={6} color="#fff" />
                 <p>Submit</p>
               </button>
-              <span className="text-white text-xl">or</span>
-              <Link href="/auth/register" className="mx-auto">
-                <div className="mx-auto py-1 md:py-2 leading-none px-4 md:px-6 rounded-full bg-gradient-to-b from-[#174ACE] to-[#16B2DB] border-[3.3px] border-white text-sm md:text-lg font-medium text-white">
-                  REGISTER
-                </div>
-              </Link>
             </div>
           </form>
-          <div></div>
+          <div className="text-center pt-8 text-white">{"Don't have an account ?"} 
+            <Link href='/auth/register' className="text-blue-300 font-bold"> Register</Link>
+          </div>
         </div>
       </div>
     </div>
