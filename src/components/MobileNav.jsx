@@ -1,4 +1,3 @@
-// Navbar.js
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
@@ -13,7 +12,7 @@ const MobileNav = ({ isOpen, toggleNavbar }) => {
       onClick={toggleNavbar}
     >
       <motion.div
-        className="fixed text-white flex flex-col text-xl justify-between bg-gradient-to-r from-[#110D26] via-[#181146] to-[#110D26]  h-full w-[55vw] p-4 shadow-md top-0 left-0"
+        className="fixed text-white flex flex-col  text-xl font-light font-roboto justify-between bg-gradient-to-r from-[#110D26] via-[#181146] to-[#110D26]  h-full w-[55vw] p-4 shadow-md top-0 left-0"
         initial={{ x: "-100%" }}
         animate={isOpen ? { x: 0 } : { x: "-100%" }}
         transition={{ duration: 0.3 }}
@@ -39,20 +38,25 @@ const MobileNav = ({ isOpen, toggleNavbar }) => {
 
           <li className="hover:pl-2 duration-200">
             {" "}
-            <Link href={"/"}>About </Link>
+            <Link href={"/about"}>About </Link>
           </li>
 
           <li className="hover:pl-2 duration-200">
             {" "}
-            <Link href={"/"}>Contact </Link>
+            <Link href={"/events"}>Events </Link>
+          </li>
+          <li className="hover:pl-2 duration-200">
+            {" "}
+            <Link href={"/members"}>Members </Link>
           </li>
         </ul>
-        <div className="flex w-full justify-between p-2">
+        <div className="flex w-full  justify-between p-2">
           <Link href="/">
             <Image
               src="/icons/social1.png"
               alt="social"
               width={40}
+              className="hover:scale-[1.1] transition"
               height={20}
             ></Image>
           </Link>
@@ -61,6 +65,7 @@ const MobileNav = ({ isOpen, toggleNavbar }) => {
               src="/icons/social2.png"
               alt="social"
               width={40}
+              className="hover:scale-[1.1] transition"
               height={20}
             ></Image>
           </Link>
@@ -69,6 +74,7 @@ const MobileNav = ({ isOpen, toggleNavbar }) => {
               src="/icons/social3.png"
               alt="social"
               width={40}
+              className="hover:scale-[1.1] transition"
               height={20}
             ></Image>
           </Link>
