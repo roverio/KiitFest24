@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, spring } from "framer-motion";
 import BgAudio from "./BgAudio";
 
 import MobileNav from "./MobileNav";
@@ -42,7 +42,7 @@ const NavwithoutAnimation = () => {
         <motion.div
           initial={{ opacity: 0, y: -60 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
+          transition={{ type: "spring", duration: 0.7 }}
           className="text-lg font-light font-roboto lg:text-[24px] hidden md:flex space-x-8"
         >
           <div className="text-lg font-[300] font-roboto lg:text-[24px] hidden md:flex space-x-8">

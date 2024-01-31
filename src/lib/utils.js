@@ -43,15 +43,14 @@ export const generateVerificationCode = (email) => {
   });
 };
 
-
 export const initiatePayment = (kfid, amountToPay) => {
-	// naming variables here for ease
+  // naming variables here for ease
   const baseUrl = process.env.BILLDESK_URL;
   const security_id = process.env.BILLDESK_SECRET_ID;
   const checksum_key = process.env.BILLDESK_CHECKSUM;
   const merchant_id = process.env.BILLDESK_MERCHANT_ID;
   const customer_id = kfid;
-  const amount = amountToPay; 
+  const amount = amountToPay;
   const return_url = process.env.BILLDESK_REDIRECT_URL; // billdesk will redirect to this url after payment
 
   // final string to be hashed
@@ -62,8 +61,7 @@ export const initiatePayment = (kfid, amountToPay) => {
     .toString()
     .toUpperCase();
 
-    // this url is the form action
+  // this url is the form action
   const newURLtoPost = `${baseUrl}?msg=${str}|${calculatedChecksum}`;
   return newURLtoPost;
 };
-
