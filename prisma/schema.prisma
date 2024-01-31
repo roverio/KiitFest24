@@ -61,7 +61,6 @@ model Event {
   type                EventType //(cutural) || (technical)
   category            EventCategory // put on basis of cultural or technical in the enum
   groupSize           Int                   @default(1)
-  groupName           String?
   EventRegisteredUser EventRegisteredUser[]
 }
 
@@ -74,7 +73,7 @@ model EventRegisteredUser {
 
   event Event @relation(fields: [eventId], references: [id])
   user  User  @relation(fields: [userId], references: [id])
-
+  groupName String?
   @@id([userId, eventId])
 }
 
