@@ -155,7 +155,7 @@ const Page = () => {
               </button>
             </div>
           </form>
-          <div className="text-center pt-8">Don't have an account ? 
+          <div className="text-center pt-8">{"Don't have an account ?"} 
             <Link href='/auth/register' className="text-blue-700 font-bold"> Register</Link>
           </div>
         </div>
