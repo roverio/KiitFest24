@@ -49,6 +49,10 @@ const MobileNav = ({ isOpen, toggleNavbar }) => {
             {" "}
             <Link href={"/members"}>Members </Link>
           </li>
+          <li className="hover:pl-2 duration-200">
+            {" "}
+            <Link href={"/contactus"}>Contact Us </Link>
+          </li>
         </ul>
         <div className="flex w-full  justify-between p-2">
           <Link href="/">
