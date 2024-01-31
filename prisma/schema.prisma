@@ -36,6 +36,7 @@ enum EventMember {
   GROUP
 }
 
+// add both technical and cultural categories here
 enum EventCategory {
   MUSIC
   DANCE

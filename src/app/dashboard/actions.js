@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import CryptoJS from "crypto-js";
 
 export const updateMerchandise = async (merchandise, userEmail) => {
+  return null
   const user = await db.user.update({
     where: {
       email: userEmail,

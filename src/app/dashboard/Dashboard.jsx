@@ -9,17 +9,8 @@ import Link from "next/link";
 import Merchandise from "@/components/dashboard/merchandise";
 
 const Dashboard = ({ userData }) => {
-  const { merchandise, isKiitStudent, kfid } = userData;
-  let price;
-  if (isKiitStudent) {
-    price = merchandise
-      ? "₹750 (Registration + Merchandise)"
-      : "₹450 (Registration)";
-  } else {
-    price = merchandise
-      ? "₹1000 (Registration + Merchandise)"
-      : "₹700 (Registration)";
-  }
+  const { isKiitStudent } = userData;
+  const price = isKiitStudent ? "₹ 450(Registrations)" : "₹ 750(Registrations)";
 
   return (
     <div className="mt-2 flex justify-evenly flex-col items-between min-h-screen max-w-screen-xl m-auto">
@@ -32,17 +23,38 @@ const Dashboard = ({ userData }) => {
         </h1>
       </motion.div>
       <div className="flex justify-between flex-col lg:flex-row gap-8 lg:gap-0">
-        <div className="lg:max-w-xl mt-2 py-5 pl-4 pr-2 md:px-6 rounded-xl bg-dashboard-user-details flex flex-col flex-shrink-0 flex-grow">
+        <div className=" mt-2 py-5 pl-4 pr-2 md:px-6 rounded-xl bg-dashboard-user-details flex flex-col flex-shrink-0 flex-grow">
           <div className="flex flex-col gap-6 text-base sm:text-lg md:text-xl relative">
             <h1 className="uppercase font-semibold">{userData.name}</h1>
-            <div class="bg-red-100 border text-sm border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-              <strong class="font-bold">Holy smokes!{" "}</strong>
-              <span class="block sm:inline">You need to complete your payment to officially enroll for your registered events and other activies.</span>
-            </div>
-            <Link href={"/dashboard/payment-confirm"}>
-              <button className='bg-blue-700 px-4 py-2 rounded-md uppercase text-sm tracking-wider hover:bg-blue-600 transition-colors duration-200'>Proceed to Payment</button>
-            </Link>
-            <div className="flex justify-between gap-4">
+            {userData.isPaymentCompleted ? (
+              <div
+                className="bg-emerald-100 border mb-4 text-sm max-w-xl border-emerald-400 text-emerald-700 px-4 py-3 rounded relative"
+                role="alert"
+              >
+                <span className="block sm:inline">
+                Your Payment is complete. You are officially enrolled for KIIT FEST 2024.
+                </span>
+              </div>
+            ) : (
+              <div>
+                <div
+                  className="bg-red-100 border mb-4 text-sm max-w-xl border-red-400 text-red-700 px-4 py-3 rounded relative"
+                  role="alert"
+                >
+                  <strong className="font-bold">Holy smokes! </strong>
+                  <span className="block sm:inline">
+                    You need to complete your payment to officially enroll for
+                    your registered events and other activities.
+                  </span>
+                </div>
+                <Link href={"/dashboard/payment-confirm"}>
+                  <button className="bg-blue-700 px-4 py-2 rounded-md uppercase text-sm tracking-wider hover:bg-blue-600 transition-colors duration-200">
+                    Proceed to Payment
+                  </button>
+                </Link>
+              </div>
+            )}
+            <div className="flex justify-between max-w-xl gap-4">
               <div className="flex flex-col gap-2 md:gap-5 font-light font-sans">
                 <span>KF ID</span>
                 <span>Contact</span>
@@ -71,7 +83,7 @@ const Dashboard = ({ userData }) => {
             />
           </div>
         </div>
-        <Merchandise merchandise={merchandise} userEmail={userData.email} />
+        {/* <Merchandise merchandise={merchandise} userEmail={userData.email} /> */}
       </div>
       <div className="flex justify-between gap-10 mt-10 flex-col md:flex-row">
         <AddedToCartSwiper />
