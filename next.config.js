@@ -6,16 +6,6 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/events",
-        destination: "/coming-soon",
-        permanent: true,
-      },
-      {
-        source: "/events/:slug",
-        destination: "/coming-soon",
-        permanent: true,
-      },
-      {
         source: "/members",
         destination: "/coming-soon",
         permanent: true,
