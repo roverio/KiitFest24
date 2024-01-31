@@ -21,7 +21,7 @@ const Topbar = ({ sidebarOpen, setSidebarOpen }) => {
                 <BackButton className/>
             </span>
         </div>
-        <Link href={'/'}>
+        <Link href={'/dashboard'}>
             <div className='transition-all duration-1000 gradient-button bg-gradient-to-r p-2 md:p-4 rounded-full from-[#1741CC] to-[#16BCDC] hover:from-[#16BCDC] hover:to-[#1741CC]'>
                 <FaUser className='text-2xl md:text-3xl'/>
             </div>
