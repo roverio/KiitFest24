@@ -58,7 +58,7 @@ export const allCulturalCategory = [
 
 export const MAX_EVENT_USER_CAN_REGISTER = 7
 
-<<<<<<< HEAD
+
 export const TERMS_AND_CONDITIONS = 
 [
   {
@@ -95,7 +95,7 @@ export const TERMS_AND_CONDITIONS =
   }
 ]
 
-=======
+
 export const DesignDummyData = [
   {
     src: "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709521/kiifest/carousel/vr-girl_ofg80o.png",
@@ -171,4 +171,4 @@ export const WebDummyData = [
     github: "https://github.com/manishmh",
   },
 ]
->>>>>>> 534843dd3850ab107713ef51edfb9fa242d4e692
+
