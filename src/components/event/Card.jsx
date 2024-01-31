@@ -10,7 +10,7 @@ export const Card = ({ event, showRegister = true, buttonComponent }) => {
           alt={event.name}
           width={257}
           height={270}
-          className=" object-cover w-full sm:h-[270px] "
+          className="aspect-auto object-cover w-full"
         />
         <div className="text-center uppercase text-xs md:text-xl pt-3 text-white">
           {event.name}
