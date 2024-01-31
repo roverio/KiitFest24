@@ -3,9 +3,10 @@ import './globals.css'
 import { getServerSession } from 'next-auth'
 const inter = Inter({ subsets: ['latin'] })
 import { Toaster } from "sonner";
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
-  title: 'KIIT FEST 24',
+  title: 'KIIT FEST 7.0',
   description: 'KIIT FEST 24 7.0',
 }
 
@@ -17,6 +18,7 @@ export default async function RootLayout({ children }) {
         {children}
         <Toaster position="top-center" expand={true}
         richColors />
+        <Analytics />
       </body>
     </html>
   )
