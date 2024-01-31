@@ -18,7 +18,7 @@ const Hero = () => {
           alt="fest logo"
           width={1000}
           height={850}
-          className="w-[100%] lg:w-[80%] pt-32   max-w-[960px]"
+          className="w-[100%] lg:w-[80%] pt-28 max-w-[960px] z-40"
         ></Image>
       </motion.div>
 
@@ -28,13 +28,13 @@ const Hero = () => {
         initial={{ opacity: 0, y: 900, scale: 1.2 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ type: "spring", stiffness: 20, delay: 2, duration: 4 }}
-        className={`w-full  object-cover  lg:object-fill  overflow-x-hidden absolute bottom-0  left-0 h-[50%]`}
+        className={`w-full  object-cover  lg:object-fill  overflow-x-hidden absolute bottom-0  left-0 h-[47%]`}
       ></motion.img>
 
       <motion.img
         src="/Assets/building3.png"
         alt="building"
-        className={`w-full lg:w-[73%]  object-cover  lg:object-fill  absolute bottom-[5%] lg:bottom-[8%] left-0 lg:left-[10%]  h-[48%]`}
+        className={`w-full lg:w-[73%]  object-cover  lg:object-fill  absolute bottom-[5%] lg:bottom-[8%] left-0 lg:left-[10%]  h-[45%]`}
       ></motion.img>
     </div>
   );

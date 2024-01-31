@@ -2,10 +2,16 @@
 
 import { registerUserInEvent } from "./actions";
 import { toast } from "sonner";
+import { redirect } from "next/navigation";
+// import { useRouter } from "next/router";
 import { useRouter } from "next/navigation";
 
 const RegisterButton = ({ isRegistered, userId, eventId }) => {
   const router = useRouter();
+  if (!userId) {
+    // redirect("/auth/login");
+    router.push("/auth/login");
+  }
   return (
     <button
       className="text-sm lg:text-[17px] font-semibold bg-gradient-to-b from-[#174ACE] rounded-full border-white border-[2px] to-[#16B2DB] px-4 py-1  lg:px-9 lg:py-3"

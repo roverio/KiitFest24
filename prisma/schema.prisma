@@ -80,6 +80,7 @@ model EventRegisteredUser {
 model Issue {
   id        String   @id @default(uuid())
   userId    String
+  subject   String
   issue     String
   createdAt DateTime @default(now())
   resolved  Boolean
