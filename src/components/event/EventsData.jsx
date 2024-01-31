@@ -11,13 +11,13 @@ const EventsData = ({ events }) => {
   const search = searchParams.get("type");
   return (
     <div>
-      <div className="tabs | mb-12 inline-flex w-full justify-center gap-6 text-xl font-semibold text-[#606060] ">
+      <div className="tabs | mb-12 flex-col lg:max-w-none  max-w-md flex-wrap  md:flex-nowrap md:inline-flex lg:flex-row  inline-flex w-full justify-center gap-6 text-xl font-semibold text-[#606060] ">
           <Link
             className={`${
               !search
                 ? "border-2 border-[#573FEA] bg-[#DFDAFF] text-[#573FEA]"
                 : "border border-[#B5B1B1] bg-white"
-            } cursor-pointer rounded-[72px]  px-6 py-3 `}
+            } cursor-pointer rounded-[72px]  px-3 lg:px-6 py-2 mx-4 lg:py-3 `}
             href="?"
             scroll={false}
           >
@@ -29,7 +29,7 @@ const EventsData = ({ events }) => {
               search === "CULTURAL"
                 ? "border-2 border-[#573FEA] bg-[#DFDAFF] text-[#573FEA]"
                 : "border border-[#B5B1B1] bg-white"
-            } cursor-pointer rounded-[72px]  px-6 py-3 `}
+            } cursor-pointer rounded-[72px]  px-3 lg:px-6 py-2 mx-4 lg:py-3 `}
             scroll={false}
           >
             Cultural
@@ -40,14 +40,14 @@ const EventsData = ({ events }) => {
               search === "TECHNICAL"
                 ? "border-2 border-[#573FEA] bg-[#DFDAFF] text-[#573FEA]"
                 : "border border-[#B5B1B1] bg-white"
-            } cursor-pointer rounded-[72px]  px-6 py-3 `}
+            } cursor-pointer rounded-[72px]  px-3 lg:px-6 py-2 mx-4 lg:py-3`}
             scroll={false}
           >
             Technical {"(Coming Soon)"}
           </Link>
           <div className="relative">
             <FaSearch className="absolute left-6 top-4"/>
-          <input placeholder="Search" type="text" value={searchInput} onChange={(e)=>setSearchInput(e.target.value)} className="rounded-[72px]  pl-14 py-3 border border-[#B5B1B1] bg-white"/>
+          <input placeholder="Search" type="text" value={searchInput} onChange={(e)=>setSearchInput(e.target.value)} className="rounded-[72px]  pl-14 mx-2 py-3 border border-[#B5B1B1] bg-white"/>
           </div>
       </div>
       <div className="max-w-[1532px] mx-auto my-3">
