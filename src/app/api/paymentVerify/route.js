@@ -44,13 +44,6 @@ export async function POST(request) {
         },
       });
 
-      if (user) {
-        // Update successful, access the updated user data
-        console.log("User updated successfully:", user);
-      } else {
-        // No user found with the provided kfid
-      throw new Error("User not found with the provided kfid, contact us for help");
-      }
 
       await db.payment.create({
         data: { kfid: Number(customer), txnId: txn, amount: Number(amt)},
