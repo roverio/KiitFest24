@@ -11,7 +11,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/auth/signup",
+        source: "/auth/register",
         destination: "/coming-soon",
         permanent: true,
       },
