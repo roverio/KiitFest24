@@ -10,7 +10,7 @@ datasource db {
 
 model User {
   id                  String                @id @default(uuid())
-  kfid                Int                   @unique @default(autoincrement())
+  kfid                String                @unique @default(cuid())
   name                String
   email               String                @unique
   phoneNumber         String
@@ -96,11 +96,10 @@ model Issue {
   user      User     @relation(fields: [userId], references: [id])
 }
 
-
-model Payment{
+model Payment {
   id        String   @id @default(uuid())
-  kfid    Int @unique
+  kfid      Int      @unique
   amount    Int
-  txnId   String 
+  txnId     String
   createdAt DateTime @default(now())
 }
