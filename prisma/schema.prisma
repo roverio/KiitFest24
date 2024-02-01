@@ -95,3 +95,12 @@ model Issue {
   resolved  Boolean
   user      User     @relation(fields: [userId], references: [id])
 }
+
+
+model Payment{
+  id        String   @id @default(uuid())
+  kfid    Int @unique
+  amount    Int
+  txnId   String 
+  createdAt DateTime @default(now())
+}

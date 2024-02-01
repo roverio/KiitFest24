@@ -35,7 +35,7 @@ export async function POST(request) {
       const amt = splitData[4];
       console.log(customer, txn, amt);
       //   run db query here to update payment status
-      await db.user.update({
+      const user = await db.user.update({
         where: {
           kfid: Number(customer),
         },
@@ -43,6 +43,19 @@ export async function POST(request) {
           isPaymentCompleted: true,
         },
       });
+
+      if (user) {
+        // Update successful, access the updated user data
+        console.log("User updated successfully:", user);
+      } else {
+        // No user found with the provided kfid
+      throw new Error("User not found with the provided kfid, contact us for help");
+      }
+
+      await db.payment.create({
+        data: { kfid: Number(customer), txnId: txn, amount: Number(amt)},
+      });
+    
       // write a newquery to log payments if possible
       return redirect("/paid");
     }
