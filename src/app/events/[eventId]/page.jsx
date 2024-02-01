@@ -29,6 +29,7 @@ const EventPage = async ({ params }) => {
         },
       },
     });
+
     return (
       <div className="bg-[url('/Assets/bgevent.png')] w-full  h-full bg-no-repeat bg-cover ">
         <Link href="/dashboard">
@@ -40,6 +41,11 @@ const EventPage = async ({ params }) => {
           <Card event={events} showRegister={false} />
           <section className="w-[90vw] mx-auto lg:w-[60vw] lg:h-[85vh] flex flex-col justify-between items-center text-white bg-gradient-to-r from-[#ffffff1a] to-[#ffffff00] backdrop-blur-2xl border-[#130C5C] rounded-xl border-[1px] md:py-[60px] md:px-12 px-6 text-lg py-8 gap-8 md:text-xl">
             <p>{events.description}</p>
+            <div>
+              <p>Partcipation: {events.memberType}</p>
+              <p>Category: {events.category}</p>
+              <p>Max members: {events.groupSize}</p>
+            </div>
             <RegisterButton
               isRegistered={registeredEventData ? true : false}
               eventId={eventId}
