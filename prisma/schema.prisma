@@ -1,0 +1,97 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id                  String                @id @default(uuid())
+  kfid                Int                   @unique @default(autoincrement())
+  name                String
+  email               String                @unique
+  phoneNumber         String
+  password            String
+  dateOfBirth         DateTime
+  city                String
+  state               String
+  gender              String
+  institution         String
+  isKiitStudent       Boolean               @default(false)
+  rollNumber          String?
+  isEmailVerified     Boolean               @default(false)
+  merchandise         Boolean               @default(false)
+  isPaymentCompleted  Boolean               @default(false)
+  createdAt           DateTime              @default(now())
+  issue               Issue[]
+  EventRegisteredUser EventRegisteredUser[]
+}
+
+enum EventMember {
+  SOLO
+  SOLO_OR_GROUP
+  GROUP
+}
+
+// add both technical and cultural categories here
+enum EventCategory {
+  ART
+  DESIGN
+  ACTING
+  MUSIC
+  COOKING
+  FASHION
+  PHOTOGRAPHY
+  DEBATE
+  SHORTFILM
+  QUIZ
+  WRITING
+  MARKETING
+  GAMES
+  DANCE
+}
+
+enum EventType {
+  CULTURAL
+  TECHNICAL
+}
+
+model Event {
+  id                  String                @id @default(uuid())
+  name                String                @unique
+  description         String
+  imageUrl            String
+  venue               String
+  memberType          EventMember // (solo) || (solo/group) || (group only)
+  type                EventType //(cutural) || (technical)
+  category            EventCategory // put on basis of cultural or technical in the enum
+  groupSize           Int                   @default(1)
+  EventRegisteredUser EventRegisteredUser[]
+}
+
+model EventRegisteredUser {
+  // id      String @id @default(uuid())
+  eventId String
+  userId  String
+
+  createdAt DateTime @default(now())
+
+  event     Event   @relation(fields: [eventId], references: [id])
+  user      User    @relation(fields: [userId], references: [id])
+  groupName String?
+
+  @@id([userId, eventId])
+}
+
+model Issue {
+  id        String   @id @default(uuid())
+  userId    String
+  subject   String
+  issue     String
+  createdAt DateTime @default(now())
+  resolved  Boolean
+  user      User     @relation(fields: [userId], references: [id])
+}

@@ -1,55 +1,43 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import ParticleBackgound from "./particleBackgound";
-import { motion, useAnimation, useAnimate } from "framer-motion";
 
-const Hero = ({ clicked, clickHandler }) => {
-  const homePage = {};
+import { motion } from "framer-motion";
+
+const Hero = () => {
   return (
-    <div className="flex bg-gradient-to-b from-[#0e0b17a8] via-[#1d15579f] to-[#05111d8a] relative items-center w-full h-[100vh] overflow-hidden justify-start flex-col space-y-32 py-2">
-      <ParticleBackgound />
+    <div className="flex  relative items-center w-full h-[100vh] overflow-hidden justify-start flex-col space-y-32 py-2">
       <motion.div
-        initial={{ opacity: 0, y: 400, scale: 0.7 }}
-        animate={clicked ? { opacity: 1, y: 0, z: 0, scale: 1 } : {}}
-        transition={{ delay: 0, duration: 1.5 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 3.2, duration: 1 }}
         className="flex items-center  justify-center"
       >
         <Image
-          src="/Assets/fest_logo.png"
+          src="/Assets/fest_newlogo.png"
           alt="fest logo"
           width={1000}
           height={850}
-          className="w-[70%] md:w-[60%] lg:w-[70%] max-w-[960px]"
+          className="w-[100%] lg:w-[80%] pt-28 max-w-[960px] z-40"
         ></Image>
       </motion.div>
-      <Image
+
+      <motion.img
         src="/Assets/objects1.png"
         alt="building"
-        width={1500}
-        height={1800}
-        onClick={clickHandler}
-        className={`w-full ${
-          clicked ? "scale:[1]" : "scale-[1.2]"
-        } object-cover md:object-fill transition duration-700 cursor-pointer  overflow-x-hidden absolute bottom-0  left-0 h-[50%]`}
-      ></Image>
+        initial={{ opacity: 0, y: 900, scale: 1.2 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ type: "spring", stiffness: 20, delay: 2, duration: 4 }}
+        className={`w-full  object-cover  lg:object-fill  overflow-x-hidden absolute bottom-0  left-0 h-[47%]`}
+      ></motion.img>
 
-      <Image
+      <motion.img
         src="/Assets/building3.png"
         alt="building"
-        width={1500}
-        height={1800}
-        onClick={clickHandler}
-        className={`w-[73%] ${
-          clicked ? "scale:[1]" : "scale-[1.2]"
-        } object-cover md:object-fill transition duration-1000 cursor-pointer  absolute bottom-[8%] left-[10%]  h-[48%]`}
-      ></Image>
+        className={`w-full lg:w-[73%]  object-cover  lg:object-fill  absolute bottom-[5%] lg:bottom-[8%] left-0 lg:left-[10%]  h-[45%]`}
+      ></motion.img>
     </div>
   );
 };
-{
-  /* <button className="text-[37px] edgecut text-white font-medium bg-gradient-to-r from-[#034957] rounded to-[#3BE4FF] px-20 py-2">
-        ENTER
-      </button> */
-}
+
 export default Hero;
