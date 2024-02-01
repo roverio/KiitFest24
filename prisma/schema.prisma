@@ -96,9 +96,11 @@ model Issue {
   user      User     @relation(fields: [userId], references: [id])
 }
 
+
+// removed constraints from here kfid
 model Payment {
   id        String   @id @default(uuid())
-  kfid      String     @unique @default(cuid())
+  kfid      String   
   amount    Int
   txnId     String
   createdAt DateTime @default(now())
