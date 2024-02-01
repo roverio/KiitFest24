@@ -21,6 +21,12 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/dashboard/payment-confirm",
+        destination: "/coming-soon",
+        permanent: true,
+      },
+      
+      {
         source: "/contactus",
         destination: "/coming-soon",
         permanent: true,
