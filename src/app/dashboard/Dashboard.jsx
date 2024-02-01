@@ -32,7 +32,8 @@ const Dashboard = ({ userData }) => {
                 role="alert"
               >
                 <span className="block sm:inline">
-                Your Payment is complete. You are officially enrolled for KIIT FEST 2024.
+                  Your Payment is complete. You are officially enrolled for KIIT
+                  FEST 2024.
                 </span>
               </div>
             ) : (
@@ -83,22 +84,22 @@ const Dashboard = ({ userData }) => {
             />
           </div>
         </div>
+        <Image
+          src={
+            "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709212/kiifest/robot-vaccum_u2fjry.png"
+          }
+          alt="dashboard-robot-vaccum"
+          width={804}
+          height={800}
+          className="hidden object-contain w-[300px] h-[300px] lg:block"
+        />
         {/* <Merchandise merchandise={merchandise} userEmail={userData.email} /> */}
       </div>
-      <div className="flex justify-between gap-10 mt-10 flex-col md:flex-row">
-        <AddedToCartSwiper />
-        <div className="flex flex-col justify-between">
-          <Image
-            src={
-              "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709212/kiifest/robot-vaccum_u2fjry.png"
-            }
-            alt="dashboard-robot-vaccum"
-            width={264}
-            height={171}
-            className="hidden md:block"
-          />
-          <CountDown />
-        </div>
+      <div className="flex justify-center w-full  gap-10 mt-10 flex-col md:flex-row">
+        {/* <AddedToCartSwiper /> */}
+        {/* <div className="flex flex-col justify-between"> */}
+        <CountDown />
+        {/* </div> */}
       </div>
     </div>
   );

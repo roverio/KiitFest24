@@ -6,7 +6,7 @@ const ALERTS = [
 
 const Alerts = () => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 min-h-screen">
       <h1 className="uppercase">alerts</h1>
       {ALERTS.length === 0 && (
         <h2 className="text-sm text-gray-300">Currently no alerts</h2>

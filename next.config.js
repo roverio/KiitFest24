@@ -3,36 +3,36 @@ const nextConfig = {
   images: {
     domains: ["res.cloudinary.com", "picsum.photos", "i.ibb.co"],
   },
-  async redirects() {
-    return [
-      {
-        source: "/members",
-        destination: "/coming-soon",
-        permanent: true,
-      },
-      {
-        source: "/auth/register",
-        destination: "/coming-soon",
-        permanent: true,
-      },
-      {
-        source: "/auth/login",
-        destination: "/coming-soon",
-        permanent: true,
-      },
-      {
-        source: "/dashboard/payment-confirm",
-        destination: "/coming-soon",
-        permanent: true,
-      },
-      
-      {
-        source: "/contactus",
-        destination: "/coming-soon",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig;
+
+// async redirects() {
+//   return [
+//     {
+//       source: "/events",
+//       destination: "/coming-soon",
+//       permanent: true,
+//     },
+//     {
+//       source: "/events/:slug",
+//       destination: "/coming-soon",
+//       permanent: true,
+//     },
+//     {
+//       source: "/members",
+//       destination: "/coming-soon",
+//       permanent: true,
+//     },
+//     {
+//       source: "/auth/signup",
+//       destination: "/coming-soon",
+//       permanent: true,
+//     },
+//     {
+//       source: "/auth/login",
+//       destination: "/coming-soon",
+//       permanent: true,
+//     },
+//   ];
+// }

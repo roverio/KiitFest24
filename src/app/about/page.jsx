@@ -54,7 +54,7 @@ const Page = () => {
 
   return (
     <div className="">
-      <NavwithoutAnimation  />
+      <NavwithoutAnimation />
 
       <div className="h-screen">
         <div className="-z-10 w-[100vw] h-[100vh] fixed  bg-about-background"></div>
@@ -128,7 +128,10 @@ const Page = () => {
                     muted
                     loop
                   >
-                    <source src="/about/circle2.mp4" type="video/mp4" />
+                    <source
+                      src="https://res.cloudinary.com/dbzo04n4l/video/upload/v1706787162/eyatxmypgxtmlhhwgnqq.mov"
+                      type="video/mp4"
+                    />
                     Your browser does not support the video tag.
                   </video>
                 </div>

@@ -6,7 +6,7 @@ import Link from "next/link";
 const MobileNav = ({ isOpen, toggleNavbar }) => {
   return (
     <motion.div
-      className={`fixed w-full inset-0 bg-black bg-opacity-50 z-50 ${
+      className={`fixed w-full  inset-0 bg-black bg-opacity-50 z-[100] ${
         isOpen ? "" : "hidden"
       }`}
       onClick={toggleNavbar}
