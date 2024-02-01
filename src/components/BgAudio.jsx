@@ -4,7 +4,7 @@ import { IoVolumeMuteSharp } from "react-icons/io5";
 import { VscUnmute } from "react-icons/vsc";
 
 const BgAudio = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef();
 
   const playPauseHandler = () => {
@@ -18,7 +18,7 @@ const BgAudio = () => {
 
   return (
     <div>
-      <audio ref={audioRef} loop src="/Assets/bgaudio.mp3" />
+      <audio ref={audioRef} autoPlay={true} loop src="/Assets/bgaudio.mp3" />
       <button onClick={playPauseHandler}>
         {isPlaying ? (
           <VscUnmute className=" text-2xl" />
