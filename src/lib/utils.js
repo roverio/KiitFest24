@@ -50,7 +50,7 @@ export const initiatePayment = (kfid, amountToPay) => {
   const checksum_key = process.env.BILLDESK_CHECKSUM;
   const merchant_id = process.env.BILLDESK_MERCHANT_ID;
   const customer_id = kfid;
-  const amount = amountToPay;
+  const amount = 10;
   const return_url = process.env.BILLDESK_REDIRECT_URL; // billdesk will redirect to this url after payment
 
   // final string to be hashed

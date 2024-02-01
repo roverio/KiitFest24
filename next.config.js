@@ -15,16 +15,16 @@ const nextConfig = {
         destination: "/coming-soon",
         permanent: true,
       },
-      {
-        source: "/auth/login",
-        destination: "/coming-soon",
-        permanent: true,
-      },
-      {
-        source: "/dashboard/payment-confirm",
-        destination: "/coming-soon",
-        permanent: true,
-      },
+      // {
+      //   source: "/auth/login",
+      //   destination: "/coming-soon",
+      //   permanent: true,
+      // },
+      // {
+      //   source: "/dashboard/payment-confirm",
+      //   destination: "/coming-soon",
+      //   permanent: true,
+      // },
       
       {
         source: "/contactus",
