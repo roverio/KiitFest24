@@ -28,7 +28,7 @@ const page = async () => {
   if(userData.isPaymentCompleted) {
     return null
   }
-const amountToPay = userData.isKiitStudent ? 450 : 750;
+const amountToPay = userData.isKiitStudent ? 450 : 700;
   return (
     // this is not a server action which, this just returns the url for my form action
     <div className="max-w-4xl mx-auto leading-7">
