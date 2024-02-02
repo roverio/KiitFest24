@@ -11,7 +11,17 @@ const EventsData = ({ events }) => {
   const search = searchParams.get("type");
   return (
     <div className=" flex flex-col  items-center">
-      <div className="tabs | mb-12 flex-col lg:max-w-none flex-wrap  md:flex-nowrap md:inline-flex lg:flex-row  inline-flex justify-center gap-6 text-xl font-semibold text-[#606060]  w-10/12 lg:w-full lg:px-4">
+      <div className="relative flex flex-col w-[78%] text-[#573FEA] mb-8 lg:mb-20 max-w-[600px] items-center border bg-white rounded-full mx-3">
+          <FaSearch className="absolute left-6 text-zinc-500  top-[34%]" />
+          <input
+            placeholder="Search"
+            type="text"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+            className="rounded-full pl-14 py-3  border border-[#B5B1B1] bg-white w-full h-full"
+          />
+        </div>
+      <div className="tabs | mb-9 flex-col lg:max-w-none flex-wrap  md:flex-nowrap md:inline-flex lg:flex-row  inline-flex justify-center gap-6 text-lg font-semibold text-[#606060]  w-10/12 lg:w-full lg:px-4">
         <Link
           className={`${
             !search
@@ -45,17 +55,9 @@ const EventsData = ({ events }) => {
         >
           Technical {"(Coming Soon)"}
         </Link>
-        <div className="relative flex flex-col items-center border bg-white rounded-full mx-4">
-          <FaSearch className="absolute left-6 top-4 lg:top-4" />
-          <input
-            placeholder="Search"
-            type="text"
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-            className="rounded-full pl-14 py-2 border border-[#B5B1B1] bg-white w-full h-full"
-          />
-        </div>
+    
       </div>
+      
       <div className="max-w-[1532px] mx-auto my-3">
         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 w-[93%] mx-auto gap-8 md:gap-10">
           {events
