@@ -44,10 +44,11 @@ const Navbar = () => {
           } rounded-sm items-center text-white`}
         >
           <Image
-            src="/Assets/k_logo.png"
+            src="/Assets/k_logo.webp"
             alt="kiit logo"
             width={100}
             height={100}
+            quality={50}
             className="w-14 h-12  lg:w-16 lg:h-16"
           ></Image>
           <motion.div
