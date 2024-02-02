@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import NavwithoutAnimation from "@/components/Navwithoutanimation";
+import Navbar from "@/components/navbar";
 
 const Page = () => {
   const [currentInfo, setCurrentInfo] = useState(0);
@@ -53,9 +53,8 @@ const Page = () => {
   };
 
   return (
-    <div className="">
-      <NavwithoutAnimation  />
-
+    <>
+      <Navbar/>
       <div className="h-screen">
         <div className="-z-10 w-[100vw] h-[100vh] fixed  bg-about-background"></div>
         <div className="flex flex-col justify-between h-full  blur-[0.1px] text-white ">
@@ -154,7 +153,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

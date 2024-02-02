@@ -1,18 +1,18 @@
-import NavwithoutAnimation from "@/components/Navwithoutanimation";
+
 import React from "react";
+import Navbar from "@/components/navbar";
 import {
   FaFacebook,
   FaInstagram,
   FaLinkedinIn,
   FaTwitter,
 } from "react-icons/fa";
-import Navbar from "../../components/navbar";
+
 
 const ContactUs = () => {
   return (
     <div className=" min-h-screen bg-about-background">
-      {/* <Navbar /> */}
-      <NavwithoutAnimation />
+      <Navbar/>
       <div id="footer" className="w-full h-full bg-no-repeat bg-cover pt-24">
         <footer className="g-gradient-to-b from-black to-black via-blue-900 md:mx-auto mx-2 md:px-12 py-6 rounded-lg text-white">
           <div className="container mx-auto space-y-8 ">
