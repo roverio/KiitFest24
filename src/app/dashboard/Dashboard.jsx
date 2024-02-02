@@ -1,12 +1,9 @@
 "use client";
-import AddedToCartSwiper from "@/components/dashboard/AddedToCartSwiper";
 import CountDown from "@/components/dashboard/CountDown";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { headTextAnimation } from "@/config/motion";
 import Link from "next/link";
-import Merchandise from "@/components/dashboard/merchandise";
-import ForceLogout from "./ForceLogout";
 
 const Dashboard = ({ userData }) => {
 
@@ -86,22 +83,12 @@ const Dashboard = ({ userData }) => {
             />
           </div>
         </div>
-        {/* <Merchandise merchandise={merchandise} userEmail={userData.email} /> */}
       </div>
       <div className="flex justify-between gap-10 mt-10 flex-col md:flex-row">
-        <AddedToCartSwiper />
-        <div className="flex flex-col justify-between">
-          <Image
-            src={
-              "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709212/kiifest/robot-vaccum_u2fjry.png"
-            }
-            alt="dashboard-robot-vaccum"
-            width={264}
-            height={171}
-            className="hidden md:block"
-          />
+        {/* <AddedToCartSwiper /> */}
+        {/* <div className="flex flex-col justify-between"> */}
           <CountDown />
-        </div>
+        {/* </div> */}
       </div>
     </div>
   );
