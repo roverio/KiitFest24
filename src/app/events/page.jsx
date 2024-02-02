@@ -21,6 +21,7 @@ const Event = async () => {
           src="/Assets/bgevent.png"
           alt="bg image"
           fill
+          priority
           className="object-cover "
         />
       </div>
