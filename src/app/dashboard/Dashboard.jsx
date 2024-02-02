@@ -1,5 +1,5 @@
 "use client";
-
+import { useEffect } from "react";
 import AddedToCartSwiper from "@/components/dashboard/AddedToCartSwiper";
 import CountDown from "@/components/dashboard/CountDown";
 import Image from "next/image";
@@ -7,19 +7,18 @@ import { motion } from "framer-motion";
 import { headTextAnimation } from "@/config/motion";
 import Link from "next/link";
 import Merchandise from "@/components/dashboard/merchandise";
+import { signOut } from "next-auth/react";
 
 const Dashboard = ({ userData }) => {
-
-  
   useEffect(() => {
     // user should not access dashboard if he is not in our db, but exists in session due to some reason
     // this sideEffect component is written so it can logout user if his id his not stored in our database
     // in testing phase few users created their ids so it will only effect people who are not in our db
-    if(userData){
+    if(!userData){
       return () => signOut();
     }
   }, [userData]);
-  
+
   const { isKiitStudent } = userData;
   const price = isKiitStudent ? "₹ 450(Registration)" : "₹ 700(Registration)";
 
