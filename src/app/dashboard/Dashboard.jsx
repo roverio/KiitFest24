@@ -1,15 +1,16 @@
 "use client";
+
+import AddedToCartSwiper from "@/components/dashboard/AddedToCartSwiper";
 import CountDown from "@/components/dashboard/CountDown";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { headTextAnimation } from "@/config/motion";
 import Link from "next/link";
+import Merchandise from "@/components/dashboard/merchandise";
 
 const Dashboard = ({ userData }) => {
-
-
   const { isKiitStudent } = userData;
-  const price = isKiitStudent ? "₹ 450(Registration)" : "₹ 700(Registration)";
+  const price = isKiitStudent ? "₹ 450(Registrations)" : "₹ 750(Registrations)";
 
   return (
     <div className="mt-2 flex justify-evenly flex-col items-between min-h-screen max-w-screen-xl m-auto">
@@ -83,11 +84,21 @@ const Dashboard = ({ userData }) => {
             />
           </div>
         </div>
+        <Image
+          src={
+            "https://res.cloudinary.com/dlkd1pzli/image/upload/v1704709212/kiifest/robot-vaccum_u2fjry.png"
+          }
+          alt="dashboard-robot-vaccum"
+          width={804}
+          height={800}
+          className="hidden object-contain w-[300px] h-[300px] lg:block"
+        />
+        {/* <Merchandise merchandise={merchandise} userEmail={userData.email} /> */}
       </div>
-      <div className="flex justify-between gap-10 mt-10 flex-col md:flex-row">
+      <div className="flex justify-center w-full  gap-10 mt-10 flex-col md:flex-row">
         {/* <AddedToCartSwiper /> */}
         {/* <div className="flex flex-col justify-between"> */}
-          <CountDown />
+        <CountDown />
         {/* </div> */}
       </div>
     </div>
