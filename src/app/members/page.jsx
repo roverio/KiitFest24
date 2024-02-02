@@ -1,10 +1,11 @@
 "use client";
 
+import Navbar from "@/components/navbar";
 import MembersCard from "@/components/MembersCard";
 import { slideAnimation } from "@/config/motion";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import NavwithoutAnimation from "@/components/Navwithoutanimation";
+
 import { useState } from "react";
 
 import { DesignDummyData, WebDummyData } from "@/constants";
@@ -41,7 +42,7 @@ const Members = () => {
 
   return (
     <>
-      <NavwithoutAnimation />
+    <Navbar/>
       <div className="bg-about-background min-h-screen font-sans ">
         <Image
           src="/members/topRight.svg"
