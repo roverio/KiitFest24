@@ -3,16 +3,16 @@
 import { useState, useEffect } from "react";
 
 const CountDown = () => {
-  const targetDate = new Date('February 13, 2024 24:00:00');
+  const targetDate = new Date("February 13, 2024 24:00:00");
   const [timeRemaining, setTimeRemaining] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeRemaining(calculateTimeRemaining());
-    }, 1000)
+    }, 1000);
 
     return() => clearInterval(timer);
-  }, [''])
+  }, [""])
 
   function calculateTimeRemaining() {
     const currentTime = new Date().getTime()
@@ -47,7 +47,7 @@ export default CountDown
 
 function CountdownPill ({ time, title }) {
     return (
-        <div className='gradient-button flex flex-col rounded-md text-2xl justify-center items-center py-1 px-2 bg-gradient-to-b from-[#1741CC] to-[#16BCDC] hover:from16BCDC] hover:to-[#1741CC]'>
+        <div className='gradient-button flex flex-col rounded-md text-4xl md:text-7xl justify-center items-center py-3 px-4 bg-gradient-to-b from-[#1741CC] to-[#16BCDC] hover:from16BCDC] hover:to-[#1741CC]'>
             <span>{ time }</span> 
             <span className='text-sm'>{ title }</span>
         </div>

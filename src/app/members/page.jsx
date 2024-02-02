@@ -67,14 +67,14 @@ const Members = () => {
           className="absolute bottom-0"
         />
         <div className="flex flex-col justify-end h-full px-4 pb-12">
-          <div className="mt-24 md:mt-40 max-w-5xl m-auto flex justify-between w-full mb-12">
+          <div className="mt-24 md:mt-40 max-w-5xl items-center gap-4 m-auto flex flex-col md:flex-row justify-between w-full mb-12">
             <TeamTitle team={activeTeam} />
             <select
               id="teamSelect"
               name="teamSelect"
               value={activeTeam}
               onChange={handleTeamChange}
-              className="w-full max-w-sm px-2 py-1 block border-gray-300 rounded-md shadow-sm sm:text-sm text-gray-700 relative z-10 ring-0 outline-none"
+              className="w-full max-w-sm h-full px-2 py-1 block border-gray-300 rounded-md shadow-sm sm:text-sm text-gray-700 relative z-10 ring-0 outline-none"
             >
               {TEAM_NAME.map((team, index) => (
                 <option key={index} value={team.toLowerCase()}>

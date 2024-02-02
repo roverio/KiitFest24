@@ -1,3 +1,4 @@
+import NavwithoutAnimation from "@/components/Navwithoutanimation";
 import React from "react";
 import {
   FaFacebook,
@@ -6,7 +7,6 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import Navbar from "../../components/navbar";
-import NavwithoutAnimation from "@/components/Navwithoutanimation";
 
 const ContactUs = () => {
   return (
@@ -38,18 +38,18 @@ const ContactUs = () => {
               <div className="w-full md:w-1/2 lg:w-1/5 mb-4 text-left">
                 <h4 className="text-lg font-bold text-white">PHONE</h4>
                 <p className="text-white">
-                  <a href="tel: +918210542443">
-                    +91-8210542443 (Kshitij Singh){" "}
-                  </a>{" "}
-                </p>
-                <p className="text-white">
-                  <a href="tel: +917735127138">
-                    +91-7735127138 (Satyajeet Das){" "}
+                  <a href="tel: +917008051628">
+                    +91-7008051628 (Shivram Krishna){" "}
                   </a>
                 </p>
                 <p className="text-white">
-                  <a href="tel: +917008051628">
-                    +91-7008051628 (Shivram Krishna){" "}
+                  <a href="tel: +918697087952">
+                    +91-8697087952 (Sohini Joarder){" "}
+                  </a>{" "}
+                </p>
+                <p className="text-white">
+                  <a href="tel: +917478299805">
+                    +91-7478299805 (Anamitra Sen Gupta){" "}
                   </a>
                 </p>
               </div>
@@ -64,7 +64,7 @@ const ContactUs = () => {
               <div className="w-full md:w-1/2 lg:w-1/5 mb-4 md:pl-16">
                 <h4 className="text-lg font-bold text-white">Email</h4>
                 <p className="text-white">
-                  <a href="mailto:kiit.mun@kiit.ac.in">kiit.mun@kiit.ac.in</a>{" "}
+                  <a href="mailto:kiit.mun@kiit.ac.in">kiit.fest@kiit.ac.in</a>{" "}
                 </p>
               </div>
               <div className="w-full md:w-1/2 lg:w-1/5 mb-4 md:pl-16">
@@ -76,7 +76,7 @@ const ContactUs = () => {
                     style={{ fontSize: "xs", marginRight: "0.5rem" }}
                   />
                   <a
-                    href="https://www.facebook.com/kiitmun/"
+                    href="https://www.facebook.com/kiitfest/"
                     className="text-white"
                     target="blank"
                   >
@@ -88,7 +88,7 @@ const ContactUs = () => {
                     style={{ fontSize: "xs", marginRight: "0.5rem" }}
                   />
                   <a
-                    href="https://www.instagram.com/instakiitmun/"
+                    href="https://www.instagram.com/kiitfest/"
                     className="text-white"
                     target="blank"
                   >
@@ -100,23 +100,11 @@ const ContactUs = () => {
                     style={{ fontSize: "xs", marginRight: "0.5rem" }}
                   />
                   <a
-                    href="https://twitter.com/kiitmun"
+                    href="https://x.com/KIITFest?t=SK7oE2X1zqdfwy7e8tG2aw&s=09"
                     className="text-white"
                     target="blank"
                   >
                     Twitter
-                  </a>
-                </div>
-                <div className="flex items-center">
-                  <FaLinkedinIn
-                    style={{ fontSize: "xs", marginRight: "0.5rem" }}
-                  />
-                  <a
-                    href="https://www.linkedin.com/company/kiit-international-mun/"
-                    className="text-white"
-                    target="blank"
-                  >
-                    LinkedIn
                   </a>
                 </div>
               </div>
