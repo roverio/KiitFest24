@@ -1,6 +1,7 @@
 import CryptoJS from "crypto-js";
 import { NextResponse } from "next/server";
 import { db } from "@/server/db";
+import { redirect } from "next/navigation";
 
 // Function to calculate HMAC-SHA256 hash using CryptoJS
 function calculateHmacSha256(str, key) {
@@ -44,12 +45,14 @@ export async function POST(request) {
       });
 
 
-        await db.payment.create({
-          data: { kfid: customer, txnId: txn, amount: Number(amt)},
-        });  
-        return NextResponse.redirect(new URL('/paid', request.url))
+      await db.payment.create({
+        data: { kfid: customer, txnId: txn, amount: Number(amt)},
+      });
+    
+      // write a newquery to log payments if possible
+      return redirect("/paid");
     }
-    return NextResponse.redirect(new URL('/paymentnotsuccess', request.url));
+    return redirect("/paymentnotsuccess");
   }
-  return NextResponse.redirect(new URL('/paymentnotsuccess', request.url));
+  return redirect("/paymentnotsuccess");
 }
