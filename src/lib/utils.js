@@ -17,7 +17,7 @@ export const sendConfirmationEmail = async ({
   const DOMAIN = process.env.MAILGUN_DOMAIN;
 
   const data = {
-    from: `KIIT Fest 2024 <email@kiitfest.org>`,
+    from: `KIIT Fest 2024 <verify@kiitfest.org>`,
     to: email,
     subject: "Verify Your Email | KIIT Fest 2024",
     html: `

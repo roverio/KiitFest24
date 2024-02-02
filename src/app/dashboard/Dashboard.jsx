@@ -10,7 +10,7 @@ import Merchandise from "@/components/dashboard/merchandise";
 
 const Dashboard = ({ userData }) => {
   const { isKiitStudent } = userData;
-  const price = isKiitStudent ? "₹ 450(Registrations)" : "₹ 750(Registrations)";
+  const price = isKiitStudent ? "₹ 450(Registration)" : "₹ 700(Registration)";
 
   return (
     <div className="mt-2 flex justify-evenly flex-col items-between min-h-screen max-w-screen-xl m-auto">

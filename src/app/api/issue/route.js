@@ -52,7 +52,7 @@ export const POST = async (req) => {
     });
 
     const data = {
-      from: `KIIT Fest 2024 <email@kiitfest.org>`,
+      from: `KIIT Fest 2024 <issues@kiitfest.org>`,
       to: email,
       subject: "Generated you issue ticket| KIIT FEST 2024",
       html: `
@@ -139,7 +139,7 @@ export const PUT = async (req) => {
       },
     });
     const data = {
-      from: `KIIT Fest 2024 <email@kiitfest.org>`,
+      from: `KIIT Fest 2024 <issues@kiitfest.org>`,
       to: user.email,
       subject: "Update regarding your issue| KIIT FEST 2024",
       html: `
