@@ -9,6 +9,8 @@ export const Card = ({ event, showRegister = true, buttonComponent }) => {
           src={event.imageUrl}
           alt={event.name}
           width={257}
+          placeholder="blur"
+          blurDataURL="/Assets/blur3.webp"
           height={270}
           className="aspect-auto object-cover w-full"
         />
