@@ -127,7 +127,7 @@ const Page = () => {
                     muted
                     loop
                   >
-                    <source src="/about/circle2.mp4" type="video/mp4" />
+                    <source src="/about/circle.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>

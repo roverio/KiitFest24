@@ -14,7 +14,7 @@ const Hero = () => {
         className="flex items-center  justify-center"
       >
         <Image
-          src="/Assets/fest_newlogo.png"
+          src="/Assets/fest_newlogo.webp"
           alt="fest logo"
           width={1000}
           height={850}
