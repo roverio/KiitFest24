@@ -25,12 +25,6 @@ const nextConfig = {
       //   destination: "/coming-soon",
       //   permanent: true,
       // },
-      
-      {
-        source: "/contactus",
-        destination: "/coming-soon",
-        permanent: true,
-      },
     ];
   },
 };
