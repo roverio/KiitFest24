@@ -57,14 +57,14 @@ const Page = () => {
     <div className="w-[100vw] h-[100vh] overflow-x-hidden">
       <div className="-z-10 w-[100vw] h-[100vh] fixed">
         <Image
-          src="/Assets/bgbottom.svg"
+          src="/Assets/bgbottom.webp"
           alt="bg image"
           fill
           priority
           className=" invisible md:visible object-cover translate-y-[100px]"
         />
         <Image
-          src="/Assets/bgbottom2.svg"
+          src="/Assets/bgbottom2.webp"
           alt="bg image"
           fill
           priority
@@ -114,7 +114,7 @@ const Page = () => {
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
                 <Image
-                  src="/icons/profile.png"
+                  src="/icons/profile.webp"
                   alt="bg image"
                   width={30}
                   height={30}
@@ -133,7 +133,7 @@ const Page = () => {
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
                 <Image
-                  src="/icons/mail.png"
+                  src="/icons/mail.webp"
                   alt="bg image"
                   width={30}
                   height={30}
@@ -154,7 +154,7 @@ const Page = () => {
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
-                    src="/icons/password.png"
+                    src="/icons/password.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -174,7 +174,7 @@ const Page = () => {
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
-                    src="/icons/password.png"
+                    src="/icons/password.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -195,7 +195,7 @@ const Page = () => {
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
-                    src="/icons/phone.png"
+                    src="/icons/phone.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -214,7 +214,7 @@ const Page = () => {
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 h-[45.6px]"
                   />
                   <Image
-                    src="/icons/calendar.png"
+                    src="/icons/calendar.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -235,7 +235,7 @@ const Page = () => {
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
-                    src="/icons/city.png"
+                    src="/icons/city.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -254,7 +254,7 @@ const Page = () => {
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
-                    src="/icons/state.png"
+                    src="/icons/state.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -290,7 +290,7 @@ const Page = () => {
                     className="absolute right-5 bottom-3.5 "
                   />
                   <Image
-                    src="/icons/gender.png"
+                    src="/icons/gender.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -309,7 +309,7 @@ const Page = () => {
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
-                    src="/icons/institution.png"
+                    src="/icons/institution.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -330,7 +330,7 @@ const Page = () => {
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
-                    src="/icons/institution.png"
+                    src="/icons/institution.webp"
                     alt="bg image"
                     width={30}
                     height={30}
