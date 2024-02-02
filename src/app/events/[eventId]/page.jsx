@@ -1,10 +1,11 @@
-import React from "react";
 import Card from "@/components/event/Card";
-import { db } from "@/server/db";
 import { getServerAuthSession } from "@/server/auth";
-import { redirect } from "next/navigation";
-import RegisterButton from "./RegisterButton";
+import { db } from "@/server/db";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import React from "react";
+import { IoCaretBack } from "react-icons/io5";
+import RegisterButton from "./RegisterButton";
 
 const EventPage = async ({ params }) => {
   const eventId = params.eventId;
@@ -16,7 +17,7 @@ const EventPage = async ({ params }) => {
   });
 
   const session = await getServerAuthSession();
-  // if(session)
+  // if(session)ankitkumar19041@gmail.com
 
   if (session) {
     const userId = session.user.id || null;
@@ -40,6 +41,7 @@ const EventPage = async ({ params }) => {
         <div className="flex gap-8 max-w-[1500px] flex-col w-[95vw] lg:flex-row justify-center mx-auto py-10 md:py-20">
           <Card event={events} showRegister={false} />
           <section className="w-[90vw] mx-auto lg:w-[60vw] lg:h-[85vh] flex flex-col justify-between items-center text-white bg-gradient-to-r from-[#ffffff1a] to-[#ffffff00] backdrop-blur-2xl border-[#130C5C] rounded-xl border-[1px] md:py-[60px] md:px-12 px-6 text-lg py-8 gap-8 md:text-xl">
+            {/* <IoCaretBack className="text-white text-xl"/> */}
             <p>{events.description}</p>
             <div>
               <p>Partcipation: {events.memberType}</p>
@@ -64,7 +66,15 @@ const EventPage = async ({ params }) => {
           </button>
         </Link>
         <div className="flex gap-8 max-w-[1500px] flex-col w-[95vw] lg:flex-row justify-center mx-auto py-10 md:py-20">
-          <Card event={events} showRegister={false} />
+          <div className="">
+            <Card event={events} showRegister={false} />
+            <Link href="/events" className="max-w-72 flex-shrink-0">
+              <button className="flex items-center text-white self-center mx-auto font-semibold font-sans mt-4 uppercase justify-center w-full bg-blue-800 rounded-md py-2 gap-1 group max-w-72 hover:bg-blue-700 transition-colors duration-300">
+                <IoCaretBack className="text-white text-2xl top-4 lef-6 group-hover:-translate-x-2 transition-all duration-300"/>
+                Back to events
+              </button>
+            </Link>
+          </div>
           <section className="w-[90vw] mx-auto lg:w-[60vw] lg:h-[85vh] flex flex-col  text-white bg-gradient-to-r from-[#ffffff1a] to-[#ffffff00] backdrop-blur-2xl border-[#130C5C] rounded-xl border-[1px] md:py-[60px] md:px-12 px-6 text-lg py-8 gap-8 md:text-xl">
             <p>{events.description}</p>
             <div>
