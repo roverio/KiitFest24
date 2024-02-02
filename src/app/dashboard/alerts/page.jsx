@@ -6,10 +6,10 @@ const ALERTS = [
 
 const Alerts = () => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col w-full  justify-center items-center gap-2">
       <h1 className="uppercase">alerts</h1>
       {ALERTS.length === 0 && (
-        <h2 className="text-sm text-gray-300">Currently no alerts</h2>
+        <h2 className="text-base text-gray-300">Currently no alerts</h2>
       )}
       <div className="space-y-4">
         {ALERTS.map((alert, index) => (
