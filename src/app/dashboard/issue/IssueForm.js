@@ -61,14 +61,14 @@ const IssueForm = () => {
     <div className="  overflow-x-hidden">
       {/* <div className="-z-10 w-[100vw] h-[100vh] fixed">
         <Image
-          src="/Assets/bgbottom.svg"
+          src="/Assets/bgbottom.webp"
           alt="bg image"
           fill
           priority
           className=" invisible md:visible object-cover translate-y-[100px]"
         />
         <Image
-          src="/Assets/bgbottom2.svg"
+          src="/Assets/bgbottom2.webp"
           alt="bg image"
           fill
           className="md:invisible visible object-cover translate-y-[200px]"
@@ -105,7 +105,7 @@ const IssueForm = () => {
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
                 {/* <Image
-                  src="/icons/profile.png"
+                  src="/icons/profile.webp"
                   alt="bg image"
                   width={30}
                   height={30}
@@ -128,7 +128,7 @@ const IssueForm = () => {
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
                 {/* <Image
-                  src="/icons/mail.png"
+                  src="/icons/mail.webp"
                   alt="bg image"
                   width={30}
                   height={30}
@@ -149,7 +149,7 @@ const IssueForm = () => {
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
                 {/* <Image
-                  src="/icons/profile.png"
+                  src="/icons/profile.webp"
                   alt="bg image"
                   width={30}
                   height={30}
@@ -170,7 +170,7 @@ const IssueForm = () => {
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
                 {/* <Image
-                  src="/icons/profile.png"
+                  src="/icons/profile.webp"
                   alt="bg image"
                   width={30}
                   height={30}

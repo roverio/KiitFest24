@@ -26,7 +26,7 @@ const PreLoader = () => {
         transition={{ delay: 0, duration: 2 }}
       >
         <Image
-          src="/Assets/k_logo.png"
+          src="/Assets/k_logo.webp"
           alt="fest logo"
           width={500}
           height={550}
