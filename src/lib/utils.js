@@ -21,6 +21,7 @@ export const sendConfirmationEmail = async ({
     to: email,
     subject: "Verify Your Email | KIIT Fest 2024",
     html: `
+
     <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
       <h1 style="text-align: center; color: #1a1a1a;">Verify Your Email</h1>
       <p style="text-align: center; color: #1a1a1a;">Hi ${name},</p>
@@ -50,7 +51,7 @@ export const initiatePayment = (kfid, amountToPay) => {
   const checksum_key = process.env.BILLDESK_CHECKSUM;
   const merchant_id = process.env.BILLDESK_MERCHANT_ID;
   const customer_id = kfid;
-  const amount = 2;
+  const amount = amountToPay;
   const return_url = process.env.BILLDESK_REDIRECT_URL; // billdesk will redirect to this url after payment
 
   // final string to be hashed

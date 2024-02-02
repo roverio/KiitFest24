@@ -46,7 +46,6 @@ const EventPage = async ({ params }) => {
             <div>
               <p>Partcipation: {events.memberType}</p>
               <p>Category: {events.category}</p>
-              <p>Max members: {events.groupSize}</p>
             </div>
             <RegisterButton
               isRegistered={registeredEventData ? true : false}
@@ -80,14 +79,13 @@ const EventPage = async ({ params }) => {
             <div>
               <p>Partcipation: {events.memberType}</p>
               <p>Category: {events.category}</p>
-              <p>Max members: {events.groupSize}</p>
             </div>
 
-            {/* <Link href="/auth/login">
+            <Link href="/auth/login">
               <button className="text-sm lg:text-[17px] font-semibold bg-gradient-to-b from-[#174ACE] rounded-full border-white border-[2px] to-[#16B2DB] px-4 py-1  lg:px-9 lg:py-3">
                 Login to Register
               </button>
-            </Link> */}
+            </Link>
           </section>
         </div>
       </div>

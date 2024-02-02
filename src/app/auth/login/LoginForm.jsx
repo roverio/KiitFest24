@@ -20,6 +20,7 @@ const Page = () => {
   });
 
   const [displayMessage, setDisplayMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
@@ -34,7 +35,10 @@ const Page = () => {
       console.log(res, "res");
       if (res?.error) {
         console.log(res?.error || "Unknown error Occurred");
-        setDisplayMessage(res?.error || "Try again later or Contact us");
+        setErrorMessage(res?.error || "Try again later or Contact us");
+        setTimeout(() => {
+          setErrorMessage(""); 
+          }, 3000);
         setLoading(false);
       } else {
         setDisplayMessage("Taking you to your Dashboard...");
@@ -44,7 +48,10 @@ const Page = () => {
       }
     } catch (err) {
       console.log(err || "Unknown error Occurred");
-      setDisplayMessage(err || "Try again later or Contact us");
+      setErrorMessage(err || "Try again later or Contact us");
+      setTimeout(() => {
+      setErrorMessage(""); 
+      }, 3000);
 
       setLoading(false);
     }
@@ -142,8 +149,11 @@ const Page = () => {
               </div>
             </div>
 
-            <p className="mx-auto text-red-400 font-medium mt-5">
+            <p className="mx-auto text-green-400 font-medium mt-5">
               {displayMessage}
+            </p>
+            <p className="mx-auto text-red-400 font-medium mt-5">
+              {errorMessage}
             </p>
             <div className="flex items-center justify-between gap-1 mt-5">
               <button

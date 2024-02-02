@@ -25,6 +25,7 @@ const Page = () => {
   const [showRollNumberField, setShowRollNumberField] = useState(false);
   const rollNumber = watch("rollNumber");
   const [displayMessage, setDisplayMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const onSubmit = async (data) => {
@@ -43,7 +44,10 @@ const Page = () => {
     const { success, message } = await response.json();
     if (!success) {
       setLoading(false);
-      return setDisplayMessage(message);
+      setErrorMessage(message);
+      return setTimeout(() => {
+        setErrorMessage(""); 
+        }, 3000); 
     } else {
       setLoading(false);
       setDisplayMessage(
@@ -352,14 +356,17 @@ const Page = () => {
                   setIsKiitStudent(e.target.checked);
                   setShowRollNumberField(e.target.checked);
                 }}
-                className="mr-2 cursor-pointer"
+                className="mr-2 w-8 h-8 cursor-pointer"
               />
-              <label htmlFor="kiitStudentCheckbox" className="text-[#0098CE]">
-                Are you a KIIT Student ?
+              <label htmlFor="kiitStudentCheckbox" className="text-cyan-300">
+                Are you a KIIT Student ? <span className="font-semibold">Make your you put your KIIT mail id and check this box to avail KIIT student pricing</span>
               </label>
             </div>
-            <p className="mx-auto text-red-400 font-medium mt-5">
+            <p className="mx-auto text-green-400 font-medium mt-5">
               {displayMessage}
+            </p>
+            <p className="mx-auto text-red-400 font-medium mt-5">
+              {errorMessage}
             </p>
             <button
               type="submit"
