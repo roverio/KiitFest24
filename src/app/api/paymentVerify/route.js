@@ -49,7 +49,7 @@ export async function POST(request) {
         });  
         return NextResponse.redirect(new URL('/paid', request.url))
     }
-    return NextResponse.redirect(new URL('/paid', request.url));
+    return NextResponse.redirect(new URL('/paymentnotsuccess', request.url));
   }
-  return NextResponse.redirect(new URL('/paid', request.url));
+  return NextResponse.redirect(new URL('/paymentnotsuccess', request.url));
 }
