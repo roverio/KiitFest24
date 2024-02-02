@@ -387,6 +387,7 @@ const Page = () => {
               Login
             </Link>
           </div>
+          <div className="text-white textsm text-center max-w-md mx-auto"><span className="text-blue-300">Note:</span>{" "} If you are a kiit student, make sure to use your kiit email to awail kiit student perks</div>
         </div>
       </div>
     </div>
