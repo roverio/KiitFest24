@@ -73,6 +73,9 @@ const Navbar = () => {
             <Link href={"/contactus"} className={`hover:scale-[1.14] duration-300 ${pathname === "/contactus" && "text-blue-500"}`}>
               Contact us
             </Link>
+            <Link href={"/privacy"} className={`hover:scale-[1.14] duration-300 ${pathname === "/privacy" && "text-blue-500"}`}>
+              Privacy
+            </Link>
           </motion.div>
           <div className="flex items-center space-x-2">
             <Link href={"/auth/login"}>
