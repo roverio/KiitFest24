@@ -13,7 +13,7 @@ export const Card = ({ event, showRegister = true, buttonComponent }) => {
           placeholder="blur"
           blurDataURL={bgBlurImg}
           height={270}
-          className="aspect-auto object-cover w-full "
+          className="aspect-auto w-full object-cover "
         />
         <div className="text-center uppercase text-xs md:text-xl pt-3 text-white">
           {event.name}
