@@ -31,7 +31,8 @@ const ComingSoon = () => {
           alt="coming soon image"
         />
         <div className="text-lg md:text-2xl text-white tracking-[2.4px] font-semibold blink">
-          We are facing a huge traffic which will be fixed sortly, make sure you come here again😄...
+          We are facing a huge traffic which will be fixed sortly, make sure you
+          come here again😄...
         </div>
         <Link href="/" className="flex self-center">
           <button className="text-sm lg:text-[17px] text-white font-semibold bg-gradient-to-b from-[#174ACE] rounded-full border-white border-[2px] to-[#16B2DB] px-4 py-1  lg:px-9 lg:py-3">
@@ -43,4 +44,4 @@ const ComingSoon = () => {
   );
 };
 
-export default ComingSoon;
+export default ComingSoon;
