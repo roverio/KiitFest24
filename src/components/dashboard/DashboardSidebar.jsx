@@ -36,20 +36,28 @@ function DashboardSidebar({ setSidebarOpen, sidebarOpen }) {
             title={"alerts"}
             alertNo={""}
             link={"/dashboard/alerts"}
+            setSidebarOpen={setSidebarOpen} 
           />
           <DashboardSidebarItem
             title={"registered-events"}
             link={"/dashboard/registered-events"}
+            setSidebarOpen={setSidebarOpen} 
           />
           <DashboardSidebarItem
             title={"report issues"}
             link={"/dashboard/issue"}
+            setSidebarOpen={setSidebarOpen} 
           />
           <DashboardSidebarItem
             title={"Your issues"}
             link={"/dashboard/issues"}
+            setSidebarOpen={setSidebarOpen} 
           />
-          <DashboardSidebarItem title={"add more events"} link={"/events"} />
+          <DashboardSidebarItem 
+            title={"add more events"} 
+            link={"/events"} 
+            setSidebarOpen={setSidebarOpen} 
+          />
           <Logout />
         </div>
       </div>

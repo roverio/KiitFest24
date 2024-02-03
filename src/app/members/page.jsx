@@ -8,15 +8,20 @@ import Image from "next/image";
 
 import { useState } from "react";
 
-import { DesignDummyData, WebDummyData } from "@/constants";
+import { WebDummyData } from "@/constants";
 
 const TEAM_NAME = [
   "Web Development",
-  "Design",
   "Marketing",
-  "HR",
-  "App Development",
-  "ML",
+  "Design",
+  "PR",
+  "Operations",
+  "Transport",
+  "Cultural",
+  "Sponsorship",
+  "Decoration",
+  "Technical",
+  "Drafting",
 ];
 
 const getDummyData = (team) => {
@@ -25,10 +30,6 @@ const getDummyData = (team) => {
   switch (lowercaseTeam) {
     case "web development":
       return WebDummyData;
-    case "design":
-      return DesignDummyData;
-    default:
-      return [];
   }
 };
 
@@ -75,7 +76,7 @@ const Members = () => {
               name="teamSelect"
               value={activeTeam}
               onChange={handleTeamChange}
-              className="w-full max-w-sm h-full px-2 py-1 block border-gray-300 rounded-md shadow-sm sm:text-sm text-gray-700 relative z-10 ring-0 outline-none"
+              className="w-full max-w-sm py-2 px-2 block border-gray-300 rounded-md shadow-sm sm:text-sm text-gray-700 relative z-10 ring-0 outline-none"
             >
               {TEAM_NAME.map((team, index) => (
                 <option key={index} value={team.toLowerCase()}>
@@ -86,9 +87,14 @@ const Members = () => {
           </div>
           <AnimatePresence>
             <motion.section {...slideAnimation("up")}>
-              <MembersContainer
-                dummyData={getDummyData(activeTeam.toLowerCase())}
-              />
+                {/* <div className="text-white text-2xl font-semibold max-w-5xl mx-auto">Coming soon...</div> */}
+              {activeTeam === "web development" ? (
+                <MembersContainer
+                  dummyData={getDummyData(activeTeam.toLowerCase())}
+                />
+              ) : (
+                <div className="text-white text-2xl font-semibold max-w-5xl mx-auto">Coming soon...</div>
+              )}
             </motion.section>
           </AnimatePresence>
         </div>
@@ -102,7 +108,7 @@ export default Members;
 function MembersContainer({ dummyData }) {
   return (
     <div className="flex flex-col justify-end h-full px-4">
-      <div className="max-w-7xl m-auto ">
+      <div className="max-w-6xl m-auto ">
         <div className="flex justify-center flex-wrap gap-6 relative">
           {dummyData.map((member, index) => (
             <MembersCard key={index} member={member} />

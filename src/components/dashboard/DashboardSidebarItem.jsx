@@ -1,11 +1,14 @@
 import Link from "next/link";
 import React from "react";
+import { usePathname } from "next/navigation";
 
-const DashboardSidebarItem = ({ title, alertNo, link }) => {
+const DashboardSidebarItem = ({ title, alertNo, link, setSidebarOpen }) => {
+  const pathname = usePathname()
+
   return (
-    <Link href={link}>
+    <Link href={link} onClick={() => setSidebarOpen(false)}>
       <div className="flex justify-between text-lg group">
-        <h1 className="uppercase group-hover:translate-x-4 transition-transform duration-300">
+        <h1 className={`uppercase group-hover:translate-x-4 transition-transform duration-300 ${pathname === link && "text-blue-500"}`}>
           {title}
         </h1>
         {alertNo && (

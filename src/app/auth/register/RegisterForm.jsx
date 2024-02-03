@@ -210,7 +210,7 @@ const Page = () => {
                   </span>
                 </div>
                 <div className="w-full relative">
-                  <span className="absolute text-sm font-medium text-blue-100 -top-5 ">Enter your Date of Birth.</span>
+                  <span className="absolute text-xs font-medium text-blue-100 -bottom-4 ">Enter your Date of Birth above.</span>
                   <input
                     type="date"
                     placeholder="Date Of Birth"
