@@ -21,7 +21,7 @@ const EventsData = ({ events }) => {
             className="rounded-full pl-14 py-3  border border-[#B5B1B1] bg-white w-full h-full"
           />
         </div>
-      <div className="tabs | mb-9 flex-col lg:max-w-none flex-wrap  md:flex-nowrap md:inline-flex lg:flex-row  inline-flex justify-center gap-6 text-lg font-semibold text-[#606060]  w-10/12 lg:w-full lg:px-4">
+      <div className="tabs | mb-9 flex-col max-w-[630px] lg:max-w-none flex-wrap  md:flex-nowrap md:inline-flex lg:flex-row  inline-flex justify-center gap-6 text-lg font-semibold text-[#606060]  w-10/12 lg:w-full lg:px-4">
         <Link
           className={`${
             !search
