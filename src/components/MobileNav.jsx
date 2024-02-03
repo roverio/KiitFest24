@@ -12,7 +12,7 @@ const MobileNav = ({ isOpen, toggleNavbar }) => {
       onClick={toggleNavbar}
     >
       <motion.div
-        className="fixed text-white flex flex-col  text-xl font-light font-roboto justify-between bg-gradient-to-r from-[#110D26] via-[#181146] to-[#110D26]  h-full w-[55vw] p-4 shadow-md top-0 left-0"
+        className="fixed text-white flex flex-col  text-xl font-light font-roboto justify-between bg-gradient-to-r from-[#110D26] via-[#181146] to-[#110D26]  h-full w-[50vw] p-4 shadow-md top-0 left-0"
         initial={{ x: "-100%" }}
         animate={isOpen ? { x: 0 } : { x: "-100%" }}
         transition={{ duration: 0.3 }}
@@ -64,7 +64,7 @@ const MobileNav = ({ isOpen, toggleNavbar }) => {
               height={20}
             ></Image>
           </Link>
-          <Link href="/">
+          <Link href="https://www.instagram.com/kiitfest?igsh=MXJ1OGh2a2FyeTFvMQ==">
             <Image
               src="/icons/social2.png"
               alt="social"

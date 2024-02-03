@@ -57,7 +57,7 @@ const Navbar = () => {
             transition={
               pathname == "/"
                 ? { delay: 3.2, duration: 1 }
-                : { type: "spring", duration: 0.6 }
+                : { type: "spring", duration: 0.7 }
             }
             className="text-lg font-light font-roboto  lg:text-[24px] hidden md:flex space-x-8"
           >
@@ -80,19 +80,19 @@ const Navbar = () => {
               Contact us
             </Link>
           </motion.div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center  space-x-2">
             <Link href={"/auth/login"}>
-              <button className="  text-sm lg:text-[17px] bg-gradient-to-b from-[#174ACE] rounded-full border-white border-[2px] to-[#16B2DB] px-4 py-1  lg:px-9 lg:py-2">
+              <button className="  text-sm lg:text-[17px] bg-gradient-to-b from-[#174ACE] rounded-full border-white border-[2px] to-[#16B2DB] px-3 py-[2px]  lg:px-9 lg:py-2">
                 SIGN IN
               </button>
             </Link>
             <BgAudio />
-            <button className="md:hidden" onClick={toggleNavbar}>
+            <button className=" md:hidden" onClick={toggleNavbar}>
               <Image
                 src="/mobiilenav.svg"
                 alt="mb"
-                width={32}
-                height={12}
+                width={28}
+                height={9}
               ></Image>
             </button>
           </div>

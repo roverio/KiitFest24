@@ -36,7 +36,7 @@ const Page = async () => {
       <div className="w-full  flex flex-col py-16 gap-4 items-center justify-center">
         {/* <h1 className="text-4xl pb-8 font-semibold text-white">Issues</h1> */}
         {issues.length === 0 && (
-          <p className="text-base lg:text-2xl z-[100]">No issues found :)</p>
+          <p className="text-base lg:text-2xl z-[30]">No issues found :)</p>
         )}
         {issues.map((issue, index) => {
           return (
