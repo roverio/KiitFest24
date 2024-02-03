@@ -365,7 +365,7 @@ const Page = () => {
                 className="mr-2 w-8 h-8 cursor-pointer"
               />
               <label htmlFor="kiitStudentCheckbox" className="text-cyan-300">
-                Are you a kiit student? Fill your KIIT issued email id for
+                Are you a kiit student? Fill your KIIT issued email id and fill your roll number for
                 checking credentials later.
               </label>
             </div>
