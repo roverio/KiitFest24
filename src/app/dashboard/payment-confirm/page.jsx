@@ -33,7 +33,6 @@ const page = async () => {
     // this is not a server action which, this just returns the url for my form action
     <div className="max-w-4xl mx-auto leading-7">
       <h1 className="pb-8 text-2xl font-semibold">Payment overview -:</h1>
-
       <p className="">Amount : ₹{amountToPay}</p>
       {/* <p className="inline-flex gap-2 items-center">
         Merchandise Selected : {userData.merchandise ? <FaCheck /> : <FaX />}
@@ -41,14 +40,14 @@ const page = async () => {
       <p className="mb-4">
         Kiit Student : {userData.isKiitStudent ? "Yes" : "No"}
       </p>
+      <p className="mb-4">
+        Please ensure that you see ₹450 if you are from KIIT University, or ₹700
+        if you are from another university. If a different amount is shown,
+        please contact our tech team.
+      </p>
       <p className="mb-2">
-        <p className="mb-4">
-           Please ensure that you see ₹450 if you are from KIIT University, or ₹700 if you are from another university. If a different amount is shown, please contact our tech team.
-        </p>
-
-        <p className="mb-2">
-          All payments will be validated later and failure to meet the above terms may result in disqualification.
-        </p>
+        All payments will be validated later and failure to meet the above terms
+        may result in disqualification.
       </p>
       <p className="mb-2">
         By proceeding to payment, I {userData.name} hereby adhere that my
