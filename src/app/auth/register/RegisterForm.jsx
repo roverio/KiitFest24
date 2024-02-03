@@ -210,7 +210,7 @@ const Page = () => {
                   </span>
                 </div>
                 <div className="w-full relative">
-                  <span className="absolute text-sm font-medium text-blue-100 -top-5 ">Enter your Date of Birth.</span>
+                  <span className="absolute text-xs font-medium text-blue-100 -bottom-4 ">Enter your Date of Birth above.</span>
                   <input
                     type="date"
                     placeholder="Date Of Birth"
@@ -390,7 +390,6 @@ const Page = () => {
               Login
             </Link>
           </div>
-          <div className="text-white textsm text-center max-w-md mx-auto"><span className="text-blue-300">Note:</span>{" "} If you are a kiit student, make sure to use your kiit email to awail kiit student perks</div>
         </div>
       </div>
     </div>

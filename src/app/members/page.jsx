@@ -87,14 +87,14 @@ const Members = () => {
           </div>
           <AnimatePresence>
             <motion.section {...slideAnimation("up")}>
-                <div className="text-white text-2xl font-semibold max-w-5xl mx-auto">Coming soon...</div>
-              {/* {activeTeam === "web development" ? (
+                {/* <div className="text-white text-2xl font-semibold max-w-5xl mx-auto">Coming soon...</div> */}
+              {activeTeam === "web development" ? (
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
                 />
               ) : (
                 <div className="text-white text-2xl font-semibold max-w-5xl mx-auto">Coming soon...</div>
-              )} */}
+              )}
             </motion.section>
           </AnimatePresence>
         </div>
