@@ -46,8 +46,8 @@ const Page = () => {
       setLoading(false);
       setErrorMessage(message);
       return setTimeout(() => {
-        setErrorMessage(""); 
-        }, 3000); 
+        setErrorMessage("");
+      }, 3000);
     } else {
       setLoading(false);
       setDisplayMessage(
@@ -210,12 +210,14 @@ const Page = () => {
                   </span>
                 </div>
                 <div className="w-full relative">
+                  <span className="absolute text-sm font-medium text-blue-100 -top-5 ">Enter your Date of Birth.</span>
                   <input
                     type="date"
                     placeholder="Date Of Birth"
-                    max="2006-01-01"
+                    max="2013-01-01"
                     {...register("date")}
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 h-[45.6px]"
+                    required
                   />
                   <Image
                     src="/icons/calendar.webp"
@@ -359,7 +361,8 @@ const Page = () => {
                 className="mr-2 w-8 h-8 cursor-pointer"
               />
               <label htmlFor="kiitStudentCheckbox" className="text-cyan-300">
-                Are you a KIIT Student ? <span className="font-semibold">Make your you put your KIIT mail id and check this box to avail KIIT student pricing</span>
+                Are you a kiit student? Fill your KIIT issued email id for
+                checking credentials later.
               </label>
             </div>
             <p className="mx-auto text-green-400 font-medium mt-5">

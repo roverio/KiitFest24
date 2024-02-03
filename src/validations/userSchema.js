@@ -5,14 +5,7 @@ export const userSchema = yup.object({
   email: yup
     .string()
     .email("Please enter a valid email")
-    .required("Please enter email")
-    .test("kiit-email", "Please enter a valid KIIT email", function (value) {
-      const isKiitStudent = this.parent.isKiitStudent;
-      if (isKiitStudent) {
-        return value.includes("@kiit.ac.in");
-      }
-      return true;
-    }),
+    .required("Please enter email"),
   password: yup
     .string()
     .min(6, "minimum 6 characters")
