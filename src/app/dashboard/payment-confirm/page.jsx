@@ -25,10 +25,10 @@ const page = async () => {
     },
   });
 
-  if(userData.isPaymentCompleted) {
-    return null
+  if (userData.isPaymentCompleted) {
+    return null;
   }
-const amountToPay = userData.isKiitStudent ? 450 : 700;
+  const amountToPay = userData.isKiitStudent ? 450 : 700;
   return (
     // this is not a server action which, this just returns the url for my form action
     <div className="max-w-4xl mx-auto leading-7">
@@ -42,8 +42,17 @@ const amountToPay = userData.isKiitStudent ? 450 : 700;
         Kiit Student : {userData.isKiitStudent ? "Yes" : "No"}
       </p>
       <p className="mb-2">
+        <p className="mb-4">
+           Please ensure that you see ₹450 if you are from KIIT University, or ₹700 if you are from another university. If a different amount is shown, please contact our tech team.
+        </p>
+
+        <p className="mb-2">
+          All payments will be validated later and failure to meet the above terms may result in disqualification.
+        </p>
+      </p>
+      <p className="mb-2">
         By proceeding to payment, I {userData.name} hereby adhere that my
-        payment is not refundable.
+        payment is not refundable and the above conditions are met.
       </p>
       <form method="post" action={initiatePayment(userData.kfid, amountToPay)}>
         <button
