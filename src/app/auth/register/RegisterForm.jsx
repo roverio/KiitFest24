@@ -8,6 +8,7 @@ import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import { PulseLoader } from "react-spinners";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const {
@@ -20,26 +21,26 @@ const Page = () => {
     mode: "onChange",
     resolver: yupResolver(userSchema),
   });
-
+  const router = useRouter();
   const [isKiitStudent, setIsKiitStudent] = useState(false);
+  const [rollNumber, setRollNumber] = useState("");
   const [showRollNumberField, setShowRollNumberField] = useState(false);
-  const rollNumber = watch("rollNumber");
   const [displayMessage, setDisplayMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const onSubmit = async (data) => {
-    // If isKiitStudent is not selected, set rollNumber to an empty string
-    if (!data.isKiitStudent) {
-      data.rollNumber = "";
-    }
     setLoading(true);
     const response = await fetch("/api/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        ...data,
+        isKiitStudent,
+        rollNumber,
+      }),
     });
     const { success, message } = await response.json();
     if (!success) {
@@ -50,9 +51,8 @@ const Page = () => {
       }, 3000);
     } else {
       setLoading(false);
-      setDisplayMessage(
-        "Check your email for verification link. You may close this tab."
-      );
+      setDisplayMessage("You may close this tab and login directly");
+      router.push("/auth/login");
       setSubmitted(true);
     }
   };
@@ -210,7 +210,9 @@ const Page = () => {
                   </span>
                 </div>
                 <div className="w-full relative">
-                  <span className="absolute text-xs font-medium text-blue-100 -bottom-4 ">Enter your Date of Birth above.</span>
+                  <span className="absolute text-xs font-medium text-blue-100 -bottom-4 ">
+                    Enter your Date of Birth above.
+                  </span>
                   <input
                     type="date"
                     placeholder="Date Of Birth"
@@ -332,7 +334,9 @@ const Page = () => {
                   <input
                     type="number"
                     placeholder="Roll Number"
-                    {...register("rollNumber")}
+                    // {...register("rollNumber")}
+                    value={rollNumber}
+                    onChange={(e) => setRollNumber(e.target.value)}
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
@@ -353,7 +357,7 @@ const Page = () => {
               <input
                 type="checkbox"
                 id="kiitStudentCheckbox"
-                {...register("isKiitStudent")}
+                // {...register("isKiitStudent")}
                 onChange={(e) => {
                   setIsKiitStudent(e.target.checked);
                   setShowRollNumberField(e.target.checked);

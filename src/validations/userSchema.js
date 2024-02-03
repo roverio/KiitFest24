@@ -28,16 +28,16 @@ export const userSchema = yup.object({
     .string()
     .max(50, "maximum 50 characters")
     .required("please enter institution name"),
-  isKiitStudent: yup.boolean(),
-  rollNumber: yup.string().when("isKiitStudent", {
-    is: true,
-    then: () =>
-      yup
-        .string()
-        .max(20, "Maximum 20 characters")
-        .required("Please enter Roll Number"),
-    otherwise: () => yup.string(),
-  }),
+  // isKiitStudent: yup.boolean(),
+  // rollNumber: yup.string().when("isKiitStudent", {
+  //   is: true,
+  //   then: () =>
+  //     yup
+  //       .string()
+  //       .max(20, "Maximum 20 characters")
+  //       .required("Please enter Roll Number"),
+  //   otherwise: () => yup.string(),
+  // }),
 });
 
 export const loginSchema = yup.object({

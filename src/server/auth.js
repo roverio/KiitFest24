@@ -44,9 +44,9 @@ export const authOptions = {
           throw new Error("User not found. Please Register.");
         }
 
-        if(!user.isEmailVerified){
-          throw new Error("Please verify your email to login.")
-        }
+        // if(!user.isEmailVerified){
+        //   throw new Error("Please verify your email to login.")
+        // }
 
         const isValid = await comparePassword(password, user.password);
 

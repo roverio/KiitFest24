@@ -72,6 +72,8 @@ const createFakeEventData = () => {
 };
 
 async function seed() {
+  const data = await prisma.user.findMany();
+
   
 }
 
