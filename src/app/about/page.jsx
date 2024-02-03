@@ -59,14 +59,11 @@ const Page = () => {
         <div className="-z-10 w-[100vw] h-[100vh] fixed  bg-about-background"></div>
         <div className="flex flex-col justify-between h-full  blur-[0.1px] text-white ">
           <div>
-            <div className="text-center text-xl font-semibold md:font-normal md:text-4xl tracking-[1.62px] md:tracking-[4.32px] mt-24">
-              {informationList[currentInfo].title}
-            </div>
-            <div className="flex flex-col md:flex-row h-[600px] justify-between gap-9 md:gap-11 mt-3 max-w-[891px] w-11/12 backdrop-blur-2xl border-[1px] rounded-[21px] bg-about-details-section border-[#130C5C] py-9 md:py-14 px-4 md:px-9 mx-auto">
-              <div className="overflow-y-auto custom-scrollbar order-2 md:order-1 flex-grow text-lg md:text-xl tracking-[1.39px] md:tracking-[2.16px] text-justify w-full md:w-[50%] ">
+            <div className="flex flex-col md:flex-row h-[600px] justify-between gap-9 md:gap-11 mt-24  max-w-5xl w-11/12 backdrop-blur-2xl border-[1px] rounded-[21px] bg-about-details-section border-[#130C5C] py-9 md:py-14 px-4 md:px-9 mx-auto mb-8 ">
+              <div className="overflow-y-auto custom-scrollbar order-2 md:order-1 flex-grow text-lg md:text-xl tracking-[1.39px] md:tracking-[2.16px] text-justify w-full md:w-[50%] pr-3 text-gray-300 hover:text-white transition-colors duration-300">
                 {informationList[currentInfo].description}
               </div>
-              <div className="order-1 md:order-2 rounded-xl mx-auto w-10/12 h-[511px] sm:h-[400px] md:h-auto md:w-[50%] overflow-hidden">
+              <div className="order-1 relative md:order-2 rounded-xl mx-auto w-10/12 h-[511px] sm:h-[400px] md:h-auto md:w-[50%] overflow-hidden">
                 <Image
                   src={informationList[currentInfo].image}
                   alt="bg image"
@@ -74,6 +71,9 @@ const Page = () => {
                   height={545}
                   className="object-cover w-full h-full"
                 />
+                <div className="text-center absolute z-10 top-50 left-50  text-xl font-semibold md:font-normal md:text-4xl tracking-[1.62px] md:tracking-[4.32px] ">
+                  {informationList[currentInfo].title}
+                </div>
               </div>
             </div>
           </div>

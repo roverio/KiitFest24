@@ -16,13 +16,13 @@ const Event = async () => {
   return (
     <div className="text-white">
       <Navbar/>
-      <div className="-z-40 w-[100vw] h-[40vh] md:h-[100vh] fixed">
+      <div className="-z-40 w-[100vw] h-[100vh] fixed">
         <Image
           src="/Assets/bgevent.png"
           alt="bg image"
           fill
           priority
-          className="object-cover "
+          className="object-cover"
         />
       </div>
       <div className="-z-20 w-[100vw] h-[40vh] md:h-[100vh] fixed bg-event-bg"></div>

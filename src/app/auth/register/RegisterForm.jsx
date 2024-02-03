@@ -359,7 +359,7 @@ const Page = () => {
                 className="mr-2 w-8 h-8 cursor-pointer"
               />
               <label htmlFor="kiitStudentCheckbox" className="text-cyan-300">
-                Are you a KIIT Student ? <span className="font-semibold">Make your you put your KIIT mail id and check this box to avail KIIT student pricing</span>
+                Are you a KIIT Student ? <span className="font-semibold">Make sure you put your KIIT mail id and check this box to avail KIIT student pricing</span>
               </label>
             </div>
             <p className="mx-auto text-green-400 font-medium mt-5">
