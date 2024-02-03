@@ -10,11 +10,11 @@ const nextConfig = {
         destination: "/coming-soon",
         permanent: true,
       },
-      {
-        source: "/auth/register",
-        destination: "/coming-soon",
-        permanent: true,
-      },
+      // {
+      //   source: "/auth/register",
+      //   destination: "/coming-soon",
+      //   permanent: true,
+      // },
     ];
   },
 };
