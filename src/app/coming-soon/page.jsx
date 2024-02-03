@@ -31,7 +31,7 @@ const ComingSoon = () => {
           alt="coming soon image"
         />
         <div className="text-lg md:text-2xl text-white tracking-[2.4px] font-semibold blink">
-          We are facing a huge traffic which will be fixed sortly, make sure you
+          We are facing a huge traffic which will be fixed shortly, make sure you
           come here again😄...
         </div>
         <Link href="/" className="flex self-center">
