@@ -8,17 +8,6 @@ const mgclient = MailGun.client({
   key: process.env.MAILGUN_API_KEY,
 });
 const DOMAIN = process.env.MAILGUN_DOMAIN;
-export const GET = async () => {
-  try {
-    const issue = await db.issue.findMany();
-    return NextResponse.json({ Issues: issue }, { status: 200 });
-  } catch (err) {
-    return NextResponse.json(
-      { status: false, message: "Something went wrong" },
-      { status: 500 }
-    );
-  }
-};
 
 export const POST = async (req) => {
   const { issue, subject, email } = await req.json();

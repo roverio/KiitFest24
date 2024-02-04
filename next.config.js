@@ -5,16 +5,11 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      {
-        source: "/members",
-        destination: "/coming-soon",
-        permanent: true,
-      },
-      {
-        source: "/auth/register",
-        destination: "/coming-soon",
-        permanent: true,
-      },
+      // {
+      //   source: "/auth/register",
+      //   destination: "/coming-soon",
+      //   permanent: true,
+      // },
     ];
   },
 };

@@ -39,17 +39,17 @@ const ContactUs = () => {
                 <h4 className="text-lg font-bold text-white">PHONE</h4>
                 <p className="text-white">
                   <a href="tel: +917008051628">
-                    +91-7008051628 (Shivram Krishna){" "}
+                    +91-7008051628 (Shivram Krishna){" "}Operation
                   </a>
                 </p>
                 <p className="text-white">
-                  <a href="tel: +918697087952">
-                    +91-8697087952 (Sohini Joarder){" "}
+                  <a href="https://wa.me/8697087952">
+                    +91-8697087952 (Sohini Joarder){" "}Payments and Tech
                   </a>{" "}
                 </p>
                 <p className="text-white">
                   <a href="tel: +917478299805">
-                    +91-7478299805 (Anamitra Sen Gupta){" "}
+                    +91-7478299805 (Anamitra Sen Gupta){" "}Public Relations
                   </a>
                 </p>
               </div>

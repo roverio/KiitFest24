@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import BgAudio from "./BgAudio";
-
 import MobileNav from "./MobileNav";
 
 const Navbar = () => {
@@ -39,9 +38,7 @@ const Navbar = () => {
         } top-0  fixed  z-[50] left-0 right-0  `}
       >
         <div
-          className={`flex max-w-[1900px]    mx-auto justify-between w-full  p-4  lg:px-20 ${
-            pathname == "/" ? "lg:py-6" : "py-3"
-          } rounded-sm items-center text-white`}
+          className={`flex max-w-[1900px]    mx-auto justify-between w-full  p-4  lg:px-20 py-2 rounded-sm items-center text-white`}
         >
           <Image
             src="/Assets/k_logo.webp"
@@ -59,28 +56,28 @@ const Navbar = () => {
                 ? { delay: 3.2, duration: 1 }
                 : { type: "spring", duration: 0.7 }
             }
-            className="text-lg font-light font-roboto  lg:text-[24px] hidden md:flex space-x-8"
+            className="text-lg font-roboto  lg:text-[20px] hidden md:flex space-x-8"
           >
-            <Link href={"/"} className="hover:scale-[1.14] pl-16 duration-300">
+            <Link href={"/"} className={`hover:scale-[1.14] pl-16 duration-300 ${pathname === "/" && "text-blue-500"}`}>
               Home
             </Link>
-            <Link href={"/events"} className="hover:scale-[1.14] duration-300">
+            <Link href={"/events"} className={`hover:scale-[1.14] duration-300 ${pathname === "/events" && "text-blue-500"}`}>
               Events
             </Link>
-            <Link href={"/about"} className="hover:scale-[1.14] duration-300">
+            <Link href={"/about"} className={`hover:scale-[1.14] duration-300 ${pathname === "/about" && "text-blue-500"}`}>
               About
             </Link>
-            <Link href={"/members"} className="hover:scale-[1.14] duration-300">
+            <Link href={"/members"} className={`hover:scale-[1.14] duration-300 ${pathname === "/members" && "text-blue-500"}`}>
               Members
             </Link>
-            <Link
-              href={"/contactus"}
-              className="hover:scale-[1.14] duration-300"
-            >
+            <Link href={"/contactus"} className={`hover:scale-[1.14] duration-300 ${pathname === "/contactus" && "text-blue-500"}`}>
               Contact us
             </Link>
+            <Link href={"/privacy"} className={`hover:scale-[1.14] duration-300 ${pathname === "/privacy" && "text-blue-500"}`}>
+              Privacy
+            </Link>
           </motion.div>
-          <div className="flex items-center  space-x-2">
+          <div className="flex items-center space-x-2">
             <Link href={"/auth/login"}>
               <button className="  text-sm lg:text-[17px] bg-gradient-to-b from-[#174ACE] rounded-full border-white border-[2px] to-[#16B2DB] px-3 py-[2px]  lg:px-9 lg:py-2">
                 SIGN IN
