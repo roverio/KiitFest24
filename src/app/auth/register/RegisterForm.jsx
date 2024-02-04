@@ -101,12 +101,20 @@ const Page = () => {
             className="absolute left-[calc(50%-43px)] md:left-[calc(50%-61px)] -top-[43px] md:-top-[61px] md:w-[122px] md:h-[122px] h-[86px] w-[86px]"
           />
 
-          <Link
-            href="/"
-            className="absolute -top-8 right-2 text-white hover:scale-105 transition-all duration-200 hover:font-bold"
-          >
-            Home
-          </Link>
+          <div className="flex gap-8">
+            <Link
+              href="/"
+              className="absolute -top-8 left-2 text-white hover:scale-105 transition-all duration-200 hover:font-bold"
+            >
+              Home
+            </Link>
+            <Link
+              href="/privacy"
+              className="absolute -top-8 right-2 text-white hover:scale-105 transition-all duration-200 hover:font-bold"
+            >
+              Privacy Policy
+            </Link>
+          </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
             <div className="w-full h-full flex flex-col space-y-5">
