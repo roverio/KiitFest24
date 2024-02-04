@@ -12,6 +12,7 @@ import { WebDummyData } from "@/constants";
 
 const TEAM_NAME = [
   "Web Development",
+  "Executive Heads",
   "Marketing",
   "Design",
   "PR",
