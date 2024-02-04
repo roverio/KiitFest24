@@ -43,7 +43,7 @@ const ContactUs = () => {
                   </a>
                 </p>
                 <p className="text-white">
-                  <a href="tel: +918697087952">
+                  <a href="https://wa.me/8697087952">
                     +91-8697087952 (Sohini Joarder){" "}Payments and Tech
                   </a>{" "}
                 </p>
