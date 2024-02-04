@@ -21,7 +21,7 @@ const EventPage = async ({ params }) => {
 				<p>Privacy Policy for KIITFest
 				Information Collection, Use & Security
 		
-				KIITFest is the sole owner of the information collected on this website. We take every precaution to protect and secure our databases and user’s information, and we will not sell, share, or rent this information to others.
+				KIITFest is the sole owner of the information collected on this website. We take every precaution to protect and secure our databases and user’s information, and we will not sell, share, or rent this information to others. We collect your email so that we can verify you and provide you services like adding mails and creating issues. We also collect your name, email, student status to display on the website
 				 <p className="my-8">
 		
 					 </p>
