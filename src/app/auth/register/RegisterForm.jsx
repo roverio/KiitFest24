@@ -9,7 +9,6 @@ import dynamic from "next/dynamic";
 import { PulseLoader } from "react-spinners";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
 const Page = () => {
   const {
     register,
@@ -21,7 +20,7 @@ const Page = () => {
     mode: "onChange",
     resolver: yupResolver(userSchema),
   });
-  const router = useRouter();
+  const router = useRouter()
   const [isKiitStudent, setIsKiitStudent] = useState(false);
   const [rollNumber, setRollNumber] = useState("");
   const [showRollNumberField, setShowRollNumberField] = useState(false);
@@ -52,7 +51,9 @@ const Page = () => {
     } else {
       setLoading(false);
       setDisplayMessage("You may close this tab and login directly");
-      router.push("/auth/login");
+      setTimeout(() => {
+        router.push("/auth/login");
+      }, 2000);
       setSubmitted(true);
     }
   };
@@ -343,7 +344,8 @@ const Page = () => {
                     type="number"
                     placeholder="Roll Number"
                     // {...register("rollNumber")}
-                    value={rollNumber}
+                    value={showRollNumberField ? rollNumber : ""}
+                    required
                     onChange={(e) => setRollNumber(e.target.value)}
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
@@ -369,12 +371,13 @@ const Page = () => {
                 onChange={(e) => {
                   setIsKiitStudent(e.target.checked);
                   setShowRollNumberField(e.target.checked);
+                  setRollNumber("");
                 }}
-                className="mr-2 w-8 h-8 cursor-pointer"
+                className="mr-2 w-8 h-8 shrink-0 cursor-pointer"
               />
               <label htmlFor="kiitStudentCheckbox" className="text-cyan-300">
-                Are you a kiit student? Fill your KIIT issued email id and fill your roll number for
-                checking credentials later.
+                Are you a kiit student? Fill your KIIT issued email id and fill
+                your roll number for checking credentials later.
               </label>
             </div>
             <p className="mx-auto text-green-400 font-medium mt-5">
