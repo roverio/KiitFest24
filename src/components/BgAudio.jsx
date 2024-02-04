@@ -18,7 +18,7 @@ const BgAudio = () => {
 
   return (
     <div>
-      <audio ref={audioRef} autoPlay={true} loop src="/Assets/bgaudio.mp3" />
+      <audio ref={audioRef} autoPlay={true} loop src="/Assets/editedbg.mp3" />
       <button onClick={playPauseHandler}>
         {isPlaying ? (
           <VscUnmute className=" text-2xl" />
