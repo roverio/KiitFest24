@@ -24,6 +24,7 @@ const DashboardPage = async () => {
       isPaymentCompleted: true,
       merchandise: true,
       isKiitStudent: true,
+      isEmailVerified: true,
     },
   });
 

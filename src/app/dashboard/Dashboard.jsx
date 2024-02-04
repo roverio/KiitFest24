@@ -1,17 +1,21 @@
 "use client";
 
-import AddedToCartSwiper from "@/components/dashboard/AddedToCartSwiper";
+// import AddedToCartSwiper from "@/components/dashboard/AddedToCartSwiper";
 import CountDown from "@/components/dashboard/CountDown";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { headTextAnimation } from "@/config/motion";
 import Link from "next/link";
-import Merchandise from "@/components/dashboard/merchandise";
+import { sendVerificationEmail } from "./actions";
+import { toast } from "sonner";
+// import Merchandise from "@/components/dashboard/merchandise";
+
 
 const Dashboard = ({ userData }) => {
-  const { isKiitStudent } = userData;
-  const price = isKiitStudent ? "₹ 450(Registration)" : "₹ 700(Registration)";
+  const { isKiitStudent, isEmailVerified } = userData;
+  const price = isKiitStudent ? "₹ 450 (Registration)" : "₹ 700 (Registration)";
 
+  
   return (
     <div className="mt-2 flex justify-evenly flex-col items-between min-h-screen max-w-screen-xl m-auto">
       <motion.div {...headTextAnimation}>
@@ -48,11 +52,26 @@ const Dashboard = ({ userData }) => {
                     your registered events and other activities.
                   </span>
                 </div>
+                <div className="flex items-center gap-4">
                 <Link href={"/dashboard/payment-confirm"}>
                   <button className="bg-blue-700 px-4 py-2 rounded-md uppercase text-sm tracking-wider hover:bg-blue-600 transition-colors duration-200">
                     Proceed to Payment
                   </button>
                 </Link>
+                {
+                  !isEmailVerified && (
+                    <button onClick={()=>{
+                      sendVerificationEmail({
+                        email: userData.email,
+                        name: userData.name
+                      })
+                      toast.success("Verification email sent")
+                    }} className="bg-red-600 px-4 py-2 rounded-md uppercase text-sm tracking-wider hover:bg-red-500 transition-colors duration-200">
+                      Verify Email
+                    </button>
+                  )
+                }
+                </div>
               </div>
             )}
             <div className="flex justify-between max-w-xl gap-4">

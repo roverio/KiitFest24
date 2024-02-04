@@ -8,7 +8,6 @@ import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import { PulseLoader } from "react-spinners";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 const Page = () => {
   const {
@@ -21,7 +20,6 @@ const Page = () => {
     mode: "onChange",
     resolver: yupResolver(userSchema),
   });
-  const router = useRouter();
   const [isKiitStudent, setIsKiitStudent] = useState(false);
   const [rollNumber, setRollNumber] = useState("");
   const [showRollNumberField, setShowRollNumberField] = useState(false);
@@ -29,6 +27,7 @@ const Page = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
   const onSubmit = async (data) => {
     setLoading(true);
     const response = await fetch("/api/auth/register", {
@@ -51,8 +50,7 @@ const Page = () => {
       }, 3000);
     } else {
       setLoading(false);
-      setDisplayMessage("You may close this tab and login directly");
-      router.push("/auth/login");
+      setDisplayMessage("Check you email for verification. You may close this tab");
       setSubmitted(true);
     }
   };
