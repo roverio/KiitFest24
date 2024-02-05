@@ -51,7 +51,7 @@ const page = async () => {
       </p>
 
       <p className="mb-2 text-yellow-400 font-medium tracking-wide">
-        ⚠️ Important: As there are some issues faced with UPI recently, we recommend using a Debit card(no convenience fee) or Credit card for the payment. Make sure the online/merchant transaction is on.
+        ⚠️ Important: As there were some issues faced with UPI recently, we recommend using a Debit card(no convenience fee) or Credit card for the payment. Make sure the online/merchant transaction is on.
       </p>
       <p className="mb-2">
         By proceeding to payment, I {userData.name} hereby adhere that my
