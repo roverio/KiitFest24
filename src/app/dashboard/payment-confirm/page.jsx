@@ -49,6 +49,10 @@ const page = async () => {
         All payments will be validated later and failure to meet the above terms
         may result in disqualification.
       </p>
+
+      <p className="mb-2 text-yellow-400 font-medium tracking-wide">
+        ⚠️ Important: As there are some issues faced with UPI recently, we recommend using a Debit card(no convenience fee) or Credit card for the payment. Make sure the online/merchant transaction is on.
+      </p>
       <p className="mb-2">
         By proceeding to payment, I {userData.name} hereby adhere that my
         payment is not refundable and the above conditions are met.
