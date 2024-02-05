@@ -100,9 +100,9 @@ export const WebDummyData = [
   {
     src: "https://res.cloudinary.com/dcaf9chn5/image/upload/v1706950339/tl2wq67qroi7eb4pclzb.jpg",
     memberName: "Sohini Jordar",
-    instagram: "https://www.instagram.com/pratikdevdas/",
-    linkedin: "https://www.linkedin.com/in/pratikdevdas/",
-    github: "https://github.com/pratikdevdas",
+    instagram: "https://www.instagram.com/s_jordy.gg/",
+    linkedin: "https://www.linkedin.com/in/sohini-joarder/",
+    github: "https://github.com/sohinijRover/",
     title: "Developer"
   },
   {
@@ -114,7 +114,7 @@ export const WebDummyData = [
     title: "Developer"
   },
   {
-    src: "https://res.cloudinary.com/dqwbkjfuh/image/upload/v1706950781/ndngqsacyfnzwrqtof8e.png",
+    src: "https://res.cloudinary.com/dqwbkjfuh/image/upload/v1706987709/x6wxdss4mhwlqamlnzop.png",
     memberName: "Amaan Bhati",
     instagram: "http://instagram.com/amaanbhatiii",
     linkedin: "http://linkedin.com/in/amaan-bhati",
@@ -131,7 +131,7 @@ export const WebDummyData = [
   },
   {
     src: "https://res.cloudinary.com/dggzaq4oo/image/upload/v1706950570/mlsamypic_cfitwg.jpg",
-    memberName: "Harsh Kumar",
+    memberName: "Harsh Raj",
     instagram: "https://www.instagram.com/harsh_rj002?igsh=MTcxMmZpN201MzdmYg==",
     linkedin: "https://www.linkedin.com/in/harsh-raj-898340217?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     github: "https://github.com/022003harsh",
