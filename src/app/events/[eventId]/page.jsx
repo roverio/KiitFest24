@@ -31,13 +31,13 @@ const EventPage = async ({ params }) => {
     });
 
     return (
-      <div className="bg-[url('/Assets/bgevent.png')] w-full  h-full bg-no-repeat bg-cover ">
+      <div className="bg-[url('/Assets/bgevent.png')] w-full  min-h-screen bg-no-repeat bg-cover ">
         <Link href="/dashboard">
           <button className="text-white absolute right-8 top-6 border-b">
             Go to Dashboard
           </button>
         </Link>
-        <div className="flex gap-8 max-w-[1500px] flex-col w-[95vw] lg:flex-row justify-center mx-auto py-10 md:py-20">
+        <div className="flex gap-8 max-w-[1500px] flex-col  w-[95vw] lg:flex-row justify-center mx-auto py-16 md:py-20">
           <Card event={events} showRegister={false} />
           <section className="w-[90vw] mx-auto lg:w-[60vw] lg:h-[85vh] flex flex-col justify-between items-center text-white bg-gradient-to-r from-[#ffffff1a] to-[#ffffff00] backdrop-blur-2xl border-[#130C5C] rounded-xl border-[1px] md:py-[60px] md:px-12 px-6 text-lg py-8 gap-8 md:text-xl">
             {/* <IoCaretBack className="text-white text-xl"/> */}
