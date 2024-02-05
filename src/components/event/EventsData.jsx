@@ -53,7 +53,7 @@ const EventsData = ({ events }) => {
           } cursor-pointer rounded-[72px]  px-3 lg:px-6 py-2 mx-4 lg:py-3`}
           scroll={false}
         >
-          Technical {"(Coming Soon)"}
+          Technical Events
         </Link>
     
       </div>
