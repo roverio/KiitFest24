@@ -1,19 +1,25 @@
 import { db } from "@/server/db";
 
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import Link from "next/link";
 
 import { getServerAuthSession } from "@/server/auth";
 
 const Page = async () => {
+
   const session = await getServerAuthSession();
+
+  if (!session) {
+    redirect("/auth/login");
+  }
 
   const issues = await db.issue.findMany({
     where: {
       userId: session.user.id,
     },
   });
-  // console.log(issues);
+
 
   return (
     <div className="  overflow-x-hidden">
