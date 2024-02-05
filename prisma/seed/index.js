@@ -14,12 +14,12 @@ const createFakeEventData = () => {
     "CSE",
   ];
 
-// randomly throws cultural or technical
+  // randomly throws cultural or technical
   function getRandomYesOrNo() {
     let randomNum = Math.floor(Math.random() * 2);
     return randomNum === 1 ? "CULTURAL" : "TECHNICAL";
   }
-  
+
   // Example usage
   const fakeEventData = [];
 
@@ -48,7 +48,6 @@ const createFakeEventData = () => {
             imageUrl: "https://picsum.photos/200",
             groupSize: Math.floor(Math.random() * 4) + 1,
             type: getRandomYesOrNo(),
-
           });
         }
 
@@ -72,9 +71,20 @@ const createFakeEventData = () => {
 };
 
 async function seed() {
-  const data = await prisma.user.findMany();
-
-  
+  await prisma.event.createMany({
+    data: [
+      {
+        name: "Teenie Weenie tales",
+        description: "https://drive.google.com/file/d/1DfDRyu5bpibOZlgNlklyG5Y1H0GuK2LG/view?usp=drive_link",
+        imageUrl: "https://i.ibb.co/wwvW34G/Poster1x1-Website.webp",
+        venue: "T.B.A",
+        memberType: "NONE",
+        type: "TECHNICAL",
+        category: "TSLANG",
+        groupSize: 1,
+    },
+    ],
+  });
 }
 
 seed()
@@ -86,17 +96,17 @@ seed()
     await prisma.$disconnect();
   });
 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
