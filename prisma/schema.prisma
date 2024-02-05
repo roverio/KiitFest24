@@ -34,6 +34,7 @@ enum EventMember {
   SOLO
   SOLO_OR_GROUP
   GROUP
+  NONE
 }
 
 // add both technical and cultural categories here
@@ -52,6 +53,19 @@ enum EventCategory {
   MARKETING
   GAMES
   DANCE
+  // school events
+  TSSOCIAL
+  TSRURAL
+  TSOM
+  TSMECH
+  TSCIVIL
+  TSOF
+  TSELECTRICAL
+  TSCSE
+  TSCA
+  TSBIO
+  TSARCH
+  TSLANG
 }
 
 enum EventType {
