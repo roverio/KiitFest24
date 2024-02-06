@@ -62,6 +62,7 @@ enum EventCategory {
   TSCIVIL
   TSOF
   TSELECTRICAL
+  TSELECTRONICS
   TSCSE
   TSCA
   TSBIO
