@@ -99,10 +99,10 @@ export const DesignDummyData = [
 export const WebDummyData = [
   {
     src: "https://res.cloudinary.com/dcaf9chn5/image/upload/v1706950339/tl2wq67qroi7eb4pclzb.jpg",
-    memberName: "Sohini Jordar",
-    instagram: "https://www.instagram.com/pratikdevdas/",
-    linkedin: "https://www.linkedin.com/in/pratikdevdas/",
-    github: "https://github.com/pratikdevdas",
+    memberName: "Sohini Joarder",
+    instagram: "https://www.instagram.com/s_jordy.gg",
+    linkedin: "https://www.linkedin.com/in/sohini-joarder",
+    github: "https://github.com/SohinijRover",
     title: "Developer"
   },
   {
