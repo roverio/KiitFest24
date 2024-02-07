@@ -35,9 +35,11 @@ model User {
   isPaymentCompleted Boolean  @default(false)
   createdAt          DateTime @default(now())
 
-  // for updates 
+  // for monitoring 
   receivedIdCard      Boolean?
   cardIssuer          String?
+  uid                 Int?
+  // relations
   issue               Issue[]
   EventRegisteredUser EventRegisteredUser[]
 }
