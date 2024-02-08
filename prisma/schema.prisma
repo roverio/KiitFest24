@@ -70,7 +70,6 @@ enum EventCategory {
   DANCE
   // school events
   TSSOCIAL
-  TSMASCOM
   TSRURAL
   TSOM
   TSMECH
