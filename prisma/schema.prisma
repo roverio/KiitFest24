@@ -8,24 +8,38 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
+model Admin {
+  id         String  @id @default(cuid())
+  name       String
+  password   String
+  email      String
+  superAdmin Boolean @default(false)
+}
+
 model User {
-  id                  String                @id @default(uuid())
-  kfid                String                @unique @default(cuid())
-  name                String
-  email               String                @unique
-  phoneNumber         String
-  password            String
-  dateOfBirth         DateTime
-  city                String
-  state               String
-  gender              String
-  institution         String
-  isKiitStudent       Boolean               @default(false)
-  rollNumber          String?
-  isEmailVerified     Boolean               @default(false)
-  merchandise         Boolean               @default(false)
-  isPaymentCompleted  Boolean               @default(false)
-  createdAt           DateTime              @default(now())
+  id                 String   @id @default(uuid())
+  kfid               String   @unique @default(cuid())
+  name               String
+  email              String   @unique
+  phoneNumber        String
+  password           String
+  dateOfBirth        DateTime
+  city               String
+  state              String
+  gender             String
+  institution        String
+  isKiitStudent      Boolean  @default(false)
+  rollNumber         String?
+  isEmailVerified    Boolean  @default(false)
+  merchandise        Boolean  @default(false)
+  isPaymentCompleted Boolean  @default(false)
+  createdAt          DateTime @default(now())
+
+  // for monitoring 
+  receivedIdCard      Boolean?
+  cardIssuer          String?
+  uid                 Int?
+  // relations
   issue               Issue[]
   EventRegisteredUser EventRegisteredUser[]
 }
@@ -87,7 +101,7 @@ model Event {
   category            EventCategory // put on basis of cultural or technical in the enum
   groupSize           Int                   @default(1)
   EventRegisteredUser EventRegisteredUser[]
-  rulebookUrl        String?
+  rulebookUrl         String?
 }
 
 model EventRegisteredUser {
@@ -114,11 +128,10 @@ model Issue {
   user      User     @relation(fields: [userId], references: [id])
 }
 
-
 // removed constraints from here kfid
 model Payment {
   id        String   @id @default(uuid())
-  kfid      String   
+  kfid      String
   amount    Int
   txnId     String
   createdAt DateTime @default(now())
