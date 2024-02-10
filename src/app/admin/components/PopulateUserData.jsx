@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { searchUser } from "../action";
 import IssueCard from "./IssueCard";
-
+import Link from "next/link";
 export default function PopulateUserData({ issuerName }) {
   const [userData, setUserData] = useState(null);
   console.log(userData);
@@ -56,6 +56,7 @@ export default function PopulateUserData({ issuerName }) {
             </button>
           </form>
         </div>
+        <Link href="/admin/mpt" className="text-neutral-200">Payment Update Access</Link>
         <IssueCard userData={userData} issuerName={issuerName} />
       </div>
     </section>

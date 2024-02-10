@@ -1,13 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
 import { assignUid } from "../action";
-import { redirect } from "next/navigation";
 
 export default function IssueCard({ userData, issuerName }) {
   const [done, setDone] = useState(null);
-  const router = useRouter();
 
   if (!userData) {
     return <div></div>;
@@ -60,7 +57,7 @@ export default function IssueCard({ userData, issuerName }) {
           >
             <div>
               <label
-                for="email"
+                htmlFor="email"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >
                 Assign UID
