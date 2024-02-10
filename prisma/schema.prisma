@@ -32,6 +32,10 @@ model User {
   receivedIdCard      Boolean?
   cardIssuer          String?
   uid                 Int? 
+
+  // for payments
+  isPaymentUpdater    Boolean? @default(false)
+  payUpdaterName      String?
   // relations
   issue               Issue[]
   EventRegisteredUser EventRegisteredUser[]
