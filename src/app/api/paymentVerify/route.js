@@ -10,6 +10,7 @@ function calculateHmacSha256(str, key) {
 }
 
 export async function POST(request) {
+  return null
   const data = await request.formData();
   console.log(data);
   let receivedMsg = data.get("msg");

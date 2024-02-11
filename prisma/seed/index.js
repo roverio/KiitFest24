@@ -2,27 +2,24 @@ const { PrismaClient } = require("@prisma/client");
 // import data from "../data/data.json" assert { type: "json" };
 const fs = require("fs");
 const prisma = new PrismaClient();
+const bcrypt = require("bcrypt");
 
 
 // randomly throws cultural or technical
 
   async function seed() {
-    // const user = await prisma.user.findMany({
-    //   where: {
-    //     isPaymentCompleted: false,
-    //   },
-    //   select: {
-    //     email: true,
-    //     name: true,
-    //     phoneNumber: true,
-    //     isKiitStudent: true,
-    //     institution: true,
-    //   },
-    // });
-    // console.log(user);
-    // const jsonData = JSON.stringify(user);
-    // console.log(jsonData);
-    // fs.writeFileSync('output.json', jsonData);
+  
+
+const a = async () => {
+  const salt = await bcrypt.genSalt(10);
+  const hash = await bcrypt.hash("bhavya@3", salt);
+  console.log(hash);
+};
+
+a().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});
   }
 
 
