@@ -3,12 +3,11 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "@/validations/userSchema";
 import Image from "next/image";
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { signIn } from "next-auth/react";
 import { PulseLoader } from "react-spinners";
-import { redirect } from "next/dist/server/api-utils";
 import { useRouter } from "next/navigation";
 
 const Page = () => {
@@ -21,6 +20,7 @@ const Page = () => {
   });
 
   const [displayMessage, setDisplayMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
@@ -32,10 +32,13 @@ const Page = () => {
         email: data.email,
         password: data.password,
       });
-      console.log(res, 'res');
+      console.log(res, "res");
       if (res?.error) {
         console.log(res?.error || "Unknown error Occurred");
-        setDisplayMessage(res?.error || "Try again later or Contact us");
+        setErrorMessage(res?.error || "Try again later or Contact us");
+        setTimeout(() => {
+          setErrorMessage(""); 
+          }, 3000);
         setLoading(false);
       } else {
         setDisplayMessage("Taking you to your Dashboard...");
@@ -45,7 +48,10 @@ const Page = () => {
       }
     } catch (err) {
       console.log(err || "Unknown error Occurred");
-      setDisplayMessage(err || "Try again later or Contact us");
+      setErrorMessage(err || "Try again later or Contact us");
+      setTimeout(() => {
+      setErrorMessage(""); 
+      }, 3000);
 
       setLoading(false);
     }
@@ -55,14 +61,14 @@ const Page = () => {
     <div className="w-[100vw] h-[100vh] overflow-x-hidden">
       <div className="-z-10 w-[100vw] h-[100vh] fixed">
         <Image
-          src="/Assets/bgbottom.svg"
+          src="/Assets/bgbottom.webp"
           alt="bg image"
           fill
           priority
           className=" invisible md:visible object-cover translate-y-[100px]"
         />
         <Image
-          src="/Assets/bgbottom2.svg"
+          src="/Assets/bgbottom2.webp"
           alt="bg image"
           fill
           className="md:invisible visible object-cover translate-y-[200px]"
@@ -94,7 +100,12 @@ const Page = () => {
             className="absolute left-[calc(50%-43px)] md:left-[calc(50%-61px)] -top-[43px] md:-top-[61px] md:w-[122px] md:h-[122px] h-[86px] w-[86px]"
           />
 
-          <Link href="/" className="absolute -top-8 right-2 text-white hover:scale-105 transition-all duration-200 hover:font-bold">Home</Link>
+          <Link
+            href="/"
+            className="absolute -top-8 right-2 text-white hover:scale-105 transition-all duration-200 hover:font-bold"
+          >
+            Home
+          </Link>
 
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="w-full h-full flex flex-col space-y-6">
@@ -106,7 +117,7 @@ const Page = () => {
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
                 <Image
-                  src="/icons/profile.png"
+                  src="/icons/profile.webp"
                   alt="bg image"
                   width={30}
                   height={30}
@@ -126,7 +137,7 @@ const Page = () => {
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
                 <Image
-                  src="/icons/password.png"
+                  src="/icons/password.webp"
                   alt="bg image"
                   width={30}
                   height={30}
@@ -138,8 +149,11 @@ const Page = () => {
               </div>
             </div>
 
-            <p className="mx-auto text-red-400 font-medium mt-5">
+            <p className="mx-auto text-green-400 font-medium mt-5">
               {displayMessage}
+            </p>
+            <p className="mx-auto text-red-400 font-medium mt-5">
+              {errorMessage}
             </p>
             <div className="flex items-center justify-between gap-1 mt-5">
               <button
@@ -154,9 +168,13 @@ const Page = () => {
               </button>
             </div>
           </form>
-          <div className="text-center pt-8 text-white">{"Don't have an account ?"} 
-            <Link href='/auth/register' className="text-blue-300 font-bold"> Register</Link>
-          </div>
+          {/* <div className="text-center pt-8 text-white">
+            {"Don't have an account ?"}
+            <Link href="/auth/register" className="text-blue-300 font-bold">
+              {" "}
+              Register
+            </Link>
+          </div> */}
         </div>
       </div>
     </div>

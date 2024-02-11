@@ -26,7 +26,7 @@ export default function DashboardLayout({
               setSidebarOpen={setSidebarOpen}
             /> 
           </motion.section>
-          <div className="px-4 md:px-6 py-7 w-full flex-1">
+          <div className="px-4 md:px-6 py-7 min-h-screen w-full flex-1">
             <motion.section {...slideAnimation('down')}>
               <Topbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
             </motion.section>

@@ -8,7 +8,7 @@ import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import { PulseLoader } from "react-spinners";
 import Link from "next/link";
-
+import { useRouter } from "next/navigation";
 const Page = () => {
   const {
     register,
@@ -20,35 +20,40 @@ const Page = () => {
     mode: "onChange",
     resolver: yupResolver(userSchema),
   });
-
+  const router = useRouter()
   const [isKiitStudent, setIsKiitStudent] = useState(false);
+  const [rollNumber, setRollNumber] = useState("");
   const [showRollNumberField, setShowRollNumberField] = useState(false);
-  const rollNumber = watch("rollNumber");
   const [displayMessage, setDisplayMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const onSubmit = async (data) => {
-    // If isKiitStudent is not selected, set rollNumber to an empty string
-    if (!data.isKiitStudent) {
-      data.rollNumber = "";
-    }
     setLoading(true);
     const response = await fetch("/api/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        ...data,
+        isKiitStudent,
+        rollNumber,
+      }),
     });
     const { success, message } = await response.json();
     if (!success) {
       setLoading(false);
-      return setDisplayMessage(message);
+      setErrorMessage(message);
+      return setTimeout(() => {
+        setErrorMessage("");
+      }, 3000);
     } else {
       setLoading(false);
-      setDisplayMessage(
-        "Check your email for verification link. You may close this tab."
-      );
+      setDisplayMessage("You may close this tab and login directly");
+      setTimeout(() => {
+        router.push("/auth/login");
+      }, 2000);
       setSubmitted(true);
     }
   };
@@ -57,14 +62,14 @@ const Page = () => {
     <div className="w-[100vw] h-[100vh] overflow-x-hidden">
       <div className="-z-10 w-[100vw] h-[100vh] fixed">
         <Image
-          src="/Assets/bgbottom.svg"
+          src="/Assets/bgbottom.webp"
           alt="bg image"
           fill
           priority
           className=" invisible md:visible object-cover translate-y-[100px]"
         />
         <Image
-          src="/Assets/bgbottom2.svg"
+          src="/Assets/bgbottom2.webp"
           alt="bg image"
           fill
           priority
@@ -97,12 +102,20 @@ const Page = () => {
             className="absolute left-[calc(50%-43px)] md:left-[calc(50%-61px)] -top-[43px] md:-top-[61px] md:w-[122px] md:h-[122px] h-[86px] w-[86px]"
           />
 
-          <Link
-            href="/"
-            className="absolute -top-8 right-2 text-white hover:scale-105 transition-all duration-200 hover:font-bold"
-          >
-            Home
-          </Link>
+          <div className="flex gap-8">
+            <Link
+              href="/"
+              className="absolute -top-8 left-2 text-white hover:scale-105 transition-all duration-200 hover:font-bold"
+            >
+              Home
+            </Link>
+            <Link
+              href="/privacy"
+              className="absolute -top-8 right-2 text-white hover:scale-105 transition-all duration-200 hover:font-bold"
+            >
+              Privacy Policy
+            </Link>
+          </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
             <div className="w-full h-full flex flex-col space-y-5">
@@ -114,7 +127,7 @@ const Page = () => {
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
                 <Image
-                  src="/icons/profile.png"
+                  src="/icons/profile.webp"
                   alt="bg image"
                   width={30}
                   height={30}
@@ -133,7 +146,7 @@ const Page = () => {
                   className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                 />
                 <Image
-                  src="/icons/mail.png"
+                  src="/icons/mail.webp"
                   alt="bg image"
                   width={30}
                   height={30}
@@ -154,7 +167,7 @@ const Page = () => {
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
-                    src="/icons/password.png"
+                    src="/icons/password.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -174,7 +187,7 @@ const Page = () => {
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
-                    src="/icons/password.png"
+                    src="/icons/password.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -195,7 +208,7 @@ const Page = () => {
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
-                    src="/icons/phone.png"
+                    src="/icons/phone.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -206,15 +219,19 @@ const Page = () => {
                   </span>
                 </div>
                 <div className="w-full relative">
+                  <span className="absolute text-xs font-medium text-blue-100 -bottom-4 ">
+                    Enter your Date of Birth above.
+                  </span>
                   <input
                     type="date"
                     placeholder="Date Of Birth"
-                    max="2006-01-01"
+                    max="2013-01-01"
                     {...register("date")}
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 h-[45.6px]"
+                    required
                   />
                   <Image
-                    src="/icons/calendar.png"
+                    src="/icons/calendar.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -235,7 +252,7 @@ const Page = () => {
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
-                    src="/icons/city.png"
+                    src="/icons/city.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -254,7 +271,7 @@ const Page = () => {
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
-                    src="/icons/state.png"
+                    src="/icons/state.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -290,7 +307,7 @@ const Page = () => {
                     className="absolute right-5 bottom-3.5 "
                   />
                   <Image
-                    src="/icons/gender.png"
+                    src="/icons/gender.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -309,7 +326,7 @@ const Page = () => {
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
-                    src="/icons/institution.png"
+                    src="/icons/institution.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -326,11 +343,14 @@ const Page = () => {
                   <input
                     type="number"
                     placeholder="Roll Number"
-                    {...register("rollNumber")}
+                    // {...register("rollNumber")}
+                    value={showRollNumberField ? rollNumber : ""}
+                    required
+                    onChange={(e) => setRollNumber(e.target.value)}
                     className="w-full placeholder-[#0098CE] bg-gray-50 border border-gray-300 text-[#0098CE] font-light text-base rounded-lg block ps-12 p-2.5 "
                   />
                   <Image
-                    src="/icons/institution.png"
+                    src="/icons/institution.webp"
                     alt="bg image"
                     width={30}
                     height={30}
@@ -347,19 +367,24 @@ const Page = () => {
               <input
                 type="checkbox"
                 id="kiitStudentCheckbox"
-                {...register("isKiitStudent")}
+                // {...register("isKiitStudent")}
                 onChange={(e) => {
                   setIsKiitStudent(e.target.checked);
                   setShowRollNumberField(e.target.checked);
+                  setRollNumber("");
                 }}
-                className="mr-2 cursor-pointer"
+                className="mr-2 w-8 h-8 shrink-0 cursor-pointer"
               />
-              <label htmlFor="kiitStudentCheckbox" className="text-[#0098CE]">
-                Are you a KIIT Student ?
+              <label htmlFor="kiitStudentCheckbox" className="text-cyan-300">
+                Are you a kiit student? Fill your KIIT issued email id and fill
+                your roll number for checking credentials later.
               </label>
             </div>
-            <p className="mx-auto text-red-400 font-medium mt-5">
+            <p className="mx-auto text-green-400 font-medium mt-5">
               {displayMessage}
+            </p>
+            <p className="mx-auto text-red-400 font-medium mt-5">
+              {errorMessage}
             </p>
             <button
               type="submit"

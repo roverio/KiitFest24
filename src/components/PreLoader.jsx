@@ -16,6 +16,7 @@ const PreLoader = () => {
       <Image
         src="/Assets/bggif.gif"
         alt="Bg"
+        priority
         width={1400}
         height={1700}
         className="object-cover w-[100vw] h-[100vh]"
@@ -26,7 +27,7 @@ const PreLoader = () => {
         transition={{ delay: 0, duration: 2 }}
       >
         <Image
-          src="/Assets/k_logo.png"
+          src="/Assets/k_logo.webp"
           alt="fest logo"
           width={500}
           height={550}

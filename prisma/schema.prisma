@@ -9,23 +9,34 @@ datasource db {
 }
 
 model User {
-  id                  String                @id @default(uuid())
-  kfid                Int                   @unique @default(autoincrement())
-  name                String
-  email               String                @unique
-  phoneNumber         String
-  password            String
-  dateOfBirth         DateTime
-  city                String
-  state               String
-  gender              String
-  institution         String
-  isKiitStudent       Boolean               @default(false)
-  rollNumber          String?
-  isEmailVerified     Boolean               @default(false)
-  merchandise         Boolean               @default(false)
-  isPaymentCompleted  Boolean               @default(false)
-  createdAt           DateTime              @default(now())
+  id                 String   @id @default(uuid())
+  kfid               String   @unique @default(cuid())
+  name               String
+  email              String   @unique
+  phoneNumber        String
+  password           String
+  dateOfBirth        DateTime
+  city               String
+  state              String
+  gender             String
+  institution        String
+  isKiitStudent      Boolean  @default(false)
+  rollNumber         String?
+  isEmailVerified    Boolean  @default(false)
+  merchandise        Boolean  @default(false)
+  isPaymentCompleted Boolean  @default(false)
+  createdAt          DateTime @default(now())
+
+  // for monitoring 
+  isAdmin             Boolean? @default(false)
+  receivedIdCard      Boolean?
+  cardIssuer          String?
+  uid                 Int? 
+
+  // for payments
+  isPaymentUpdater    Boolean? @default(false)
+  payUpdaterName      String?
+  // relations
   issue               Issue[]
   EventRegisteredUser EventRegisteredUser[]
 }
@@ -34,6 +45,7 @@ enum EventMember {
   SOLO
   SOLO_OR_GROUP
   GROUP
+  NONE
 }
 
 // add both technical and cultural categories here
@@ -43,6 +55,7 @@ enum EventCategory {
   ACTING
   MUSIC
   COOKING
+  OPEN_MIC
   FASHION
   PHOTOGRAPHY
   DEBATE
@@ -52,6 +65,20 @@ enum EventCategory {
   MARKETING
   GAMES
   DANCE
+  // school events
+  TSSOCIAL
+  TSRURAL
+  TSOM
+  TSMECH
+  TSCIVIL
+  TSOF
+  TSELECTRICAL
+  TSELECTRONICS
+  TSCSE
+  TSCA
+  TSBIO
+  TSARCH
+  TSLANG
 }
 
 enum EventType {
@@ -70,6 +97,7 @@ model Event {
   category            EventCategory // put on basis of cultural or technical in the enum
   groupSize           Int                   @default(1)
   EventRegisteredUser EventRegisteredUser[]
+  rulebookUrl         String?
 }
 
 model EventRegisteredUser {
@@ -94,4 +122,13 @@ model Issue {
   createdAt DateTime @default(now())
   resolved  Boolean
   user      User     @relation(fields: [userId], references: [id])
+}
+
+// removed constraints from here kfid
+model Payment {
+  id        String   @id @default(uuid())
+  kfid      String
+  amount    Int
+  txnId     String
+  createdAt DateTime @default(now())
 }

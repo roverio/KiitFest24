@@ -69,13 +69,13 @@ export async function POST(request) {
         data: studentsData,
       });
 
-      const code = generateVerificationCode(email);
+      // const code = generateVerificationCode(email);
 
-      await sendConfirmationEmail({
-        email,
-        name,
-        verificationCode: code,
-      });
+      // await sendConfirmationEmail({
+      //   email,
+      //   name,
+      //   verificationCode: code,
+      // });
 
       return NextResponse.json(
         {

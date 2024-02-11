@@ -1,0 +1,45 @@
+{
+  "background": {
+    "color": "#000000"
+  },
+  "fullScreen": {
+    "enable": false,
+    "zIndex": -50
+  },
+  "particles": {
+    "color": {
+      "value": ["#0000b3"]
+    },
+    "links": {
+      "color": ["#0000b3"],
+      "distance": 340,
+      "enable": true,
+      "opacity": 1,
+      "width": 5
+    },
+    "collisions": {
+      "enable": true
+    },
+    "move": {
+      "direction": "InMode",
+      "enable": true,
+      "outMode": "bounce",
+      "random": false,
+      "speed": 8.5,
+      "straight": false
+    },
+    "number": {
+      "density": {
+        "enable": true
+      },
+      "value": 30
+    },
+    "shape": {
+      "type": "circle"
+    },
+    "size": {
+      "random": false,
+      "value": 10
+    }
+  }
+}

@@ -23,7 +23,7 @@ export const RegisteredCard = ({ event, buttonComponent }) => {
             </button>
           </Link>
 
-          {buttonComponent && buttonComponent}
+          {/* {buttonComponent && buttonComponent} */}
         </div>
       </div>
     </div>

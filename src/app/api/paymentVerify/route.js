@@ -35,14 +35,20 @@ export async function POST(request) {
       const amt = splitData[4];
       console.log(customer, txn, amt);
       //   run db query here to update payment status
-      await db.user.update({
+       await db.user.update({
         where: {
-          kfid: Number(customer),
+          kfid: customer,
         },
         data: {
           isPaymentCompleted: true,
         },
       });
+
+
+      await db.payment.create({
+        data: { kfid: customer, txnId: txn, amount: Number(amt)},
+      });
+    
       // write a newquery to log payments if possible
       return redirect("/paid");
     }

@@ -32,9 +32,12 @@ const MembersCard = ({ member }) => {
             alt={member.memberName} 
             width={200}
             height={250}
-            className="object-cover"
+            className="object-cover w-48 h-48 object-top"
         ></Image>
-        <h1 className="uppercase font-semibold text-center">{member.memberName}</h1>
+        <div>
+          <h1 className="uppercase font-semibold text-center">{member.memberName}</h1>
+          <h1 className="text-sm text-center">{member.title}</h1>
+        </div>
     </div>
   )
 }

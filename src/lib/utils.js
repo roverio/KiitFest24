@@ -17,10 +17,11 @@ export const sendConfirmationEmail = async ({
   const DOMAIN = process.env.MAILGUN_DOMAIN;
 
   const data = {
-    from: `KIIT Fest 2024 <email@kiitfest.org>`,
+    from: `KIIT Fest 2024 <verify@kiitfest.org>`,
     to: email,
     subject: "Verify Your Email | KIIT Fest 2024",
     html: `
+
     <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
       <h1 style="text-align: center; color: #1a1a1a;">Verify Your Email</h1>
       <p style="text-align: center; color: #1a1a1a;">Hi ${name},</p>
