@@ -168,13 +168,13 @@ const Page = () => {
               </button>
             </div>
           </form>
-          <div className="text-center pt-8 text-white">
+          {/* <div className="text-center pt-8 text-white">
             {"Don't have an account ?"}
             <Link href="/auth/register" className="text-blue-300 font-bold">
               {" "}
               Register
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

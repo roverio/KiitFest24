@@ -48,11 +48,11 @@ const Dashboard = ({ userData }) => {
                     your registered events and other activities.
                   </span>
                 </div>
-                <Link href={"/dashboard/payment-confirm"}>
+                {/* <Link href={"/dashboard/payment-confirm"}>
                   <button className="bg-blue-700 px-4 py-2 rounded-md uppercase text-sm tracking-wider hover:bg-blue-600 transition-colors duration-200">
                     Proceed to Payment
                   </button>
-                </Link>
+                </Link> */}
               </div>
             )}
             <div className="flex justify-between max-w-xl gap-4">

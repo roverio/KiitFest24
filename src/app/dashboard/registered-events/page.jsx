@@ -31,12 +31,12 @@ const RegisteredEventsPage = async () => {
             key={i}
             event={data.event}
             showRegister={false}
-            buttonComponent={
-              <RemoveEventButton userId={userId} eventId={data.event.id} />
-            }
+            // buttonComponent={
+            //   <RemoveEventButton userId={userId} eventId={data.event.id} />
+            // }
           />
         ))}
-        {registeredEvents.length === 0 && (
+        {/* {registeredEvents.length === 0 && (
           <div className="mb-8">
             <h1 className="">No event Registered Yet !!</h1>
             <Link href="/events">
@@ -45,7 +45,7 @@ const RegisteredEventsPage = async () => {
               </button>
             </Link>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

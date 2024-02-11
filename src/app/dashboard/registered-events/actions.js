@@ -4,6 +4,7 @@ import { db } from "@/server/db";
 import { revalidatePath } from "next/cache";
 
 export const removeUserFromEvent = async (userId, eventId) => {
+  return null
   const event = await db.event.findUnique({
     where: {
       id: eventId,

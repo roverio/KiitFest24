@@ -6,6 +6,8 @@ import { FaCheck } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
 
 const page = async () => {
+
+  return(<>Closed</>)
   const session = await getServerAuthSession();
 
   if (!session) {

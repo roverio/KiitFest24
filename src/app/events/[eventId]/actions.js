@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { MAX_EVENT_USER_CAN_REGISTER } from "@/constants";
 
 export const registerUserInEvent = async (userId, eventId) => {
+  return null
   const event = await db.event.findUnique({
     where: {
       id: eventId,

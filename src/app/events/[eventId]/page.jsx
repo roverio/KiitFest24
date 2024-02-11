@@ -70,11 +70,12 @@ const EventPage = async ({ params }) => {
                 </div>
               </div>
             )}
-            <RegisterButton
+            Registration for events have closed... Thank you for showing interest.
+            {/* <RegisterButton
               isRegistered={registeredEventData ? true : false}
               eventId={eventId}
               userId={userId}
-            />
+            /> */}
           </section>
         </div>
       </div>
