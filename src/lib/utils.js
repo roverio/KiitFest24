@@ -45,6 +45,8 @@ export const generateVerificationCode = (email) => {
 };
 
 export const initiatePayment = (kfid, amountToPay) => {
+
+  return null
   // naming variables here for ease
   const baseUrl = process.env.BILLDESK_URL;
   const security_id = process.env.BILLDESK_SECRET_ID;
