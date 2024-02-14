@@ -8,7 +8,22 @@ import Image from "next/image";
 
 import { useState } from "react";
 
-import { CoprorateRelationsDummyData, BroadcastingDummyData, CulturalDummyData, DecorationDummyData, DesignDummyData, DraftingDummyData, ExecutiveHeadDummyData, MarketingDummyData, OperationsDummyData, PRDummyData, SponsorshipDummyData, TechnicalDummyData, TransportDummyData, WebDummyData } from "@/constants";
+import {
+  CoprorateRelationsDummyData,
+  BroadcastingDummyData,
+  CulturalDummyData,
+  DecorationDummyData,
+  DesignDummyData,
+  DraftingDummyData,
+  ExecutiveHeadDummyData,
+  MarketingDummyData,
+  OperationsDummyData,
+  PRDummyData,
+  SponsorshipDummyData,
+  TechnicalDummyData,
+  TransportDummyData,
+  WebDummyData,
+} from "@/constants";
 
 const TEAM_NAME = [
   "Web Development",
@@ -22,7 +37,7 @@ const TEAM_NAME = [
   "Decoration",
   "Technical",
   "Drafting",
-  "Corporate Relations"
+  "Corporate Relations",
 ];
 
 const getDummyData = (team) => {
@@ -74,7 +89,7 @@ const Members = () => {
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <div className="bg-about-background min-h-screen font-sans ">
         <Image
           src="/members/topRight.svg"
@@ -118,7 +133,7 @@ const Members = () => {
           </div>
           <AnimatePresence>
             <motion.section {...slideAnimation("up")}>
-                {/* <div className="text-white text-2xl font-semibold max-w-5xl mx-auto">Coming soon...</div> */}
+              {/* <div className="text-white text-2xl font-semibold max-w-5xl mx-auto">Coming soon...</div> */}
               {activeTeam === "web development" ? (
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
@@ -127,52 +142,59 @@ const Members = () => {
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
                 />
-              ):activeTeam === "marketing" ? (
+              ) : activeTeam === "marketing" ? (
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
                 />
-              ):activeTeam === "executive heads" ? (
+              ) : activeTeam === "executive heads" ? (
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
                 />
-              ):activeTeam === "pr" ? (
+              ) : activeTeam === "pr" ? (
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
                 />
-              ):activeTeam === "operations" ? (
+              ) : activeTeam === "operations" ? (
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
                 />
-              ):activeTeam === "cultural" ? (
+              ) : activeTeam === "cultural" ? (
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
                 />
-              ):activeTeam === "sponsorship" ? (
+              ) : activeTeam === "sponsorship" ? (
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
                 />
-              ):activeTeam === "decoration" ? (
+              ) : activeTeam === "decoration" ? (
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
                 />
-              ):activeTeam === "technical" ? (
+              ) : activeTeam === "technical" ? (
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
                 />
-              ):activeTeam === "drafting" ? (
+              ) : activeTeam === "drafting" ? (
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
                 />
-              ):activeTeam === "transport" ? (
+              ) : activeTeam === "transport" ? (
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
                 />
-              ):activeTeam === "broadcasting" ? (
+              ) : activeTeam === "broadcasting" ? (
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
                 />
-              ):(
-                <div className="text-white text-2xl font-semibold max-w-5xl mx-auto">Coming soon...</div>
+              ) :
+              activeTeam === "corporate relations" ? (
+                <MembersContainer
+                  dummyData={getDummyData(activeTeam.toLowerCase())}
+                />
+              ) :  (
+                <div className="text-white text-2xl font-semibold max-w-5xl mx-auto">
+                  Coming soon...
+                </div>
               )}
             </motion.section>
           </AnimatePresence>
