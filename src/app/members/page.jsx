@@ -8,21 +8,21 @@ import Image from "next/image";
 
 import { useState } from "react";
 
-import { WebDummyData } from "@/constants";
+import { CoprorateRelationsDummyData, BroadcastingDummyData, CulturalDummyData, DecorationDummyData, DesignDummyData, DraftingDummyData, ExecutiveHeadDummyData, MarketingDummyData, OperationsDummyData, PRDummyData, SponsorshipDummyData, TechnicalDummyData, TransportDummyData, WebDummyData } from "@/constants";
 
 const TEAM_NAME = [
   "Web Development",
-  "Executive Heads",
+  "Broadcasting",
   "Marketing",
   "Design",
   "PR",
   "Operations",
   "Transport",
   "Cultural",
-  "Sponsorship",
   "Decoration",
   "Technical",
   "Drafting",
+  "Corporate Relations"
 ];
 
 const getDummyData = (team) => {
@@ -31,6 +31,36 @@ const getDummyData = (team) => {
   switch (lowercaseTeam) {
     case "web development":
       return WebDummyData;
+    case "design":
+      return DesignDummyData;
+    case "marketing":
+      return MarketingDummyData;
+      break;
+    case "pr":
+      return PRDummyData;
+      break;
+    case "broadcasting":
+      return BroadcastingDummyData;
+    case "operations":
+      return OperationsDummyData;
+      break;
+    case "transport":
+      return TransportDummyData;
+      break;
+    case "cultural":
+      return CulturalDummyData;
+      break;
+    case "decoration":
+      return DecorationDummyData;
+      break;
+    case "technical":
+      return TechnicalDummyData;
+      break;
+    case "drafting":
+      return DraftingDummyData;
+    case "corporate relations":
+      return CoprorateRelationsDummyData;
+      break;
   }
 };
 
@@ -93,7 +123,55 @@ const Members = () => {
                 <MembersContainer
                   dummyData={getDummyData(activeTeam.toLowerCase())}
                 />
-              ) : (
+              ) : activeTeam === "design" ? (
+                <MembersContainer
+                  dummyData={getDummyData(activeTeam.toLowerCase())}
+                />
+              ):activeTeam === "marketing" ? (
+                <MembersContainer
+                  dummyData={getDummyData(activeTeam.toLowerCase())}
+                />
+              ):activeTeam === "executive heads" ? (
+                <MembersContainer
+                  dummyData={getDummyData(activeTeam.toLowerCase())}
+                />
+              ):activeTeam === "pr" ? (
+                <MembersContainer
+                  dummyData={getDummyData(activeTeam.toLowerCase())}
+                />
+              ):activeTeam === "operations" ? (
+                <MembersContainer
+                  dummyData={getDummyData(activeTeam.toLowerCase())}
+                />
+              ):activeTeam === "cultural" ? (
+                <MembersContainer
+                  dummyData={getDummyData(activeTeam.toLowerCase())}
+                />
+              ):activeTeam === "sponsorship" ? (
+                <MembersContainer
+                  dummyData={getDummyData(activeTeam.toLowerCase())}
+                />
+              ):activeTeam === "decoration" ? (
+                <MembersContainer
+                  dummyData={getDummyData(activeTeam.toLowerCase())}
+                />
+              ):activeTeam === "technical" ? (
+                <MembersContainer
+                  dummyData={getDummyData(activeTeam.toLowerCase())}
+                />
+              ):activeTeam === "drafting" ? (
+                <MembersContainer
+                  dummyData={getDummyData(activeTeam.toLowerCase())}
+                />
+              ):activeTeam === "transport" ? (
+                <MembersContainer
+                  dummyData={getDummyData(activeTeam.toLowerCase())}
+                />
+              ):activeTeam === "broadcasting" ? (
+                <MembersContainer
+                  dummyData={getDummyData(activeTeam.toLowerCase())}
+                />
+              ):(
                 <div className="text-white text-2xl font-semibold max-w-5xl mx-auto">Coming soon...</div>
               )}
             </motion.section>
