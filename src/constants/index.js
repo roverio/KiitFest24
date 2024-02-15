@@ -915,6 +915,16 @@ export const OperationsDummyData = [
     title: "Operations",
   },
   {
+    src: "https://res.cloudinary.com/dhw2yukgq/image/upload/v1707988673/tyky9douklvekxgtikfs.webp",
+    memberName: "Anish",
+    instagram: "https://www.instagram.com/anish.s.7",
+    linkedin:
+      "https://www.linkedin.com/in/anish-singh-b484a4138",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  // https://res.cloudinary.com/dhw2yukgq/image/upload/v1707988673/tyky9douklvekxgtikfs.webp
+  {
     src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707813224/OPERATIONS/tbz6ugdmcxsgvd1eaa9f.webp",
     memberName: "Vinayak Tiwari",
     instagram:
