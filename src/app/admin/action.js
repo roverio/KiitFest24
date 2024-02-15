@@ -6,9 +6,9 @@ export const searchUser = async (formData) => {
   "use server";
   const email = formData.get("email");
 
-  let searchedUser = await db.user.findUnique({
+  let searchedUser = await db.user.findMany({
     where: {
-      email: email,
+      uid:parseInt(email),
     },
     select: {
       name: true,
@@ -20,6 +20,7 @@ export const searchUser = async (formData) => {
       uid: true,
     },
   });
+  console.log(searchedUser);
   return {
     message: "success",
     searchedUser,
