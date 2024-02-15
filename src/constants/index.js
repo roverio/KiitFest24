@@ -606,6 +606,170 @@ export const PRDummyData = [
 ];
 export const OperationsDummyData = [
   {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707812194/OPERATIONS/k3mkbcmpffbzmobm2bfw.webp",
+    memberName: "Aman Kumar Jena",
+    instagram:
+      "https://www.instagram.com/_amankj_4?igsh=Zmdtbjd4bTZsOTd2&utm_source=qr",
+    linkedin:
+      "https://www.linkedin.com/in/aman-kumar-jena-087622246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707820354/OPERATIONS/xgtiss99p83ushu9edof.jpg",
+    memberName: "Binayak Satpathy",
+    instagram: "https://www.instagram.com/just.binayak/",
+    linkedin: "https://www.linkedin.com/in/binayak-satpathy-a95b34227/",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707821219/OPERATIONS/qxmxybcj0kjng9dmp7zj.jpg",
+    memberName: "Naimish Pandey",
+    instagram: "https://www.instagram.com/",
+    linkedin: "https://www.linkedin.com/in/naimish-pandey-232aaa206?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707822698/OPERATIONS/z5aidiemzosgjvijgm1r.webp",
+    memberName: "Aishwarya Tiwari",
+    instagram: "https://www.instagram.com/ashofficial_0102?igsh=MTM0bnpoazNwb2htcg==",
+    linkedin: "https://www.linkedin.com",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707822221/OPERATIONS/k1lb3bnxvtp5uf4vshxe.webp",
+    memberName: "Subhankar Senapati",
+    instagram: "https://www.instagram.com/subhankar._____1?igsh=MWJ1aHBmZjVvY243OA==",
+    linkedin: "https://www.linkedin.com/in/subhankar-senapati-b9764527a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707821507/OPERATIONS/ex935rhaveb17xlo0thm.webp",
+    memberName: "Aryan Tripathi",
+    instagram: "https://www.instagram.com/aryann_.tripathi/?igsh=MWRvYzZ1MnFhbWw2bA%3D%3D",
+    linkedin: "https://www.linkedin.com/in/aryan-tripathi-7305b7246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707821507/OPERATIONS/aizeyyjxyuoqhsmxzxuw.webp",
+    memberName: "Sahil Singh",
+    instagram: "https://www.instagram.com/_sahilsinghrajput17_?igsh=MXZucm94Zmc0MWg3Nw==",
+    linkedin: "https://www.linkedin.com/in/sahil-singh-4ab97021a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707821222/OPERATIONS/tldnfe8zbniwllztwcpa.jpg",
+    memberName: "Debasis Mishra",
+    instagram: "https://www.instagram.com/l0_itz.sanu_0l?igsh=M3NndW9iMHg2MGh1&utm_source=qr",
+    linkedin: "https://www.linkedin.com/",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707820354/OPERATIONS/onzklfoqvzyctdy6de5t.jpg",
+    memberName: "Kanhaiya Lal Sharma",
+    instagram: "https://www.instagram.com/kanhaiyasharmaa?utm_source=qr&igsh=bHdtajgwd3N4Z2tk",
+    linkedin: "https://www.linkedin.com/in/kanhaiya-sharma-a70a72293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707822219/OPERATIONS/h1emsejxkt0dq81wcvsi.webp",
+    memberName: "Ashutosh Mohapatra",
+    instagram: "https://www.instagram.com/ashumohapatra86?igsh=M2hodnJpZ2dyd3dv&utm_source=qr",
+    linkedin: "https://www.linkedin.com/in/ashutosh-mohapatra-6102a3221/",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707822699/OPERATIONS/aqf76g3awau2ux2v5rbn.webp",
+    memberName: "Mohammad Arhaan Ali",
+    instagram: "https://www.instagram.com/mohammad_arhaan_ali?igsh=c3gweWYxM2Q4azE3",
+    linkedin: "https://www.linkedin.com/",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707822699/OPERATIONS/fg4ka2bo8fxmmfkc3vf0.webp",
+    memberName: "Debapratim Paul",
+    instagram: "https://www.instagram.com/debapratim_?igsh=MWtqaWQzNjdiaTh2NA==",
+    linkedin: "https://www.linkedin.com/in/debapratim-paul-0a7848250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707821219/OPERATIONS/yy0tunigh8n3loqz5wix.jpg",
+    memberName: "Dhanjee Tiwari",
+    instagram: "https://www.instagram.com/_d_j_458?igsh=cXNsM3NtbWw0cGI4",
+    linkedin: "https://www.linkedin.com/in/dhanjee-tiwari-8775b7246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707822220/OPERATIONS/daejncdj1gyjdql5ir00.webp",
+    memberName: "Parida Pratyus Srimaysis",
+    instagram: "https://www.instagram.com/_.pra._.tyus._?igsh=MWt5MnVmcWMwbWV1bg==",
+    linkedin: "https://www.linkedin.com/in/parida-pratyus-srimaysis-75b1aa2b2",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707821505/OPERATIONS/nhvd3ws2egickiihg6mp.webp",
+    memberName: "Arvind Kumar",
+    instagram: "https://www.instagram.com/arvindkant_1/?next=https%3A%2F%2Fwww.instagram.com%2Fdirect%2Finbox%2F%3F__coig_login%3D1",
+    linkedin: "https://www.linkedin.com/in/arvind-kumar-568a38226/",
+    github: "https://github.com",
+    title: "Operations",
+  },
+
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707821220/OPERATIONS/r0nuq7zrvxnttquogpbr.jpg",
+    memberName: "Yash Raj",
+    instagram: "https://www.instagram.com/_.__yasshhhh__._?igsh=ZXlsb2M2bTF4dHps",
+    linkedin: "https://www.linkedin.com/in/yash-raj-kumar-64867b230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707822220/OPERATIONS/teqi7hxfmantqiirl1kn.webp",
+    memberName: "Sayash Sarthak",
+    instagram: "https://www.instagram.com/_sayash._.7?igsh=a2lkM2wzYTM0eGFh&utm_source=qr",
+    linkedin: "https://www.linkedin.com/in/sayash-sarthak-57b885272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "",
+    memberName: "Anurag Barik",
+    instagram: "https://www.instagram.com",
+    linkedin: "https://www.linkedin.com",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "",
+    memberName: "Ayush Senapati",
+    instagram: "https://www.instagram.com",
+    linkedin: "https://www.linkedin.com",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  {
+    src: "",
+    memberName: "Shyashank Kayshp",
+    instagram: "https://www.instagram.com",
+    linkedin: "https://www.linkedin.com",
+    github: "https://github.com",
+    title: "Operations",
+  },
+  
+  {
     src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707809653/OPERATIONS/ndaw6larzodn1lety3jf.webp",
     memberName: "Rohit Kumar singh",
     instagram: "https://www.instagram.com/",
@@ -669,7 +833,7 @@ export const OperationsDummyData = [
     title: "Operations",
   },
   {
-    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707810926/OPERATIONS/lcrblcceyhtlebyjsgmk.webp",
+    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707811046/OPERATIONS/pofvst7zvkt1jiewo6um.webp",
     memberName: "Sondeepon Roy",
     instagram:
       "https://www.instagram.com/sondeeponroy?igsh=aDd1dzNhOGJ3bzlo&utm_source=qr",
@@ -723,16 +887,7 @@ export const OperationsDummyData = [
     github: "https://github.com",
     title: "Operations",
   },
-  {
-    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707812194/OPERATIONS/k3mkbcmpffbzmobm2bfw.webp",
-    memberName: "Aman Kumar Jena",
-    instagram:
-      "https://www.instagram.com/_amankj_4?igsh=Zmdtbjd4bTZsOTd2&utm_source=qr",
-    linkedin:
-      "https://www.linkedin.com/in/aman-kumar-jena-087622246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-    github: "https://github.com",
-    title: "Operations",
-  },
+
   {
     src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707812384/OPERATIONS/umhvb5m4pcjod4v3ofcu.webp",
     memberName: "Satyajit Das",
@@ -829,16 +984,6 @@ export const OperationsDummyData = [
     memberName: "Aditya Sinha",
     instagram: "www.instagram.com/adisinha_16/",
     linkedin: "https://www.linkedin.com/in/aditya-sinha-6455ba222",
-    github: "https://github.com",
-    title: "Operations",
-  },
-  {
-    src: "https://res.cloudinary.com/dzgnhsp3t/image/upload/v1707815587/OPERATIONS/perqysgvfsno6wrif1sk.webp",
-    memberName: "Ashutosh Tiwari",
-    instagram:
-      "https://www.instagram.com/gcc.ashutosh?igsh=MXA4bzduNmUxdGdkdA==",
-    linkedin:
-      "https://www.linkedin.com/in/ashutosh-tiwari-13102621b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     github: "https://github.com",
     title: "Operations",
   },
@@ -981,7 +1126,56 @@ export const TransportDummyData = [
     title: "Transport",
   },
 ];
-export const CulturalDummyData = [{}];
+export const CulturalDummyData = [
+  {
+    src: "https://res.cloudinary.com/dsevcazm8/image/upload/v1707820205/Decorations/rj576vbj51yspvqbr2rc.webp",
+    memberName: "Piyush Vishwakarma",
+    instagram: "https://www.instagram.com/piyushh11?igsh=NWRqbm1yb2p4OWV1&utm_source=qr",
+    linkedin: "https://www.linkedin.com/in/piyush-vishwakarma-b8882424a",
+    github: "https://github.com",
+    title: "Cultural",
+  },
+  {
+    src: "https://res.cloudinary.com/dsevcazm8/image/upload/v1707820326/Decorations/yeijwrieddjpoufz5ro9.webp",
+    memberName: "Lala Ankita Roy",
+    instagram: "https://www.instagram.com/_.p.i.sc.e.s._?igsh=NnRxdXVvZ256bG5u",
+    linkedin: "https://www.linkedin.com/in/lala-ankita-roy-43a975285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com",
+    title: "Cultural",
+  },
+  {
+    src: "https://res.cloudinary.com/dsevcazm8/image/upload/v1707820470/Decorations/scxc0kfspx9znignm3ms.png",
+    memberName: "Abhisekh Rout",
+    instagram: "https://www.instagram.com/__abhisek_the_king__?igsh=enlwY2p3aDM3N3gw",
+    linkedin: "https://www.linkedin.com/in/abhisek-rout-6265531b4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com",
+    title: "Cultural",
+  },
+  {
+    src: "https://res.cloudinary.com/dsevcazm8/image/upload/v1707820576/Decorations/hwx0co45hasazvreg7sx.webp",
+    memberName: "Soumya Mohapatra",
+    instagram: "https://www.instagram.com/soumyaa__mh?igsh=MW1obnNqY3N2NDV3aQ==",
+    linkedin: "https://www.linkedin.com/in/soumya-mohapatra-10b076214?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com",
+    title: "Cultural",
+  },
+  {
+    src: "https://res.cloudinary.com/dsevcazm8/image/upload/v1707820669/Decorations/nccphbk6detaqeaotwra.webp",
+    memberName: "Sangam Nath Tripathi",
+    instagram: "https://www.instagram.com/who_sangam?igsh=NzAzczg1czRzZm85",
+    linkedin: "http://linkedin.com/in/sangam-tripathi-2b8ba621b",
+    github: "https://github.com",
+    title: "Cultural",
+  },
+  {
+    src: "https://res.cloudinary.com/dsevcazm8/image/upload/v1707820779/Decorations/inbl72krsv5kb5tcsjhc.webp",
+    memberName: "Yashraj Khuntia",
+    instagram: ":https://www.instagram.com/khuntiaboy0202?igsh=bzR4M3d3eTI0amgy",
+    linkedin: "https://www.linkedin.com/in/yashraj-khuntia-a041452b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    github: "https://github.com",
+    title: "Cultural",
+  },
+];
 export const DecorationDummyData = [
   {
     src: "https://res.cloudinary.com/dsevcazm8/image/upload/v1707812669/Decorations/rnrhaxqnpyzowyd56eip.webp",
