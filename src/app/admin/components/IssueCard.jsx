@@ -45,20 +45,29 @@ export default function IssueCard({ userData, issuerName }) {
           </p>
           <p>card Issuer Name (if assigned) : {user?.cardIssuer}</p>
           <p>UID (if assigned): {user?.uid}</p>
+          <p>email: {user?.email}</p>
+          <p>phone: {user?.phoneNumber}</p>
         </div>
-        <div className="text-red-200">if second user exists. If two id cards are issued. Details will be shown below</div>
+        <div className="text-red-200">
+          if second user exists. If two id cards are issued. Details will be
+          shown below
+        </div>
         {user2 && (
-        <div className="font-light text-yellow-500 dark:text-yellow-400">
-          <p>UserName : {user2.name}</p>
-          <p>Kfid : {user2?.kfid}</p>
-          <p>Payment : {user2?.isPaymentCompleted.toString()}</p>
-          <p>KIIT student: {user2?.isKiitStudent.toString()}</p>
-          <p>
-            ID card status: {user2?.receivedIdCard ? "received" : "NOT ISSUED"}
-          </p>
-          <p>card Issuer Name (if assigned) : {user2?.cardIssuer}</p>
-          <p>UID (if assigned): {user2?.uid}</p>
-        </div>)}
+          <div className="font-light text-yellow-500 dark:text-yellow-400">
+            <p>UserName : {user2.name}</p>
+            <p>Kfid : {user2?.kfid}</p>
+            <p>Payment : {user2?.isPaymentCompleted.toString()}</p>
+            <p>KIIT student: {user2?.isKiitStudent.toString()}</p>
+            <p>
+              ID card status:{" "}
+              {user2?.receivedIdCard ? "received" : "NOT ISSUED"}
+            </p>
+            <p>card Issuer Name (if assigned) : {user2?.cardIssuer}</p>
+            <p>UID (if assigned): {user2?.uid}</p>
+            <p>email: {user2?.email}</p>
+            <p>phone: {user2?.phoneNumber}</p>
+          </div>
+        )}
         {/* {!user.receivedIdCard && (
           <form
             className="mt-4 space-y-4 lg:mt-5 md:space-y-5"

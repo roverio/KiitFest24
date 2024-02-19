@@ -18,6 +18,8 @@ export const searchUser = async (formData) => {
       isKiitStudent: true,
       kfid: true,
       uid: true,
+      email: true,
+      phoneNumber: true,
     },
   });
   console.log(searchedUser);
